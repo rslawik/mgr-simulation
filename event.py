@@ -15,5 +15,3 @@ class SentEvent(Event):
 class ErrorEvent(Event):
 	def __init__(self, time):
 		super(ErrorEvent, self).__init__(time)
-
-print('dupa')
