@@ -1,4 +1,5 @@
 from Algorithm import Algorithm
 
 class Adversary(Algorithm):
-	pass
+	def scheduleError(self, packet):
+		pass
