@@ -1,2 +1,8 @@
+from collections import deque
+
 class Events:
-    pass
+    def __init__(self):
+    	self.events = []
+
+    def hasEvents(self):
+    	return True if self.events else False
