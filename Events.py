@@ -1,4 +1,4 @@
-from collections import deque
+from heapq import heappush, heappop
 
 class Events:
     def __init__(self):
@@ -6,3 +6,6 @@ class Events:
 
     def hasEvents(self):
     	return True if self.events else False
+
+    def schedule(self, event):
+    	heappush(self.events, event)

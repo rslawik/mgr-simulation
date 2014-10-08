@@ -1,10 +1,19 @@
 import unittest
 
+from Event import Event
 from Events import Events
 
 class EventsTestCase(unittest.TestCase):
+	def setUp(self):
+		self.events = Events()
+
 	def test_createEvents(self):
-		events = Events()
+		self.assertEqual(self.events.hasEvents(), False)
+
+	def test_canScheduleEvent(self):
+		event = Event(1.1)
+		self.events.schedule(event)
+		self.assertEqual(self.events.hasEvents(), True)
 
 if __name__ == '__main__':
 	unittest.main()
