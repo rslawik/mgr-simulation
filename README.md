@@ -7,8 +7,8 @@ To Do
 -----
 
 * implement algorithms, adversaries
-* perform experiments
 * input generation
+* perform experiments
 
 Changelog
 ---------
