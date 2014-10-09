@@ -7,12 +7,14 @@ To Do
 -----
 
 * implement algorithms, adversaries
-* plot drawing
+* perform experiments
 * input generation
 
 Changelog
 ---------
 
+* 09.10.2014
+  * Plot drawing
 * 08.10.2014
   * Simulation framework
   * Algorithm, Adversary, Event, Events ported to python3
