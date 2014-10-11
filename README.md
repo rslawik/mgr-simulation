@@ -7,12 +7,14 @@ To Do
 -----
 
 * implement algorithms, adversaries
-* input generation
 * perform experiments
 
 Changelog
 ---------
 
+* 11.10.2014
+  * Plot drawing
+  * Stochastic input generation
 * 09.10.2014
   * Plot drawing
 * 08.10.2014
