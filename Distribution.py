@@ -8,3 +8,12 @@ class Distribution:
 
 	def probability(self, packet):
 		return self.distribution[packet]
+
+	def fromFile(fileName):
+		with open(fileName, 'r') as description:
+			rate = float(description.readline())
+			distribution = {}
+			for line in description:
+				packet, probability = line.split()
+				distribution[float(packet)] = float(probability)
+			return Distribution(rate, distribution)
