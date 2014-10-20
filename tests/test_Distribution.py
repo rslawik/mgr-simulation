@@ -24,10 +24,10 @@ class DistributionTestCase(unittest.TestCase):
 class DistributionFromFileTestCase(unittest.TestCase):
 	def test_createDistributionNoFile(self):
 		with self.assertRaises(FileNotFoundError):
-			distribution = Distribution.fromFile('tests/test_Distribution.inXXX')
+			distribution = Distribution.fromFile('tests/example/test_Distribution.inXXX')
 
 	def test_createDistribution(self):
-		distribution = Distribution.fromFile('tests/distribution.in')
+		distribution = Distribution.fromFile('tests/example/distribution.in')
 		self.assertEqual(distribution.rate, 5)
 		self.assertEqual(distribution.packets, [3, 5, 7])
 		self.assertEqual(distribution.probability(3.0), 0.33)
