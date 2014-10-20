@@ -58,12 +58,24 @@ class EventsTestCase(unittest.TestCase):
 		self.events.schedule(errorEvent)
 		self.assertHasEventsInOrder([self.ie1, sentEvent, self.ie2, self.ie3])
 
-	def test_canScheduleSentAndErrorEvent(self):
+	def test_canScheduleSentAndErrorEventBefore(self):
 		sentEvent, errorEvent = SentEvent(2.9, None), ErrorEvent(2.8)
 		self.events.schedule(sentEvent)
 		self.events.schedule(errorEvent)
 		self.assertHasEventsInOrder([self.ie1, self.ie2, self.ie3])
 
+class SimultaneousEventsTestCase(unittest.TestCase):
+	def test_withSimultaneousEvents(self):
+		ie1, ie2 = InjectEvent(1, None), InjectEvent(1, None)
+		events = Events([ie1, ie2])
+		nextEvent = events.next()
+		self.assertTrue(events.hasNextInjectNow(nextEvent.time))
+
+	def test_withoutSimultaneousEvents(self):
+		ie1, ie2 = InjectEvent(1, None), InjectEvent(2, None)
+		events = Events([ie1, ie2])
+		nextEvent = events.next()
+		self.assertFalse(events.hasNextInjectNow(nextEvent.time))
 
 if __name__ == '__main__':
 	unittest.main()

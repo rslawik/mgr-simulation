@@ -1,7 +1,7 @@
 from collections import deque
 from itertools import takewhile
 
-from Event import ErrorEvent
+from Event import InjectEvent, ErrorEvent
 
 class Events:
     def __init__(self, injectEvents):
@@ -9,6 +9,9 @@ class Events:
 
     def hasNext(self):
     	return True if self.injectEvents or self.sentEvents else False
+
+    def hasNextInjectNow(self, time):
+        return self.injectEvents and isinstance(self.injectEvents[0], InjectEvent) and self.injectEvents[0].time == time
 
     def schedule(self, event):
     	if isinstance(event, ErrorEvent):
