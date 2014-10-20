@@ -21,6 +21,9 @@ def play(algorithm, adversary, events):
 		algorithm.notify(event)
 		adversary.notify(event)
 
+		if isinstance(event, InjectEvent) and events.hasNextInjectNow(time):
+			continue
+
 		if not algorithm.sending:
 			packet = schedule(algorithm)
 			error = adversary.scheduleError(packet)
