@@ -10,7 +10,7 @@ class InvalidDistributionTestCase(unittest.TestCase):
 
 class DistributionTestCase(unittest.TestCase):
 	def setUp(self):
-		self.rate, self.dist = 3, {1: 0.5, 2: 0.5}
+		self.rate, self.dist = 3, {1: 0.5, 2: 0.25, 1.5: 0.25}
 		self.distribution = Distribution(self.rate, self.dist)
 
 	def test_createDistribution(self):
@@ -19,7 +19,11 @@ class DistributionTestCase(unittest.TestCase):
 		self.assertEqual(self.distribution.probability(2), self.dist[2])
 
 	def test_getPacktes(self):
-		self.assertEqual(self.distribution.packets, [1, 2])
+		self.assertEqual(self.distribution.packets, [1, 2, 1.5])
+
+	def test_getShortestLongest(self):
+		self.assertEqual(self.distribution.shortestPacket, 1)
+		self.assertEqual(self.distribution.longestPacket, 2)
 
 class DistributionFromFileTestCase(unittest.TestCase):
 	def test_createDistributionNoFile(self):

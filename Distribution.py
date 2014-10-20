@@ -5,6 +5,7 @@ class Distribution:
 			raise ValueError("{} is not a valid distribution".format(distribution))
 		self.distribution = distribution
 		self.packets = list(distribution.keys())
+		self.shortestPacket, self.longestPacket = min(self.packets), max(self.packets)
 
 	def probability(self, packet):
 		return self.distribution[packet]
