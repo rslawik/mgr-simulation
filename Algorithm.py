@@ -9,7 +9,7 @@ class Algorithm:
 		if isinstance(event, InjectEvent):
 			self.queue[event.packet] += 1
 		elif isinstance(event, SentEvent):
-			print('sent')
+			# print('sent')
 			self.sending = None
 		elif isinstance(event, ErrorEvent):
 			self.notify(InjectEvent(event.time, self.sending))

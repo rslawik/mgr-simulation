@@ -9,9 +9,9 @@ class GenerateTestCase(unittest.TestCase):
 				packets[float(packet)] += 1
 		total = sum(packets.values())
 		# print(packets, total)
-		self.assertEquals(round(packets[3.0]/total, 2), 0.33)
-		self.assertEquals(round(packets[5.0]/total, 2), 0.17)
-		self.assertEquals(round(packets[7.0]/total, 2), 0.5) 
+		self.assertEqual(round(packets[3.0]/total, 2), 0.33)
+		self.assertEqual(round(packets[5.0]/total, 2), 0.17)
+		self.assertEqual(round(packets[7.0]/total, 2), 0.5) 
 
 if __name__ == '__main__':
 	unittest.main()
