@@ -77,5 +77,20 @@ class SimultaneousEventsTestCase(unittest.TestCase):
 		nextEvent = events.next()
 		self.assertFalse(events.hasNextInjectNow(nextEvent.time))
 
+class EventsFromFileTestCase(unittest.TestCase):
+	def test_eventsFromFileNoFile(self):
+		with self.assertRaises(FileNotFoundError):
+			events = Events.fromFile('tests/example/events.inXXX')
+
+	def test_eventsFromFile(self):
+		events = Events.fromFile('tests/example/events.in')
+		self.assertEqual(events.next().time, 1)
+		self.assertEqual(events.next().time, 2)
+		self.assertEqual(events.next().packet, 3)
+		self.assertEqual(events.next().packet, 4)
+		self.assertEqual(events.next().time, 5)
+		self.assertTrue(events.hasNextInjectNow(5))
+		self.assertEqual(events.next().packet, 4)
+
 if __name__ == '__main__':
 	unittest.main()

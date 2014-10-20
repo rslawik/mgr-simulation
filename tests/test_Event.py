@@ -8,6 +8,11 @@ class EventTestCase(unittest.TestCase):
 		event = InjectEvent(time, None)
 		self.assertEqual(event.time, time)
 
+	def test_createInjectEvent(self):
+		event = InjectEvent.fromLine("123.07 4.23")
+		self.assertEqual(event.time, 123.07)
+		self.assertEqual(event.packet, 4.23)
+
 	def test_createSentEvent(self):
 		time = 123.07
 		event = SentEvent(time, None)

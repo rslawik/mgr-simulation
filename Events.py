@@ -30,3 +30,7 @@ class Events:
     		return self.injectEvents.popleft() if ie < se else self.sentEvents.pop(0)
     	if self.sentEvents: return self.sentEvents.pop(0)
     	return self.injectEvents.popleft()
+
+    def fromFile(filename):
+        with open(filename, 'r') as events:
+            return Events(InjectEvent.fromLine(line) for line in events)
