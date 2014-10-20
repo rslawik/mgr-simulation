@@ -9,15 +9,17 @@ class InvalidDistributionTestCase(unittest.TestCase):
 			Distribution(rate, dist)
 
 class DistributionTestCase(unittest.TestCase):
+	def setUp(self):
+		self.rate, self.dist = 3, {1: 0.5, 2: 0.5}
+		self.distribution = Distribution(self.rate, self.dist)
+
 	def test_createDistribution(self):
-		rate, dist = 3, {1: 0.5, 2: 0.5}
-		distribution = Distribution(rate, dist)
-		self.assertEqual(distribution.rate, rate)
-		self.assertEqual(distribution.packet(1), 0.5)
-		self.assertEqual(distribution.packet(2), 0.5)
+		self.assertEqual(self.distribution.rate, self.rate)
+		self.assertEqual(self.distribution.probability(1), self.dist[1])
+		self.assertEqual(self.distribution.probability(2), self.dist[2])
 
 	def test_getPacktes(self):
-		pass
+		self.assertEqual(self.distribution.packets, [1, 2])
 
 if __name__ == '__main__':
 	unittest.main()

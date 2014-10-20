@@ -4,9 +4,7 @@ class Distribution:
 		if sum(distribution.values()) != 1.0:
 			raise ValueError("{} is not a valid distribution".format(distribution))
 		self.distribution = distribution
+		self.packets = list(distribution.keys())
 
-	def packet(self, packet):
+	def probability(self, packet):
 		return self.distribution[packet]
-
-	def packets(self):
-		pass
