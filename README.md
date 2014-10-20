@@ -12,6 +12,8 @@ To Do
 Changelog
 ---------
 
+* 20.10.2014
+  * Stochastic input generation
 * 11.10.2014
   * Plot drawing
   * Stochastic input generation

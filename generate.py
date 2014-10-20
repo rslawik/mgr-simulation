@@ -1,4 +1,11 @@
+import sys
 from random import random, expovariate
+
+filename = sys.argv[1]
+n = int(sys.argv[2])
+
+with open(filename, 'r') as distributionfile:
+	pass
 
 # def next_time(rate):
 # 	return random.expovariate(rate)

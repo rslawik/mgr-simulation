@@ -2,7 +2,7 @@ import unittest
 
 from Event import *
 
-class MyTestCase(unittest.TestCase):
+class EventTestCase(unittest.TestCase):
 	def test_createInjectEvent(self):
 		time = 123.07
 		event = InjectEvent(time, None)
