@@ -34,6 +34,15 @@ class SLAlgorithm(Algorithm):
 			if self.queue[packet] > 0:
 				return self.schedulePacket(packet)
 
+class LLAlgorithm(Algorithm):
+	def __init__(self, distribution):
+		super(LLAlgorithm, self).__init__(distribution)
+
+	def schedule(self):
+		for packet in reversed(self.distribution.packets):
+			if self.queue[packet] > 0:
+				return self.schedulePacket(packet)
+
 # class SLPreamble(Algorithm):
 # 	preamble = []
 
