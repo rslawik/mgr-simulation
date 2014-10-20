@@ -1,15 +1,38 @@
+from Event import InjectEvent, SentEvent, ErrorEvent
+
 class Algorithm:
-	def __init__(self):
-		self.sending = None
+	def __init__(self, distribution):
+		self.sending, self.distribution = None, distribution
+		self.queue = dict((packet, 0) for packet in distribution.packets)
 
 	def notify(self, event):
-		pass
+		if isinstance(event, InjectEvent):
+			self.queue[event.packet] += 1
+		elif isinstance(event, SentEvent):
+			print('sent')
+			self.sending = None
+		elif isinstance(event, ErrorEvent):
+			self.notify(InjectEvent(event.time, self.sending))
+			self.sending = None
 
 	def schedule(self):
 		pass
 
 	def schedulePacket(self, packet):
-		pass
+		assert not self.sending
+		assert self.queue[packet] > 0
+		self.sending = packet
+		self.queue[packet] -= 1
+		return self.sending
+
+class SLAlgorithm(Algorithm):
+	def __init__(self, distribution):
+		super(SLAlgorithm, self).__init__(distribution)
+
+	def schedule(self):
+		for packet in self.distribution.packets:
+			if self.queue[packet] > 0:
+				return self.schedulePacket(packet)
 
 # class SLPreamble(Algorithm):
 # 	preamble = []

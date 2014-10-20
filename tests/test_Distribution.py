@@ -19,11 +19,7 @@ class DistributionTestCase(unittest.TestCase):
 		self.assertEqual(self.distribution.probability(2), self.dist[2])
 
 	def test_getPacktes(self):
-		self.assertEqual(self.distribution.packets, [1, 2, 1.5])
-
-	def test_getShortestLongest(self):
-		self.assertEqual(self.distribution.shortestPacket, 1)
-		self.assertEqual(self.distribution.longestPacket, 2)
+		self.assertEqual(self.distribution.packets, [1, 1.5, 2])
 
 class DistributionFromFileTestCase(unittest.TestCase):
 	def test_createDistributionNoFile(self):

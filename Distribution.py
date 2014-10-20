@@ -4,8 +4,7 @@ class Distribution:
 		if sum(distribution.values()) != 1.0:
 			raise ValueError("{} is not a valid distribution".format(distribution))
 		self.distribution = distribution
-		self.packets = list(distribution.keys())
-		self.shortestPacket, self.longestPacket = min(self.packets), max(self.packets)
+		self.packets = sorted(list(distribution.keys()))
 
 	def probability(self, packet):
 		return self.distribution[packet]
