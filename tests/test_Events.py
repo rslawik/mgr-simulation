@@ -64,6 +64,11 @@ class EventsTestCase(unittest.TestCase):
 		self.events.schedule(errorEvent)
 		self.assertHasEventsInOrder([self.ie1, self.ie2, self.ie3])
 
+	def test_canGetNextEventInjectBeforeSent(self):
+		se = SentEvent(4.2, None)
+		self.events.schedule(se)
+		self.assertHasEventsInOrder([self.ie1, self.ie2, se, self.ie3])
+
 class SimultaneousEventsTestCase(unittest.TestCase):
 	def test_withSimultaneousEvents(self):
 		ie1, ie2 = InjectEvent(1, None), InjectEvent(1, None)

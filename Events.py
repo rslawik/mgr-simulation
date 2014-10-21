@@ -27,7 +27,7 @@ class Events:
     def next(self):
     	if self.injectEvents and self.sentEvents:
     		ie, se = self.injectEvents[0], self.sentEvents[0]
-    		return self.injectEvents.popleft() if ie < se else self.sentEvents.pop(0)
+    		return self.injectEvents.popleft() if ie <= se else self.sentEvents.pop(0)
     	if self.sentEvents: return self.sentEvents.pop(0)
     	return self.injectEvents.popleft()
 

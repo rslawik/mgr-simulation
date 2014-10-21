@@ -3,6 +3,8 @@ class Event:
 		self.time = time
 	def __lt__(self, other):
 		return self.time < other.time
+	def __le__(self, other):
+		return self < other or self.time == other.time
 
 class InjectEvent(Event):
 	def __init__(self, time, packet):
