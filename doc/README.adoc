@@ -1,0 +1,16 @@
+= mgr-simulation
+Rafał Sławik <rafal.slawik@gmail.com>
+
+Simulation project of some packet scheduling algorithms.
+
+== Introduction
+
+*TO DO*
+
+== Algorithm
+
+*TO DO*
+
+== Adversary
+
+*TO DO*
