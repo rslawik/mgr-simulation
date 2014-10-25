@@ -1,24 +1,10 @@
 import sys
-from random import random, expovariate
 
-from Distribution import Distribution
+import PacketGenerator
 
-distribution = Distribution.fromFile(sys.argv[1])
-n = int(sys.argv[2])
+generatorname, args = sys.argv[1], sys.argv[2:]
 
-def generate(distribution, n):
-	def randomPacket():
-		p = random()
-		for packet in distribution.packets:
-			p -= distribution.probability(packet)
-			if p <= 0:
-				return packet
+generator = getattr(PacketGenerator, generatorname)
 
-	time = 0.0
-	for _ in range(n):
-		yield time, randomPacket()
-		time += expovariate(distribution.rate)
-
-
-for time, packet in generate(distribution, n):
+for time, packet in generator(*args):
 	print(time, packet)
