@@ -3,10 +3,11 @@ import sys
 
 import Algorithm, Adversary
 
-if len(sys.argv) != 4 or not hasattr(Algorithm, sys.argv[1]) or not hasattr(Adversary, sys.argv[2]):
-	print("Usage: {} <algorithm> <adversary> <events file>".format(sys.argv[0]))
+if len(sys.argv) != 5 or not hasattr(Algorithm, sys.argv[1]) or not hasattr(Adversary, sys.argv[2]):
+	print("Usage: {} <algorithm> <adversary> <events file> <distribution info file>".format(sys.argv[0]))
 	sys.exit(1)
 
+from Distribution import Distribution
 from Event import InjectEvent, SentEvent, ErrorEvent
 from Events import Events
 
@@ -36,8 +37,9 @@ def play(algorithm, adversary, events):
 
 		if not adversary.sending: schedule(adversary)
 
-algorithm = getattr(Algorithm, sys.argv[1])
-adversary = getattr(Adversary, sys.argv[2])
+distribution = Distribution.fromFile(sys.argv[4])
+algorithm = getattr(Algorithm, sys.argv[1])(distribution)
+adversary = getattr(Adversary, sys.argv[2])(distribution)
 events = Events.fromFile(sys.argv[3])
 
 play(algorithm, adversary, events)

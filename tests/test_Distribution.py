@@ -28,11 +28,17 @@ class DistributionFromFileTestCase(unittest.TestCase):
 
 	def test_createDistribution(self):
 		distribution = Distribution.fromFile('tests/example/distribution.in')
-		self.assertEqual(distribution.rate, 5)
 		self.assertEqual(distribution.packets, [3, 5, 7])
+		self.assertEqual(distribution.rate, 5)
 		self.assertEqual(distribution.probability(3.0), 0.33)
 		self.assertEqual(distribution.probability(5.0), 0.17)
 		self.assertEqual(distribution.probability(7.0), 0.5)
+
+	def test_createDistributionWithoutInfo(self):
+		distribution = Distribution.fromFile('tests/example/packets.in')
+		self.assertEqual(distribution.packets, [3, 5, 7])
+		self.assertEqual(distribution.rate, None)
+		self.assertEqual(distribution.probability(5.0), None)
 
 if __name__ == '__main__':
 	unittest.main()

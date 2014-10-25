@@ -1,7 +1,7 @@
 
-def experiment1(n, p1, p2):
-	n, p1, p2 = int(n), float(p1), float(p2)
-	p1, p2 = min(p1, p2), max(p1, p2)
+def experiment1(n, distribution):
+	assert len(distribution.packets) == 2
+	p1, p2 = distribution.packets
 	time, sent = 0, 0
 	while True:
 		if sent == n: break
