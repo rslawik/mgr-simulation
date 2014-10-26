@@ -3,6 +3,10 @@ import sys
 from collections import deque
 from matplotlib import pyplot
 
+if len(sys.argv) != 3:
+	print("Usage: {} <alg.log> <adv.log>".format(sys.argv[0]))
+	sys.exit(1)
+
 def readLog(filename):
 	times, totals = [0.0], [0.0]
 	with open(filename, 'r') as log:
