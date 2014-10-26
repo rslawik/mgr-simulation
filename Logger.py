@@ -12,5 +12,8 @@ class Logger:
 		self.file.close()
 
 	def log(self, algorithm, event):
+		self.file.write("{}\n".format(event))
+
+	def logSent(self, algorithm, event):
 		if isinstance(event, SentEvent) and event.algorithm == algorithm:
-			self.file.write("{} {}\n".format(str(event.time), str(algorithm.sending)))
+			self.file.write("{} {}\n".format(event.time, algorithm.sending))

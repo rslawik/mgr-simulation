@@ -15,7 +15,7 @@ class EventTestCase(unittest.TestCase):
 
 	def test_createSentEvent(self):
 		time = 123.07
-		event = SentEvent(time, None)
+		event = SentEvent(time, None, None)
 		self.assertEqual(event.time, time)
 
 	def test_createErrorEvent(self):
@@ -24,7 +24,7 @@ class EventTestCase(unittest.TestCase):
 		self.assertEqual(event.time, time)
 
 	def test_createMultipleEvents(self):
-		e1, e2, e3 = InjectEvent(1, None), SentEvent(2, None), ErrorEvent(3)
+		e1, e2, e3 = InjectEvent(1, None), SentEvent(2, None, None), ErrorEvent(3)
 		self.assertNotEqual(e1.time, e2.time)
 		self.assertNotEqual(e1.time, e3.time)
 		self.assertNotEqual(e2.time, e3.time)

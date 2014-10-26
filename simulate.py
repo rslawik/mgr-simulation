@@ -15,21 +15,18 @@ from Logger import Logger
 def play(algorithm, adversary, events):
 	def schedule(algorithm):
 		packet = algorithm.schedule()
-		if packet: events.schedule(SentEvent(time + packet, algorithm))
+		if packet: events.schedule(SentEvent(time + packet, algorithm, packet))
 		return packet
-
-	time = 0.0
 
 	while events.hasNext():
 		event = events.next()
 		time = event.time
-		print('>>', time, event)
+		print('>>', event)
 
 		algorithm.notify(event)
 		adversary.notify(event)
 
-		if isinstance(event, InjectEvent) and events.hasNextInjectNow(time):
-			continue
+		if events.hasNextNow(time): continue
 
 		if not algorithm.sending:
 			packet = schedule(algorithm)
