@@ -1,18 +1,19 @@
 from Event import InjectEvent, SentEvent, ErrorEvent
 
 class Algorithm:
-	def __init__(self, distribution):
+	def __init__(self, distribution, log):
 		self.sending, self.distribution = None, distribution
 		self.queue = dict((packet, 0) for packet in distribution.packets)
+		self.log = log
 
 	def notify(self, event):
+		self.log(self, event)
 		if isinstance(event, InjectEvent):
 			self.queue[event.packet] += 1
-		elif isinstance(event, SentEvent):
-			# print('sent')
+		elif isinstance(event, SentEvent) and event.algorithm == self:
 			self.sending = None
 		elif isinstance(event, ErrorEvent):
-			self.notify(InjectEvent(event.time, self.sending))
+			if self.sending: self.queue[self.sending] += 1
 			self.sending = None
 
 	def schedule(self):
@@ -26,8 +27,8 @@ class Algorithm:
 		return self.sending
 
 class SLAlgorithm(Algorithm):
-	def __init__(self, distribution):
-		super(SLAlgorithm, self).__init__(distribution)
+	def __init__(self, distribution, log):
+		super(SLAlgorithm, self).__init__(distribution, log)
 
 	def schedule(self):
 		for packet in self.distribution.packets:
@@ -35,8 +36,8 @@ class SLAlgorithm(Algorithm):
 				return self.schedulePacket(packet)
 
 class LLAlgorithm(Algorithm):
-	def __init__(self, distribution):
-		super(LLAlgorithm, self).__init__(distribution)
+	def __init__(self, distribution, log):
+		super(LLAlgorithm, self).__init__(distribution, log)
 
 	def schedule(self):
 		for packet in reversed(self.distribution.packets):

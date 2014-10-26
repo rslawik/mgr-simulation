@@ -10,6 +10,7 @@ if len(sys.argv) != 5 or not hasattr(Algorithm, sys.argv[1]) or not hasattr(Adve
 from Distribution import Distribution
 from Event import InjectEvent, SentEvent, ErrorEvent
 from Events import Events
+from Logger import Logger
 
 def play(algorithm, adversary, events):
 	def schedule(algorithm):
@@ -37,9 +38,10 @@ def play(algorithm, adversary, events):
 
 		if not adversary.sending: schedule(adversary)
 
-distribution = Distribution.fromFile(sys.argv[4])
-algorithm = getattr(Algorithm, sys.argv[1])(distribution)
-adversary = getattr(Adversary, sys.argv[2])(distribution)
-events = Events.fromFile(sys.argv[3])
+with Logger('alg.log') as alglog, Logger('adv.log') as advlog:
+	distribution = Distribution.fromFile(sys.argv[4])
+	algorithm = getattr(Algorithm, sys.argv[1])(distribution, alglog.log)
+	adversary = getattr(Adversary, sys.argv[2])(distribution, advlog.log)
+	events = Events.fromFile(sys.argv[3])
 
-play(algorithm, adversary, events)
+	play(algorithm, adversary, events)

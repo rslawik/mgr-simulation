@@ -5,31 +5,39 @@ from Event import InjectEvent, ErrorEvent
 
 class Events:
     def __init__(self, injectEvents):
-    	self.injectEvents, self.sentEvents = deque(injectEvents), []
+    	self.injectEvents, self.sentEvents, self.errorEvents = deque(injectEvents), [], []
 
     def hasNext(self):
     	return True if self.injectEvents or self.sentEvents else False
 
     def hasNextInjectNow(self, time):
-        return self.injectEvents and isinstance(self.injectEvents[0], InjectEvent) and self.injectEvents[0].time == time
+        return self.injectEvents and self.injectEvents[0].time == time
 
     def schedule(self, event):
-    	if isinstance(event, ErrorEvent):
-    		self.sentEvents = list(takewhile(lambda e: e < event, self.sentEvents))
-    	else:
-    		self.scheduleSentEvent(event)
+        if isinstance(event, ErrorEvent):
+            Events.scheduleEventInList(self.errorEvents, event)
+            self.sentEvents = list(takewhile(lambda e: e <= event, self.sentEvents))
+        else:
+            Events.scheduleEventInList(self.sentEvents, event)
 
-    def scheduleSentEvent(self, event):
-    	pos = 0
-    	while pos < len(self.sentEvents) and self.sentEvents[pos] < event: pos += 1
-    	self.sentEvents.insert(pos, event)
+    def scheduleEventInList(eventList, event):
+        pos = 0
+        while pos < len(eventList) and eventList[pos] < event: pos += 1
+        eventList.insert(pos, event)
 
     def next(self):
-    	if self.injectEvents and self.sentEvents:
-    		ie, se = self.injectEvents[0], self.sentEvents[0]
-    		return self.injectEvents.popleft() if ie <= se else self.sentEvents.pop(0)
-    	if self.sentEvents: return self.sentEvents.pop(0)
-    	return self.injectEvents.popleft()
+        ie = self.injectEvents[0] if self.injectEvents else None
+        se = self.sentEvents[0] if self.sentEvents else None
+        ee = self.errorEvents[0] if self.errorEvents else None
+
+        event = ie
+        if se: event = event if event and event <= se else se
+        if ee: event = event if event and event <= ee else ee
+
+        if event:
+            if event == ie: return self.injectEvents.popleft()
+            if event == se: return self.sentEvents.pop(0)
+            return self.errorEvents.pop(0)
 
     def fromFile(filename):
         with open(filename, 'r') as events:

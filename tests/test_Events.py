@@ -22,7 +22,7 @@ class EmptyEventsTestCase(unittest.TestCase):
 		self.assertEqual(nextEvent, event)
 
 	def test_cannotGetNextEventFromEmpty(self):
-		self.assertRaises(IndexError, self.events.next)
+		self.assertEqual(self.events.next(), None)
 
 	def test_canGetNextEventsInOrder(self):
 		e1, e2, e3 = SentEvent(4.3, None), SentEvent(7.1, None), SentEvent(2.3, None)
@@ -56,13 +56,13 @@ class EventsTestCase(unittest.TestCase):
 		sentEvent, errorEvent = SentEvent(2.7, None), ErrorEvent(2.8)
 		self.events.schedule(sentEvent)
 		self.events.schedule(errorEvent)
-		self.assertHasEventsInOrder([self.ie1, sentEvent, self.ie2, self.ie3])
+		self.assertHasEventsInOrder([self.ie1, sentEvent, errorEvent, self.ie2, self.ie3])
 
 	def test_canScheduleSentAndErrorEventBefore(self):
 		sentEvent, errorEvent = SentEvent(2.9, None), ErrorEvent(2.8)
 		self.events.schedule(sentEvent)
 		self.events.schedule(errorEvent)
-		self.assertHasEventsInOrder([self.ie1, self.ie2, self.ie3])
+		self.assertHasEventsInOrder([self.ie1, errorEvent, self.ie2, self.ie3])
 
 	def test_canGetNextEventInjectBeforeSent(self):
 		se = SentEvent(4.2, None)
@@ -81,6 +81,21 @@ class SimultaneousEventsTestCase(unittest.TestCase):
 		events = Events([ie1, ie2])
 		nextEvent = events.next()
 		self.assertFalse(events.hasNextInjectNow(nextEvent.time))
+
+	def test_SimultaneousSentAndError(self):
+		ie1, ie2 = InjectEvent(1, None), InjectEvent(2, None)
+		events = Events([ie1, ie2])
+		se1 = SentEvent(1.5, None)
+		events.schedule(se1)
+		se2 = SentEvent(2, None)
+		events.schedule(se2)
+		ee = ErrorEvent(1.5)
+		events.schedule(ee)
+		self.assertEqual(events.next(), ie1)
+		self.assertEqual(events.next(), se1)
+		self.assertEqual(events.next(), ee)
+		self.assertEqual(events.next(), ie2)
+		self.assertEqual(events.hasNext(), False)
 
 class EventsFromFileTestCase(unittest.TestCase):
 	def test_eventsFromFileNoFile(self):
