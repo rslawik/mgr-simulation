@@ -37,8 +37,8 @@ def play(algorithm, adversary, events):
 
 with Logger('alg.log') as alglog, Logger('adv.log') as advlog:
 	distribution = Distribution.fromFile(sys.argv[4])
-	algorithm = getattr(Algorithm, sys.argv[1])(distribution, alglog.log)
-	adversary = getattr(Adversary, sys.argv[2])(distribution, advlog.log)
+	algorithm = getattr(Algorithm, sys.argv[1])(distribution, alglog.logSent)
+	adversary = getattr(Adversary, sys.argv[2])(distribution, advlog.logSent)
 	events = Events.fromFile(sys.argv[3])
 
 	play(algorithm, adversary, events)
