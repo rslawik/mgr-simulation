@@ -1,3 +1,4 @@
+from random import random, expovariate
 
 def experiment1(n, distribution):
 	assert len(distribution.packets) == 2
@@ -15,24 +16,14 @@ def experiment1(n, distribution):
 		time += p1 + p2
 
 def stochastic(n, distribution):
-	pass
+	def randomPacket():
+		p = random()
+		for packet in distribution.packets:
+			p -= distribution.probability(packet)
+			if p <= 0:
+				return packet
 
-# from random import random, expovariate
-
-# from Distribution import Distribution
-
-# distribution = Distribution.fromFile(sys.argv[1])
-# n = int(sys.argv[2])
-
-# def generate(distribution, n):
-# 	def randomPacket():
-# 		p = random()
-# 		for packet in distribution.packets:
-# 			p -= distribution.probability(packet)
-# 			if p <= 0:
-# 				return packet
-
-# 	time = 0.0
-# 	for _ in range(n):
-# 		yield time, randomPacket()
-# 		time += expovariate(distribution.rate)
+	time = 0.0
+	for _ in range(n):
+		yield time, randomPacket()
+		time += expovariate(distribution.rate)
