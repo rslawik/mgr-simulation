@@ -427,33 +427,121 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_introduction">Introduction</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>TO DO</strong></p>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="_algorithm">Algorithm</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><strong>TO DO</strong></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class Algorithm:
+    def schedule(self): <b class="conum">(1)</b>
+        pass</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>schedule packet</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_adversary">Adversary</h2>
 <div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class Adversary(Algorithm):
+    def schedule(self): <b class="conum">(1)</b>
+        pass
+
+    def scheduleError(self, packet): <b class="conum">(2)</b>
+        pass</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>schedule packet</p>
+</li>
+<li>
+<p>schedule error in reaction on packet</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_experiment">Experiment</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_input">Input</h3>
 <div class="paragraph">
-<p><strong>TO DO</strong></p>
+<p>Each experiment contains a file with parameters such as packet length, probability distribution.</p>
+</div>
+<div class="listingblock">
+<div class="title">packets.in</div>
+<div class="content">
+<pre>3 5      <b class="conum">(1)</b>
+0.2      <b class="conum">(2)</b>
+0.2 0.8  <b class="conum">(3)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Packet lengths.</p>
+</li>
+<li>
+<p>Parameter &#955;.</p>
+</li>
+<li>
+<p>Probability distribution.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+optional
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_generate_py">generate.py</h3>
+<div class="literalblock">
+<div class="content">
+<pre>generate.py &lt;generator&gt; &lt;n&gt; &lt;distribution info file&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_simulate_py">simulate.py</h3>
+<div class="literalblock">
+<div class="content">
+<pre>simulate.py &lt;algorithm&gt; &lt;adversary&gt; &lt;events file&gt; &lt;distribution info file&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_plot_py">plot.py</h3>
+<div class="literalblock">
+<div class="content">
+<pre>plot.py &lt;alg.log&gt; &lt;adv.log&gt;</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-10-24 23:30:17 CEST
+Last updated 2014-11-02 23:32:36 CET
 </div>
 </div>
 </body>

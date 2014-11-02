@@ -3,14 +3,56 @@ Rafał Sławik <rafal.slawik@gmail.com>
 
 Simulation project of some packet scheduling algorithms.
 
-== Introduction
-
-*TO DO*
-
 == Algorithm
 
-*TO DO*
+[source,python]
+----
+class Algorithm:
+    def schedule(self): # <1>
+        pass
+----
+<1> schedule packet
 
 == Adversary
 
-*TO DO*
+[source,python]
+----
+class Adversary(Algorithm):
+    def schedule(self): # <1>
+        pass
+
+    def scheduleError(self, packet): # <2>
+        pass
+----
+<1> schedule packet
+<2> schedule error in reaction on packet
+
+== Experiment
+
+=== Input
+
+Each experiment contains a file with parameters such as packet length, probability distribution.
+
+.packets.in
+----
+3 5      // <1>
+0.2      // <2>
+0.2 0.8  // <3>
+----
+<1> Packet lengths.
+<2> Parameter &#955;.
+<3> Probability distribution.
+
+NOTE: optional
+
+=== generate.py
+
+ generate.py <generator> <n> <distribution info file>
+
+=== simulate.py
+
+ simulate.py <algorithm> <adversary> <events file> <distribution info file>
+
+=== plot.py
+
+ plot.py <alg.log> <adv.log>
