@@ -6,6 +6,9 @@ class Algorithm:
 		self.queue = dict((packet, 0) for packet in distribution.packets)
 		self.log = log
 
+	def __str__(self):
+		return self.__class__.__name__
+
 	def notify(self, event):
 		self.log(self, event)
 		if isinstance(event, InjectEvent):

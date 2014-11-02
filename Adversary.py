@@ -26,7 +26,6 @@ class Experiment1Adv(Adversary):
 class Experiment3Adv(Adversary):
 	def __init__(self, distribution, log):
 		super(Experiment3Adv, self).__init__(distribution, log)
-		self.counter = 0
 
 	def schedule(self):
 		packet = self.distribution.packets[0]
@@ -39,3 +38,27 @@ class Experiment3Adv(Adversary):
 			return packet1
 		else:
 			return packet1 / 2
+
+class SiroccoStochasticAdv(Adversary):
+	def __init__(self, distribution, log):
+		super(SiroccoStochasticAdv, self).__init__(distribution, log)
+		self.epsilon = 0.00001
+		self.shortMode = False
+
+	def schedule(self):
+		if self.shortMode and self.queue[self.distribution.packets[0]]:
+			return self.schedulePacket(self.distribution.packets[0])
+		elif self.queue[self.distribution.packets[-1]]:
+			return self.schedulePacket(self.distribution.packets[-1])
+
+	def scheduleError(self, packet):
+		if not self.sending:
+			if packet == self.distribution.packets[-1]:
+				self.shortMode = True
+				return self.distribution.packets[-1] - self.epsilon
+			else:
+				self.shortMode = False
+				if self.queue[self.distribution.packets[-1]]:
+					return self.distribution.packets[-1]
+				else:
+					return self.epsilon

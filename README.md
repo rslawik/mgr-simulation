@@ -3,20 +3,10 @@ mgr-simulation
 
 Simulation project of some packet scheduling algorithms
 
-Experiments
------------
-
-* *Experiment 1* upper bound for Shortest Length
-* *Experiment 2* upper bound for Longest Length
-
-To Do
------
-
-* implement more algorithms and different adversaries
-* perform experiments
-
 Changelog
 ---------
+* 02.11.2014
+  * Experiments
 * 26.10.2014
   * Experiments
 * 25.10.2014
