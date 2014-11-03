@@ -5,7 +5,7 @@ Simulation project of some packet scheduling algorithms
 
 Changelog
 ---------
-* 02.11.2014
+* 02.11-04.11.2014
   * Experiments
 * 26.10.2014
   * Experiments

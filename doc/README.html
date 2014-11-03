@@ -409,6 +409,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .hide-for-print{display:none!important}
 .show-for-print{display:inherit!important}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
 </head>
 <body class="article">
 <div id="header">
@@ -427,86 +428,141 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
+<h2 id="_overview">Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Framework allows to simulate a scheduling algorithm against some adversary.
+It is required to write down algorithm and adversary in special form.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_algorithm">Algorithm</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The main part of an algorithm is the <code>schedule</code> method that is called every time algorithm can make a scheduling decision.
+Usually in reaction on an event.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">class Algorithm:
-    def schedule(self): <b class="conum">(1)</b>
+    def schedule(self): <i class="conum" data-value="1"></i><b>(1)</b>
         pass</code></pre>
 </div>
 </div>
 <div class="colist arabic">
-<ol>
-<li>
-<p>schedule packet</p>
-</li>
-</ol>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Schedule packet method&#8201;&#8212;&#8201;it returns scheduled packet length or <code>None</code> when algorithm is not going to sent anything.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Handling packets queue is done internally.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_adversary">Adversary</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Adversary consists of <code>schedule</code> and <code>scheduleError</code> methods.
+Former one is used in adversary&#8217;s algorithm (OFF or OPT).
+Latter one is used to cause errors on the link.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">class Adversary(Algorithm):
-    def schedule(self): <b class="conum">(1)</b>
+    def schedule(self): <i class="conum" data-value="1"></i><b>(1)</b>
         pass
 
-    def scheduleError(self, packet): <b class="conum">(2)</b>
+    def scheduleError(self, packet): <i class="conum" data-value="2"></i><b>(2)</b>
         pass</code></pre>
 </div>
 </div>
 <div class="colist arabic">
-<ol>
-<li>
-<p>schedule packet</p>
-</li>
-<li>
-<p>schedule error in reaction on packet</p>
-</li>
-</ol>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Schedule packet method&#8201;&#8212;&#8201;it returns scheduled packet length or <code>None</code> when algorithm is not going to sent anything.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Schedule error method&#8201;&#8212;&#8201;return time in which next error occurs (in reaction on packet)</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Handling packets queue is done internally.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_experiment">Experiment</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Each experiment constists of few part.
+There is a file describing system.
+Based on the file, a sequence on inject events is generated.
+The sequence is used in simulation of both algorithms (algorithm under test and adversary&#8217;s).
+When algorithm under test makes a scheduling decision, adversary is asked to schedule an error.</p>
+</div>
 <div class="sect2">
 <h3 id="_input">Input</h3>
 <div class="paragraph">
-<p>Each experiment contains a file with parameters such as packet length, probability distribution.</p>
+<p>File describing system contains parameters such as packet length, probability distribution.</p>
 </div>
 <div class="listingblock">
 <div class="title">packets.in</div>
 <div class="content">
-<pre>3 5      <b class="conum">(1)</b>
-0.2      <b class="conum">(2)</b>
-0.2 0.8  <b class="conum">(3)</b></pre>
+<pre>3 5      <i class="conum" data-value="1"></i><b>(1)</b>
+0.2      <i class="conum" data-value="2"></i><b>(2)</b>
+0.2 0.8  <i class="conum" data-value="3"></i><b>(3)</b></pre>
 </div>
 </div>
 <div class="colist arabic">
-<ol>
-<li>
-<p>Packet lengths.</p>
-</li>
-<li>
-<p>Parameter &#955;.</p>
-</li>
-<li>
-<p>Probability distribution.</p>
-</li>
-</ol>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Packet lengths.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Parameter &#955;.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Probability distribution.</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-optional
+Lines 2 and 3 are optional.
 </td>
 </tr>
 </table>
@@ -514,9 +570,29 @@ optional
 </div>
 <div class="sect2">
 <h3 id="_generate_py">generate.py</h3>
+<div class="paragraph">
+<p>To generate sequence of inject events use:</p>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>generate.py &lt;generator&gt; &lt;n&gt; &lt;distribution info file&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Generator can be either <code>experiment1</code> or <code>stochastic</code>.
+<code>n</code> denotes number of events to generate.</p>
+</div>
+<div class="sect3">
+<h4 id="__code_experiment1_code_generator"><code>experiment1</code> generator</h4>
+<div class="paragraph">
+<p>Generates inject event sequance using strategy described in Theorem 9.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="__code_stochastic_code_generator"><code>stochastic</code> generator</h4>
+<div class="paragraph">
+<p>Generates inject events from exponential distribution with parameter &#955;.
+Packet length is randomly chosen with corresping probability (from distribution info file).</p>
 </div>
 </div>
 </div>
@@ -527,6 +603,39 @@ optional
 <pre>simulate.py &lt;algorithm&gt; &lt;adversary&gt; &lt;events file&gt; &lt;distribution info file&gt;</pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Simulation producest two files: <code>alg.log</code> and <code>adv.log</code>.
+They contain recors of moments when each algorithm have successfully transmitted a packet.</p>
+</div>
+<div class="sect3">
+<h4 id="_algorithm_2">Algorithm</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SLAlgorithm</code>&#8201;&#8212;&#8201;Shortest Length</p>
+</li>
+<li>
+<p><code>LLAlgorithm</code>&#8201;&#8212;&#8201;Longest Length</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_adversary_2">Adversary</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Experiment1Adv</code>&#8201;&#8212;&#8201;Adversary from Theorem 9</p>
+</li>
+<li>
+<p><code>Experiment3Adv</code>&#8201;&#8212;&#8201;Adversary from Theorem 11</p>
+</li>
+<li>
+<p><code>SiroccoStochasticAdv</code>&#8201;&#8212;&#8201;Adversary from section 4.1 in paper</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_plot_py">plot.py</h3>
@@ -535,13 +644,16 @@ optional
 <pre>plot.py &lt;alg.log&gt; &lt;adv.log&gt;</pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Draw a simple graph of ration: (sent by alg up to time t) / (sent by adv up to time t) over time t.</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-11-02 23:32:36 CET
+Last updated 2014-11-04 00:41:41 CET
 </div>
 </div>
 </body>

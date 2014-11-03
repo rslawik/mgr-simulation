@@ -1,9 +1,18 @@
 = mgr-simulation
+:icons: font
 Rafał Sławik <rafal.slawik@gmail.com>
 
 Simulation project of some packet scheduling algorithms.
 
+== Overview
+
+Framework allows to simulate a scheduling algorithm against some adversary.
+It is required to write down algorithm and adversary in special form.
+
 == Algorithm
+
+The main part of an algorithm is the `schedule` method that is called every time algorithm can make a scheduling decision.
+Usually in reaction on an event.
 
 [source,python]
 ----
@@ -11,9 +20,15 @@ class Algorithm:
     def schedule(self): # <1>
         pass
 ----
-<1> schedule packet
+<1> Schedule packet method -- it returns scheduled packet length or `None` when algorithm is not going to sent anything.
+
+NOTE: Handling packets queue is done internally.
 
 == Adversary
+
+Adversary consists of `schedule` and `scheduleError` methods.
+Former one is used in adversary's algorithm (OFF or OPT).
+Latter one is used to cause errors on the link.
 
 [source,python]
 ----
@@ -24,14 +39,22 @@ class Adversary(Algorithm):
     def scheduleError(self, packet): # <2>
         pass
 ----
-<1> schedule packet
-<2> schedule error in reaction on packet
+<1> Schedule packet method -- it returns scheduled packet length or `None` when algorithm is not going to sent anything.
+<2> Schedule error method -- return time in which next error occurs (in reaction on packet)
+
+NOTE: Handling packets queue is done internally.
 
 == Experiment
 
+Each experiment constists of few part.
+There is a file describing system.
+Based on the file, a sequence on inject events is generated.
+The sequence is used in simulation of both algorithms (algorithm under test and adversary's).
+When algorithm under test makes a scheduling decision, adversary is asked to schedule an error.
+
 === Input
 
-Each experiment contains a file with parameters such as packet length, probability distribution.
+File describing system contains parameters such as packet length, probability distribution.
 
 .packets.in
 ----
@@ -43,16 +66,46 @@ Each experiment contains a file with parameters such as packet length, probabili
 <2> Parameter &#955;.
 <3> Probability distribution.
 
-NOTE: optional
+NOTE: Lines 2 and 3 are optional.
 
 === generate.py
 
+To generate sequence of inject events use:
+
  generate.py <generator> <n> <distribution info file>
+
+Generator can be either `experiment1` or `stochastic`.
+`n` denotes number of events to generate.
+
+==== `experiment1` generator
+
+Generates inject event sequance using strategy described in Theorem 9.
+
+==== `stochastic` generator
+
+Generates inject events from exponential distribution with parameter &#955;.
+Packet length is randomly chosen with corresping probability (from distribution info file).
 
 === simulate.py
 
  simulate.py <algorithm> <adversary> <events file> <distribution info file>
 
+Simulation producest two files: `alg.log` and `adv.log`.
+They contain recors of moments when each algorithm have successfully transmitted a packet.
+
+==== Algorithm
+
+* `SLAlgorithm` -- Shortest Length
+* `LLAlgorithm` -- Longest Length
+
+==== Adversary
+
+* `Experiment1Adv` -- Adversary from Theorem 9
+* `Experiment3Adv` -- Adversary from Theorem 11
+* `SiroccoStochasticAdv` -- Adversary from section 4.1 in paper
+
 === plot.py
 
  plot.py <alg.log> <adv.log>
+
+Draw a simple graph of ratio: (sent by alg up to time t) / (sent by adv up to time t) over time t.
