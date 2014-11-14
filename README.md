@@ -5,6 +5,8 @@ Simulation project of some packet scheduling algorithms
 
 Changelog
 ---------
+* 11.11-13.11.2014
+  * Greedy algorithm implementation
 * 02.11-04.11.2014
   * Experiments
 * 26.10.2014

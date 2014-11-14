@@ -62,3 +62,31 @@ class SiroccoStochasticAdv(Adversary):
 					return self.distribution.packets[-1]
 				else:
 					return self.epsilon
+
+class SSAdv(Adversary):
+	def __init__(self, distribution, log):
+		super(SSAdv, self).__init__(distribution, log)
+		self.epsilon = 0.00001
+		self.shortMode = False
+
+	def schedule(self):
+		if self.shortMode:
+			for p in self.distribution.packets:
+				if self.queue[p] > 0:
+					return self.schedulePacket(p)
+		else:
+			for p in self.distribution.packets:
+				if self.queue[p] > 0:
+					return self.schedulePacket(p)
+
+	def scheduleError(self, packet):
+		if not self.sending:
+			if packet == self.distribution.packets[0]:
+				self.shortMode = False
+				for p in self.distribution.packets[1:]:
+					if self.queue[p] > 0:
+						return p
+				return self.epsilon
+			else:
+				self.shortMode = True
+				return packet - self.epsilon
