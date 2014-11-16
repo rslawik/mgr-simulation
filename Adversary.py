@@ -75,12 +75,12 @@ class SSAdv(Adversary):
 				if self.queue[p] > 0:
 					return self.schedulePacket(p)
 		else:
-			for p in self.distribution.packets:
+			for p in self.distribution.packets[1:]:
 				if self.queue[p] > 0:
 					return self.schedulePacket(p)
 
 	def scheduleError(self, packet):
-		if not self.sending:
+		if packet and not self.sending:
 			if packet == self.distribution.packets[0]:
 				self.shortMode = False
 				for p in self.distribution.packets[1:]:

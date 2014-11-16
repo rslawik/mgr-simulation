@@ -32,11 +32,11 @@ def play(algorithm, adversary, events):
 			packet = schedule(algorithm)
 			error = adversary.scheduleError(packet)
 			if error: events.schedule(ErrorEvent(time + error))
-			print("{} schedules {}; error at {}".format(algorithm, packet, error))
+			print("{} schedules {}; error in {}".format(algorithm, packet, error))
 
 		if not adversary.sending:
 			advpacket = schedule(adversary)
-			print("{} schedules {}".format(adversary, packet))
+			print("{} schedules {}".format(adversary, advpacket))
 
 with Logger('alg.log') as alglog, Logger('adv.log') as advlog:
 	distribution = Distribution.fromFile(sys.argv[4])
