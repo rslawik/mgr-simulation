@@ -1,4 +1,4 @@
-class Distribution:
+class Model:
 	def __init__(self, rate, distribution):
 		self.rate = rate
 		if rate is not None and sum(distribution.values()) != 1.0:
@@ -17,4 +17,4 @@ class Distribution:
 				rate, probabilities = None, [None] * len(packets)
 			else:
 				rate, probabilities = float(lines[1]), map(float, lines[2].strip().split())
-			return Distribution(rate, dict(zip(map(float, packets), probabilities)))
+			return Model(rate, dict(zip(map(float, packets), probabilities)))
