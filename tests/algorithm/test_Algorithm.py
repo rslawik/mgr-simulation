@@ -1,11 +1,14 @@
 import unittest
 
+print("abc")
+
 from Algorithm import Algorithm, SLAlgorithm, LLAlgorithm, GreedyAlgorithm
 from Distribution import Distribution
 from Event import InjectEvent, SentEvent, ErrorEvent
 
 class AlgorithmTestCase(unittest.TestCase):
 	def setUp(self):
+		print("dupa")
 		distribution = Distribution(3, {1: 0.5, 2: 0.25, 1.5: 0.25})
 		self.algorithm = Algorithm(distribution, lambda alg, e: None)
 

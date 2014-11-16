@@ -1,16 +1,14 @@
 from Event import InjectEvent, SentEvent, ErrorEvent
 
 class Algorithm:
-	def __init__(self, distribution, log):
+	def __init__(self, distribution):
 		self.sending, self.distribution = None, distribution
 		self.queue = dict((packet, 0) for packet in distribution.packets)
-		self.log = log
 
 	def __str__(self):
 		return self.__class__.__name__
 
 	def notify(self, event):
-		self.log(self, event)
 		if isinstance(event, InjectEvent):
 			self.queue[event.packet] += 1
 		elif isinstance(event, SentEvent) and event.algorithm == self:

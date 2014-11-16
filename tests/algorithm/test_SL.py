@@ -1,4 +1,4 @@
-class SLAlgorithmTestCase(unittest.TestCase):
+class SLAlgorithmTestCase(AlgorithmTestCase):
 	def setUp(self):
 		distribution = Distribution(3, {1: 0.5, 2: 0.25, 1.5: 0.25})
 		self.algorithm = SLAlgorithm(distribution, lambda alg, e: None)
