@@ -1,9 +1,10 @@
 from Event import InjectEvent, SentEvent, ErrorEvent
 
 class Algorithm:
-	def __init__(self, distribution):
-		self.sending, self.distribution = None, distribution
-		self.queue = dict((packet, 0) for packet in distribution.packets)
+	def __init__(self, model):
+		self.sending, self.model = None, model
+		self.queue = dict((packet, 0) for packet in model.packets)
+		self.generator = self.generate()
 
 	def __str__(self):
 		return self.__class__.__name__
@@ -18,29 +19,32 @@ class Algorithm:
 			self.sending = None
 
 	def schedule(self):
-		pass
-
-	def schedulePacket(self, packet):
 		assert not self.sending
-		assert self.queue[packet] > 0
+		packet = self.generator.__next__()
+		assert packet is None or self.queue[packet]
+		if packet: self.queue[packet] -= 1
 		self.sending = packet
-		self.queue[packet] -= 1
 		return self.sending
 
 class SL(Algorithm):
-	def schedule(self):
-		for packet in self.distribution.packets:
-			if self.queue[packet] > 0:
-				return self.schedulePacket(packet)
+	def generate(self):
+		while True:
+			send = None
+			for packet in self.model.packets:
+				if self.queue[packet]:
+					send = packet
+					break
+			yield send
 
 class LL(Algorithm):
-	def __init__(self, distribution, log):
-		super(LL, self).__init__(distribution, log)
-
-	def schedule(self):
-		for packet in reversed(self.distribution.packets):
-			if self.queue[packet] > 0:
-				return self.schedulePacket(packet)
+	def generate(self):
+		while True:
+			send = None
+			for packet in reversed(self.model.packets):
+				if self.queue[packet]:
+					send = packet
+					break
+			yield send
 
 class SLPreamble(Algorithm):
 	def __init__(self, distribution, log):
@@ -57,14 +61,7 @@ class SLPreamble(Algorithm):
 			return self.schedulePacket(self.distribution.packets[-1])
 
 class Greedy(Algorithm):
-	def __init__(self, distribution, log):
-		super(Greedy, self).__init__(distribution, log)
-		self.greedy = self.greedyGenerator()
-
-	def totalLength(self, k):
-		return sum(map(lambda l: self.queue[l] * l, self.distribution.packets[:k]))
-
-	def greedyGenerator(self):
+	def generate(self):
 		stack, n = [], len(self.distribution.packets)
 		while True:
 			if self.totalLength(n) < self.distribution.packets[-1]:
@@ -80,7 +77,5 @@ class Greedy(Algorithm):
 					else:
 						yield self.distribution.packets[j-1]
 
-	def schedule(self):
-		packet = self.greedy.__next__()
-		if packet:
-			return self.schedulePacket(packet)
+	def totalLength(self, k):
+		return sum(map(lambda l: self.queue[l] * l, self.distribution.packets[:k]))

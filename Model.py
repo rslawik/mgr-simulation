@@ -22,3 +22,6 @@ class Model:
 			else:
 				rate, probabilities = float(lines[1]), map(float, lines[2].strip().split())
 			return Model(rate, dict(zip(packets, probabilities)))
+
+	def withPackets(*packets):
+		return Model(None, dict((packet, None) for packet in packets))

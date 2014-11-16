@@ -1,119 +1,111 @@
 import unittest
 
+from Model import Model
+from Algorithm import SL, LL, SLPreamble, Greedy
+from Event import InjectEvent, SentEvent, ErrorEvent
+
 class AlgorithmTestCase(unittest.TestCase):
-	def test_something(self):
-		print("dupa")
-		pass
+	def assertSchedulePackets(self, packets):
+		for packet in packets:
+			scheduled = self.algorithm.schedule()
+			self.assertEqual(scheduled, packet)
+			self.algorithm.notify(SentEvent(0, self.algorithm, scheduled))
 
 class SLTestCase(AlgorithmTestCase):
-	def setUp(self):
-		model = Model(3, {1: 0.5, 2: 0.25, 1.5: 0.25})
-		self.algorithm = SL(model)
-
 	def test_schedule(self):
-		for testScheduledPacket in [1, 2, 1.5, 1]:
-			self.algorithm.notify(InjectEvent(0, testScheduledPacket))
-		for testScheduledPacket in [1, 1, 1.5, 2]:
-			scheduledPacket = self.algorithm.schedule()
-			self.assertEqual(scheduledPacket, testScheduledPacket)
-			self.algorithm.notify(SentEvent(0, self.algorithm, scheduledPacket))
+		model = Model.withPackets(1, 2, 1.5)
+		self.algorithm = SL(model)
+		for packet in [1, 2, 1.5, 1]:
+			self.algorithm.notify(InjectEvent(0, packet))
+		self.assertSchedulePackets([1, 1, 1.5, 2])
 
 class LLAlgorithmTestCase(AlgorithmTestCase):
-	def setUp(self):
-		distribution = Distribution(3, {1: 0.5, 2: 0.25, 1.5: 0.25})
-		self.algorithm = LLAlgorithm(distribution, lambda ale, e: None)
-
 	def test_schedule(self):
-		for testScheduledPacket in [1, 2, 1.5, 1]:
-			self.algorithm.notify(InjectEvent(0, testScheduledPacket))
-		for testScheduledPacket in [2, 1.5, 1, 1]:
-			scheduledPacket = self.algorithm.schedule()
-			self.assertEqual(scheduledPacket, testScheduledPacket)
-			self.algorithm.notify(SentEvent(0, self.algorithm, scheduledPacket))
+		model = Model.withPackets(1, 2, 1.5)
+		self.algorithm = LL(model)
+		for packet in [1, 2, 1.5, 1]:
+			self.algorithm.notify(InjectEvent(0, packet))
+		self.assertSchedulePackets([2, 1.5, 1, 1])
 
 class SLPreambleTestCase(unittest.TestCase):
-	def testFail(self):
-		assert.assertTrue(False)
+	pass
 
 class GreedyAlgorithmTestCase(unittest.TestCase):
-	def setUp(self):
-		distribution = Distribution(3, {1: 0.2, 2: 0.3, 8: 0.5})
-		self.algorithm = GreedyAlgorithm(distribution, lambda alg, e: None)
+	pass
+	# def setUp(self):
+	# 	distribution = Distribution(3, {1: 0.2, 2: 0.3, 8: 0.5})
+	# 	self.algorithm = GreedyAlgorithm(distribution, lambda alg, e: None)
 
-	def testTotalLength_1(self):
-		# inject packets
-		for packet in [2, 1, 2]:
-			self.algorithm.notify(InjectEvent(0, packet))
-		totalLength = self.algorithm.totalLength(3)
-		self.assertEqual(totalLength, 5)
+	# def testTotalLength_1(self):
+	# 	# inject packets
+	# 	for packet in [2, 1, 2]:
+	# 		self.algorithm.notify(InjectEvent(0, packet))
+	# 	totalLength = self.algorithm.totalLength(3)
+	# 	self.assertEqual(totalLength, 5)
 
-	def testTotalLength_2(self):
-		# inject packets
-		for packet in ([1] * 10) + [8]:
-			self.algorithm.notify(InjectEvent(0, packet))
-		totalLength = self.algorithm.totalLength(3)
-		self.assertEqual(totalLength, 18)
+	# def testTotalLength_2(self):
+	# 	# inject packets
+	# 	for packet in ([1] * 10) + [8]:
+	# 		self.algorithm.notify(InjectEvent(0, packet))
+	# 	totalLength = self.algorithm.totalLength(3)
+	# 	self.assertEqual(totalLength, 18)
 
-	def testSchedule_Nothing(self):
-		# inject packets
-		for packet in [2, 1, 2]:
-			self.algorithm.notify(InjectEvent(0, packet))
-		scheduled = self.algorithm.schedule()
-		self.assertIsNone(scheduled)
+	# def testSchedule_Nothing(self):
+	# 	# inject packets
+	# 	for packet in [2, 1, 2]:
+	# 		self.algorithm.notify(InjectEvent(0, packet))
+	# 	scheduled = self.algorithm.schedule()
+	# 	self.assertIsNone(scheduled)
 
-	def testSchedule_Example1(self):
-		#inject packets
-		for packet in [1, 2] * 4:
-			self.algorithm.notify(InjectEvent(0, packet))
+	# def testSchedule_Example1(self):
+	# 	#inject packets
+	# 	for packet in [1, 2] * 4:
+	# 		self.algorithm.notify(InjectEvent(0, packet))
 
-		#test schedule
-		for testPacket in [1] * 4 + [2] * 2:
-			scheduled = self.algorithm.schedule()
-			self.assertEqual(scheduled, testPacket)
-			self.algorithm.notify(SentEvent(0, self.algorithm, scheduled))
+	# 	#test schedule
+	# 	for testPacket in [1] * 4 + [2] * 2:
+	# 		scheduled = self.algorithm.schedule()
+	# 		self.assertEqual(scheduled, testPacket)
+	# 		self.algorithm.notify(SentEvent(0, self.algorithm, scheduled))
 
-	def testSchedule_Example2(self):
-		#inject packets
-		for packet in [1] * 2 +  [2] * 4:
-			self.algorithm.notify(InjectEvent(0, packet))
+	# def testSchedule_Example2(self):
+	# 	#inject packets
+	# 	for packet in [1] * 2 +  [2] * 4:
+	# 		self.algorithm.notify(InjectEvent(0, packet))
 
-		#test schedule
-		for testPacket in [1] * 2 + [2] * 3:
-			scheduled = self.algorithm.schedule()
-			self.assertEqual(scheduled, testPacket)
-			self.algorithm.notify(SentEvent(0, self.algorithm, scheduled))
+	# 	#test schedule
+	# 	for testPacket in [1] * 2 + [2] * 3:
+	# 		scheduled = self.algorithm.schedule()
+	# 		self.assertEqual(scheduled, testPacket)
+	# 		self.algorithm.notify(SentEvent(0, self.algorithm, scheduled))
 
-	def testSchedule_Example3(self):
-		#inject packets
-		for packet in [1] * 2 +  [2] * 4:
-			self.algorithm.notify(InjectEvent(0, packet))
+	# def testSchedule_Example3(self):
+	# 	#inject packets
+	# 	for packet in [1] * 2 +  [2] * 4:
+	# 		self.algorithm.notify(InjectEvent(0, packet))
 
-		#test schedule
-		for testPacket in [1] * 2 + [2] * 3:
-			scheduled = self.algorithm.schedule()
-			self.assertEqual(scheduled, testPacket)
-			self.algorithm.notify(SentEvent(0, self.algorithm, scheduled))
+	# 	#test schedule
+	# 	for testPacket in [1] * 2 + [2] * 3:
+	# 		scheduled = self.algorithm.schedule()
+	# 		self.assertEqual(scheduled, testPacket)
+	# 		self.algorithm.notify(SentEvent(0, self.algorithm, scheduled))
 
-		self.algorithm.notify(InjectEvent(0, 8))
+	# 	self.algorithm.notify(InjectEvent(0, 8))
 
-		scheduled = self.algorithm.schedule()
-		self.assertEqual(scheduled, 8)
-		self.algorithm.notify(SentEvent(0, self.algorithm, scheduled))
+	# 	scheduled = self.algorithm.schedule()
+	# 	self.assertEqual(scheduled, 8)
+	# 	self.algorithm.notify(SentEvent(0, self.algorithm, scheduled))
 
-		#inject packets
-		for packet in [2] * 3:
-			self.algorithm.notify(InjectEvent(0, packet))
+	# 	#inject packets
+	# 	for packet in [2] * 3:
+	# 		self.algorithm.notify(InjectEvent(0, packet))
 
-		#test schedule
-		for testPacket in [2] * 4:
-			scheduled = self.algorithm.schedule()
-			self.assertEqual(scheduled, testPacket)
-			self.algorithm.notify(SentEvent(0, self.algorithm, scheduled))
+	# 	#test schedule
+	# 	for testPacket in [2] * 4:
+	# 		scheduled = self.algorithm.schedule()
+	# 		self.assertEqual(scheduled, testPacket)
+	# 		self.algorithm.notify(SentEvent(0, self.algorithm, scheduled))
 
-
-# from Algorithm import Algorithm, SLAlgorithm, LLAlgorithm, GreedyAlgorithm
-# from Distribution import Distribution
-# from Event import InjectEvent, SentEvent, ErrorEvent
 
 # class AlgorithmTestCase(unittest.TestCase):
 # 	def setUp(self):
