@@ -109,3 +109,18 @@ They contain recors of moments when each algorithm have successfully transmitted
  plot.py <alg.log> <adv.log>
 
 Draw a simple graph of ratio: (sent by alg up to time t) / (sent by adv up to time t) over time t.
+
+== Experimental Results
+
+=== Sirocco
+. Theorem 9
+. Theorem 10
+. Theorem 11
+
+=== Greedy
+
+_TODO_
+
+=== Prudent
+
+_TODO_
