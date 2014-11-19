@@ -3,11 +3,14 @@ import sys
 import PacketGenerator
 
 if len(sys.argv) != 4 or not hasattr(PacketGenerator, sys.argv[1]):
-	print("Usage: {} <generator> <n> <distribution info file>".format(sys.argv[0]))
+	print("Usage: {} <generator> <n> <model file>".format(sys.argv[0]))
 	sys.exit(1)
 
-from Distribution import Distribution
+from Model import Model
 
 generator = getattr(PacketGenerator, sys.argv[1])
-for time, packet in generator(int(sys.argv[2]), Distribution.fromFile(sys.argv[3])):
+n = int(sys.argv[2])
+model = Model.fromFiel(sys.argv[3])
+
+for time, packet in generator(n, model):
 	print(time, packet)
