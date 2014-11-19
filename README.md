@@ -5,6 +5,10 @@ Simulation project of some packet scheduling algorithms
 
 Changelog
 ---------
+* 18.11-20.11.2014
+  * Experiment can be performed with single command
+  * Algorithm implementation makes use of Python generators
+  * Simplified experiment recording
 * 11.11-13.11.2014
   * Greedy algorithm implementation
 * 02.11-04.11.2014
