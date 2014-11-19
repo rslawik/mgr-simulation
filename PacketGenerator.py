@@ -1,6 +1,6 @@
 from random import random, expovariate
 
-def experiment1(n, model):
+def sirocco_thm9(n, model):
 	assert len(model.packets) == 2
 	p1, p2 = model.packets
 	time, sent = 0, 0

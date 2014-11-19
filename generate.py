@@ -10,7 +10,7 @@ from Model import Model
 
 generator = getattr(PacketGenerator, sys.argv[1])
 n = int(sys.argv[2])
-model = Model.fromFiel(sys.argv[3])
+model = Model.fromFile(sys.argv[3])
 
 for time, packet in generator(n, model):
 	print(time, packet)

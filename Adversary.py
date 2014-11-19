@@ -1,25 +1,21 @@
 from Algorithm import Algorithm
 
 class Adversary(Algorithm):
-	def __init__(self, distribution, log):
-		super(Adversary, self).__init__(distribution, log)
-
 	def scheduleError(self, packet):
 		pass
 
-class Experiment1Adv(Adversary):
-	def __init__(self, distribution, log):
-		super(Experiment1Adv, self).__init__(distribution, log)
-		self.counter = 0
+class Sirocco_Thm9(Adversary):
+	counter = 0
 
-	def schedule(self):
-		for packet in reversed(self.distribution.packets):
-			if self.queue[packet]:
-				return self.schedulePacket(packet)
+	def generate(self):
+		while True:
+			send = ([packet for packet in reversed(self.model.packets) if self.queue[packet]] or [None])[0]
+			yield send
 
 	def scheduleError(self, packet):
-		if packet == self.distribution.packets[-1]:
-			error = self.distribution.packets[-1]-self.distribution.packets[0] if self.counter % 2 == 0 else self.distribution.packets[0]
+		l1, l2 = self.model.packets
+		if packet == l2:
+			error = l2-l1 if self.counter % 2 == 0 else l1
 			self.counter += 1
 			return error
 
