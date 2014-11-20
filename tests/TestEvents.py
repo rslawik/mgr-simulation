@@ -2,6 +2,8 @@ import unittest
 
 from Event import InjectEvent, SentEvent, ErrorEvent
 from Events import Events
+from Algorithm import SL
+from Adversary import SiroccoThm9
 
 class EmptyEventsTestCase(unittest.TestCase):
 	def setUp(self):
@@ -96,6 +98,24 @@ class SimultaneousEventsTestCase(unittest.TestCase):
 		self.assertEqual(events.next(), ee)
 		self.assertEqual(events.next(), ie2)
 		self.assertEqual(events.hasNext(), False)
+
+	def test_adversaryFinishesBeforeAlgorithm(self):
+		class Model:
+			packets = [1, 2, 3]
+		se1, se2 = SentEvent(1, SL(Model()), 5), SentEvent(1, SiroccoThm9(Model()), 2)
+		events = Events([])
+		events.schedule(se1)
+		events.schedule(se2)
+		self.assertEqual(events.next(), se2)
+		self.assertEqual(events.next(), se1)
+
+		events = Events([])
+		events.schedule(se2)
+		events.schedule(se1)
+		self.assertEqual(events.next(), se2)
+		self.assertEqual(events.next(), se1)
+
+		
 
 class EventsFromFileTestCase(unittest.TestCase):
 	def test_eventsFromFileNoFile(self):

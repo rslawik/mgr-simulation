@@ -9,6 +9,9 @@ class Algorithm:
 		self.queue = dict((packet, 0) for packet in model.packets)
 		self.generator = self.generate()
 
+	def __lt__(self, other):
+		return False
+
 	def __str__(self):
 		return self.__class__.__name__
 

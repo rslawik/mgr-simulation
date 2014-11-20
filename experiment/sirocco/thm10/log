@@ -1,0 +1,144 @@
+# 0.0 inject 8.0
+> SL schedules 8.0; error in 7.99999
+> Sirocco schedules 8.0
+# 0.7639150846409741 inject 8.0
+# 2.1229070645975177 inject 8.0
+# 7.99999 error
+7.99999 ERROR
+> SL schedules 8.0; error in 7.99999
+> Sirocco schedules 8.0
+# 9.064300099580125 inject 8.0
+# 9.67440664397342 inject 8.0
+# 15.99998 error
+15.99998 ERROR
+> SL schedules 8.0; error in 7.99999
+> Sirocco schedules 8.0
+# 18.7251237003488 inject 8.0
+# 20.898812244282492 inject 8.0
+# 23.008575361391156 inject 8.0
+# 23.99997 error
+23.99997 ERROR
+> SL schedules 8.0; error in 7.99999
+> Sirocco schedules 8.0
+# 24.525544429965844 inject 8.0
+# 26.790546813902004 inject 8.0
+# 29.224206811293374 inject 8.0
+# 31.99996 error
+31.99996 ERROR
+> SL schedules 8.0; error in 7.99999
+> Sirocco schedules 8.0
+# 36.869909616842946 inject 8.0
+# 38.296941127415366 inject 8.0
+# 39.99995 error
+39.99995 ERROR
+> SL schedules 8.0; error in 7.99999
+> Sirocco schedules 8.0
+# 41.552312197007176 inject 8.0
+# 43.16355560772059 inject 8.0
+# 46.11952948549465 inject 8.0
+# 47.64875945177688 inject 8.0
+# 47.70963701027605 inject 8.0
+# 47.999939999999995 error
+47.999939999999995 ERROR
+> SL schedules 8.0; error in 7.99999
+> Sirocco schedules 8.0
+# 51.14580935181035 inject 8.0
+# 51.730273440151414 inject 8.0
+# 54.62721591004041 inject 6.0
+# 55.99992999999999 error
+55.99992999999999 ERROR
+> SL schedules 6.0; error in 8.0
+> Sirocco schedules 8.0
+# 58.82675118990696 inject 8.0
+# 61.99992999999999 sent SL 6.0
+61.99992999999999 ALG 6.0
+> SL schedules 8.0; error in None
+# 62.301786272588956 inject 8.0
+# 63.99992999999999 sent Sirocco 8.0
+63.99992999999999 ADV 8.0
+# 63.99992999999999 error
+63.99992999999999 ERROR
+> SL schedules 8.0; error in 7.99999
+> Sirocco schedules 6.0
+# 69.99992999999999 sent Sirocco 6.0
+69.99992999999999 ADV 6.0
+> Sirocco schedules 8.0
+# 71.93484867288598 inject 6.0
+# 71.99991999999999 error
+71.99991999999999 ERROR
+> SL schedules 6.0; error in 8.0
+> Sirocco schedules 8.0
+# 74.76895888821245 inject 8.0
+# 77.99991999999999 sent SL 6.0
+77.99991999999999 ALG 6.0
+> SL schedules 8.0; error in None
+# 78.75526455983889 inject 8.0
+# 79.99991999999999 sent Sirocco 8.0
+79.99991999999999 ADV 8.0
+# 79.99991999999999 error
+79.99991999999999 ERROR
+> SL schedules 8.0; error in 7.99999
+> Sirocco schedules 6.0
+# 84.4662747986376 inject 8.0
+# 85.99991999999999 sent Sirocco 6.0
+85.99991999999999 ADV 6.0
+> Sirocco schedules 8.0
+# 86.57894603870987 inject 8.0
+# 87.16586571490552 inject 8.0
+# 87.99990999999999 error
+87.99990999999999 ERROR
+> SL schedules 8.0; error in 7.99999
+> Sirocco schedules 8.0
+# 88.84156297526422 inject 8.0
+# 92.92345378932568 inject 8.0
+# 95.79044510726654 inject 8.0
+# 95.99989999999998 error
+95.99989999999998 ERROR
+> SL schedules 8.0; error in 7.99999
+> Sirocco schedules 8.0
+# 96.57913374911358 inject 8.0
+# 97.87684402698513 inject 8.0
+# 99.2526364683688 inject 8.0
+# 103.14633256316053 inject 8.0
+# 103.99988999999998 error
+103.99988999999998 ERROR
+> SL schedules 8.0; error in 7.99999
+> Sirocco schedules 8.0
+# 106.47732601484324 inject 8.0
+# 107.86630342520658 inject 8.0
+# 108.85795061681293 inject 8.0
+# 111.77602693006779 inject 8.0
+# 111.90141702677326 inject 6.0
+# 111.99987999999998 error
+111.99987999999998 ERROR
+> SL schedules 6.0; error in 8.0
+> Sirocco schedules 8.0
+# 115.04271457681953 inject 8.0
+# 117.99987999999998 sent SL 6.0
+117.99987999999998 ALG 6.0
+> SL schedules 8.0; error in None
+# 119.99987999999998 sent Sirocco 8.0
+119.99987999999998 ADV 8.0
+# 119.99987999999998 error
+119.99987999999998 ERROR
+> SL schedules 8.0; error in 7.99999
+> Sirocco schedules 6.0
+# 121.46044333466533 inject 8.0
+# 122.55399449252448 inject 8.0
+# 123.63947614121894 inject 8.0
+# 125.99987999999998 sent Sirocco 6.0
+125.99987999999998 ADV 6.0
+> Sirocco schedules 8.0
+# 127.99986999999997 error
+127.99986999999997 ERROR
+> SL schedules 8.0; error in 7.99999
+> Sirocco schedules 8.0
+# 135.99985999999998 error
+135.99985999999998 ERROR
+> SL schedules 8.0; error in 7.99999
+> Sirocco schedules 8.0
+# 136.24773727615812 inject 8.0
+# 137.40672480883484 inject 8.0
+# 140.18036649586583 inject 8.0
+# 141.22617274549464 inject 8.0
+# 142.77948745820208 inject 8.0

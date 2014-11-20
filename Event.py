@@ -26,6 +26,11 @@ class SentEvent(Event):
 		self.algorithm = algorithm
 		self.packet = packet
 
+	def __lt__(self, other):
+		if isinstance(other, SentEvent):
+			return self.time < other.time or self.time == other.time and self.algorithm < other.algorithm
+		return super(SentEvent, self).__lt__(other)
+
 	def __str__(self):
 		return "{} sent {} {}".format(self.time, self.algorithm, self.packet)
 

@@ -18,7 +18,7 @@ colormap = {}
 legendmap = {}
 
 for time, algorithm, packet in reader.sentLog:
-	print(time, algorithm, packet)
+	# print(time, algorithm, packet)
 	r = row[algorithm]
 	if packet not in colormap:
 		colormap[packet] = colors[c]
