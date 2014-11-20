@@ -4,7 +4,7 @@ class Adversary(Algorithm):
 	def scheduleError(self, packet):
 		pass
 
-class Sirocco_Thm9(Adversary):
+class SiroccoThm9(Adversary):
 	counter = 0
 
 	def generate(self):

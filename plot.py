@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import sys
-from collections import deque
 from matplotlib import pyplot
 
 from Logger import Reader
