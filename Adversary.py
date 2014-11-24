@@ -33,7 +33,6 @@ class SiroccoThm11(Adversary):
 		return l1 / (1 if self.queue[l1] and self.queue[l2] else 2)
 
 class Sirocco(Adversary):
-	epsilon = 0.00001
 	mode = 'short'
 
 	def generate(self):
@@ -49,41 +48,40 @@ class Sirocco(Adversary):
 
 	def scheduleError(self, packet):
 		l1, l2 = self.model.packets
+		epsilon = l1 / 2
 		if not self.sending:
 			if packet == l2:
 				self.mode = 'short'
-				return l2 - self.epsilon
+				return l2 - epsilon
 			else:
 				self.mode = 'long'
 				if self.queue[l2]:
 					return l2
 				else:
-					return self.epsilon
+					return epsilon
 
-class SSAdv(Adversary):
-	def __init__(self, distribution, log):
-		super(SSAdv, self).__init__(distribution, log)
-		self.epsilon = 0.00001
-		self.shortMode = False
+class ESirocco(Adversary):
+	mode = None
 
-	def schedule(self):
-		if self.shortMode:
-			for p in self.distribution.packets:
-				if self.queue[p] > 0:
-					return self.schedulePacket(p)
-		else:
-			for p in self.distribution.packets[1:]:
-				if self.queue[p] > 0:
-					return self.schedulePacket(p)
+	def generate(self):
+		while True:
+			if self.mode == 'short':
+				selected = self.model.packets
+			elif self.mode == 'long':
+				selected = self.model.packets[1:]
+			else:
+				selected = []
+			send = ([packet for packet in selected if self.queue[packet]] or [None])[0]
+			yield send
 
 	def scheduleError(self, packet):
+		l1 = self.model.packets[0]
+		epsilon = l1 / 2
 		if packet and not self.sending:
-			if packet == self.distribution.packets[0]:
-				self.shortMode = False
-				for p in self.distribution.packets[1:]:
-					if self.queue[p] > 0:
-						return p
-				return self.epsilon
+			if packet == l1:
+				self.mode = 'long'
+				select = ([packet for packet in self.model.packets[1:] if self.queue[packet]] or [None])[0]
+				return select or epsilon
 			else:
-				self.shortMode = True
-				return packet - self.epsilon
+				self.mode = 'short'
+				return packet - epsilon
