@@ -63,6 +63,36 @@ class SLPreamble(Algorithm):
 			except LinkError:
 				pass
 
+class CSLPreamble(Algorithm):
+	def generate(self):
+		assert len(self.model.packets) == 2
+		l1 = self.model.packets[0]
+		p = self.model.probability(l1)
+		# there should be smarter way to do it
+		return self.generate_SL() if self.model.rate * l1 * p > 0.5 else self.generate_SLPreamble()
+
+	def generate_SL(self):
+		while True:
+			send = ([packet for packet in self.model.packets if self.queue[packet]] or [None])[0]
+			yield send
+
+	def generate_SLPreamble(self):
+		assert len(self.model.packets) == 2
+		gamma = int(self.model.packets[-1] / self.model.packets[0])
+		while True:
+			self.error = None
+			try:
+				if self.queue[self.model.packets[0]] >= gamma:
+					for _ in range(gamma):
+						if self.error: raise LinkError()
+						yield self.model.packets[0]
+				while True:
+					if self.error: raise LinkError()
+					send = ([packet for packet in reversed(self.model.packets) if self.queue[packet]] or [None])[0]
+					yield send
+			except LinkError:
+				pass
+
 class Greedy(Algorithm):
 	def generate(self):
 		stack, n = [], len(self.model.packets)
@@ -82,3 +112,41 @@ class Greedy(Algorithm):
 
 	def totalLength(self, k):
 		return sum(map(lambda l: self.queue[l] * l, self.model.packets[:k]))
+
+class Prudent(Algorithm):
+	def generate(self):
+		lk = self.model.packets[-1]
+		while True:
+			self.error = None
+			try:
+				toSend = self.selectToSend(lk, lk)
+				if not toSend:
+					yield None
+				else:
+					i = toSend[0]
+					if i < lk:
+						li1 = self.nextLonger(i)
+						for _ in range(int(li1/i)):
+							yield i
+							if self.error: raise LinkError()
+						lsent = li1
+						while lsent < lk:
+							j = self.selectToSend(lk - lsent, lsent)
+							lj1 = self.nextLonger(j)
+							for _ in range(int(lj1/j)):
+								yield j
+								if self.error: raise LinkError()
+							lsent = lsent + lj1
+					while True:
+						# LL
+						send = ([packet for packet in reversed(self.model.packets) if self.queue[packet]] or [None])[0]
+						yield send
+						if self.error: raise LinkError()
+			except LinkError:
+				pass
+
+	def selectToSend(self, lk, longest):
+		return [l for l in self.model.packets if l * self.queue[l] >= lk and l <= longest]
+
+	def nextLonger(self, li):
+		return self.model.packets[self.model.packets.index(li)+1]

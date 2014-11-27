@@ -1,7 +1,7 @@
 import unittest
 
 from Model import Model
-from Algorithm import SL, LL, SLPreamble, Greedy
+from Algorithm import SL, LL, SLPreamble, Greedy, Prudent
 from Event import InjectEvent, SentEvent, ErrorEvent
 
 class AlgorithmTestCase(unittest.TestCase):
@@ -143,3 +143,26 @@ class GreedyTestCase(AlgorithmTestCase):
 # 		self.algorithm.schedulePacket(1)
 # 		self.algorithm.notify(SentEvent(2, self.algorithm, 1))
 # 		self.algorithm.schedulePacket(2)
+
+class PrudentTestCase(AlgorithmTestCase):
+	def setUp(self):
+		model = Model.withPackets(1, 2, 8, 16)
+		self.algorithm = Prudent(model)
+
+	def test_selectToSend_1(self):
+		packets = [1] * 8
+		self.injectPackets(*packets)
+		toSend = self.algorithm.selectToSend(8, 2)
+		self.assertEqual([1], toSend)
+
+	def test_selectToSend_2(self):
+		packets = [1] * 17 + [2] * 9
+		self.injectPackets(*packets)
+		toSend = self.algorithm.selectToSend(16, 2)
+		self.assertEqual([1, 2], toSend)
+
+def test_selectToSend_3(self):
+		packets = [1] * 10 + [2] * 20 + [8] * 7 + [16] * 3
+		self.injectPackets(*packets)
+		toSend = self.algorithm.selectToSend(8, 2)
+		self.assertEqual([1], toSend)
