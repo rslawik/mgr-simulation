@@ -131,7 +131,7 @@ class Prudent(Algorithm):
 							if self.error: raise LinkError()
 						lsent = li1
 						while lsent < lk:
-							j = self.selectToSend(lk - lsent, lsent)
+							j = self.selectToSend(lk - lsent, lsent)[-1]
 							lj1 = self.nextLonger(j)
 							for _ in range(int(lj1/j)):
 								yield j
