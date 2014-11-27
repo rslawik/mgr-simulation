@@ -150,3 +150,31 @@ class Prudent(Algorithm):
 
 	def nextLonger(self, li):
 		return self.model.packets[self.model.packets.index(li)+1]
+
+class ESLPreamble(Algorithm):
+	def generate(self):
+		assert len(self.model.packets) == 3
+		l1, l2, l3 = self.model.packets
+		# gamma = int(self.model.packets[-1] / self.model.packets[0])
+		while True:
+			self.error = None
+			try:
+				# enough l1 to send l2
+				if self.queue[l1] * l1 >= l2:
+					for _ in range(int(l2/l1)):
+						yield l1
+						if self.error: raise LinkError()
+				# enough l1 and l2 to send l3
+				if self.queue[l1] * l1 + self.queue[l2] * l2 >= l3:
+					lsent = 0
+					while lsent < l3:
+						if self.queue[l1]: yield l1
+						else: self.queue[l2]: yield l2
+						if self.error: raise LinkError()
+				# LL
+				while True:
+					if self.error: raise LinkError()
+					send = ([packet for packet in reversed(self.model.packets) if self.queue[packet]] or [None])[0]
+					yield send
+			except LinkError:
+				pass
