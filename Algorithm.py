@@ -168,8 +168,12 @@ class ESLPreamble(Algorithm):
 				if self.queue[l1] * l1 + self.queue[l2] * l2 >= l3:
 					lsent = 0
 					while lsent < l3:
-						if self.queue[l1]: yield l1
-						else: self.queue[l2]: yield l2
+						if self.queue[l1]:
+							lsent = lsent + l1
+							yield l1
+						else:
+							lsent = lsent + l2
+							yield l2
 						if self.error: raise LinkError()
 				# LL
 				while True:
