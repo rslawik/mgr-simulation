@@ -34,4 +34,5 @@ class EventTestCase(unittest.TestCase):
 		self.assertEqual(e1 < e2, True)
 
 if __name__ == '__main__':
+	print("TestEvent")
 	unittest.main()
