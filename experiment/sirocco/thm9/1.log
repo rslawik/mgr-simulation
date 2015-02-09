@@ -1,0 +1,833 @@
+# 0.0 inject 3.0
+# 0.0 inject 5.0
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 3.0 sent SL 3.0
+3.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 5.0 sent SiroccoThm9 5.0
+5.0 ADV 5.0
+# 5.0 error
+5.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 8.0 inject 3.0
+# 8.0 inject 5.0
+# 8.0 sent SiroccoThm9 3.0
+8.0 ADV 3.0
+# 8.0 error
+8.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 11.0 sent SL 3.0
+11.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 13.0 sent SiroccoThm9 5.0
+13.0 ADV 5.0
+# 13.0 error
+13.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 16.0 inject 3.0
+# 16.0 inject 5.0
+# 16.0 sent SiroccoThm9 3.0
+16.0 ADV 3.0
+# 16.0 error
+16.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 19.0 sent SL 3.0
+19.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 21.0 sent SiroccoThm9 5.0
+21.0 ADV 5.0
+# 21.0 error
+21.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 24.0 inject 3.0
+# 24.0 inject 5.0
+# 24.0 sent SiroccoThm9 3.0
+24.0 ADV 3.0
+# 24.0 error
+24.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 27.0 sent SL 3.0
+27.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 29.0 sent SiroccoThm9 5.0
+29.0 ADV 5.0
+# 29.0 error
+29.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 32.0 inject 3.0
+# 32.0 inject 5.0
+# 32.0 sent SiroccoThm9 3.0
+32.0 ADV 3.0
+# 32.0 error
+32.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 35.0 sent SL 3.0
+35.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 37.0 sent SiroccoThm9 5.0
+37.0 ADV 5.0
+# 37.0 error
+37.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 40.0 inject 3.0
+# 40.0 inject 5.0
+# 40.0 sent SiroccoThm9 3.0
+40.0 ADV 3.0
+# 40.0 error
+40.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 43.0 sent SL 3.0
+43.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 45.0 sent SiroccoThm9 5.0
+45.0 ADV 5.0
+# 45.0 error
+45.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 48.0 inject 3.0
+# 48.0 inject 5.0
+# 48.0 sent SiroccoThm9 3.0
+48.0 ADV 3.0
+# 48.0 error
+48.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 51.0 sent SL 3.0
+51.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 53.0 sent SiroccoThm9 5.0
+53.0 ADV 5.0
+# 53.0 error
+53.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 56.0 inject 3.0
+# 56.0 inject 5.0
+# 56.0 sent SiroccoThm9 3.0
+56.0 ADV 3.0
+# 56.0 error
+56.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 59.0 sent SL 3.0
+59.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 61.0 sent SiroccoThm9 5.0
+61.0 ADV 5.0
+# 61.0 error
+61.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 64.0 inject 3.0
+# 64.0 inject 5.0
+# 64.0 sent SiroccoThm9 3.0
+64.0 ADV 3.0
+# 64.0 error
+64.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 67.0 sent SL 3.0
+67.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 69.0 sent SiroccoThm9 5.0
+69.0 ADV 5.0
+# 69.0 error
+69.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 72.0 inject 3.0
+# 72.0 inject 5.0
+# 72.0 sent SiroccoThm9 3.0
+72.0 ADV 3.0
+# 72.0 error
+72.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 75.0 sent SL 3.0
+75.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 77.0 sent SiroccoThm9 5.0
+77.0 ADV 5.0
+# 77.0 error
+77.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 80.0 inject 3.0
+# 80.0 inject 5.0
+# 80.0 sent SiroccoThm9 3.0
+80.0 ADV 3.0
+# 80.0 error
+80.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 83.0 sent SL 3.0
+83.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 85.0 sent SiroccoThm9 5.0
+85.0 ADV 5.0
+# 85.0 error
+85.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 88.0 inject 3.0
+# 88.0 inject 5.0
+# 88.0 sent SiroccoThm9 3.0
+88.0 ADV 3.0
+# 88.0 error
+88.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 91.0 sent SL 3.0
+91.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 93.0 sent SiroccoThm9 5.0
+93.0 ADV 5.0
+# 93.0 error
+93.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 96.0 inject 3.0
+# 96.0 inject 5.0
+# 96.0 sent SiroccoThm9 3.0
+96.0 ADV 3.0
+# 96.0 error
+96.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 99.0 sent SL 3.0
+99.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 101.0 sent SiroccoThm9 5.0
+101.0 ADV 5.0
+# 101.0 error
+101.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 104.0 inject 3.0
+# 104.0 inject 5.0
+# 104.0 sent SiroccoThm9 3.0
+104.0 ADV 3.0
+# 104.0 error
+104.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 107.0 sent SL 3.0
+107.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 109.0 sent SiroccoThm9 5.0
+109.0 ADV 5.0
+# 109.0 error
+109.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 112.0 inject 3.0
+# 112.0 inject 5.0
+# 112.0 sent SiroccoThm9 3.0
+112.0 ADV 3.0
+# 112.0 error
+112.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 115.0 sent SL 3.0
+115.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 117.0 sent SiroccoThm9 5.0
+117.0 ADV 5.0
+# 117.0 error
+117.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 120.0 inject 3.0
+# 120.0 inject 5.0
+# 120.0 sent SiroccoThm9 3.0
+120.0 ADV 3.0
+# 120.0 error
+120.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 123.0 sent SL 3.0
+123.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 125.0 sent SiroccoThm9 5.0
+125.0 ADV 5.0
+# 125.0 error
+125.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 128.0 inject 3.0
+# 128.0 inject 5.0
+# 128.0 sent SiroccoThm9 3.0
+128.0 ADV 3.0
+# 128.0 error
+128.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 131.0 sent SL 3.0
+131.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 133.0 sent SiroccoThm9 5.0
+133.0 ADV 5.0
+# 133.0 error
+133.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 136.0 inject 3.0
+# 136.0 inject 5.0
+# 136.0 sent SiroccoThm9 3.0
+136.0 ADV 3.0
+# 136.0 error
+136.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 139.0 sent SL 3.0
+139.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 141.0 sent SiroccoThm9 5.0
+141.0 ADV 5.0
+# 141.0 error
+141.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 144.0 inject 3.0
+# 144.0 inject 5.0
+# 144.0 sent SiroccoThm9 3.0
+144.0 ADV 3.0
+# 144.0 error
+144.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 147.0 sent SL 3.0
+147.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 149.0 sent SiroccoThm9 5.0
+149.0 ADV 5.0
+# 149.0 error
+149.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 152.0 inject 3.0
+# 152.0 inject 5.0
+# 152.0 sent SiroccoThm9 3.0
+152.0 ADV 3.0
+# 152.0 error
+152.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 155.0 sent SL 3.0
+155.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 157.0 sent SiroccoThm9 5.0
+157.0 ADV 5.0
+# 157.0 error
+157.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 160.0 inject 3.0
+# 160.0 inject 5.0
+# 160.0 sent SiroccoThm9 3.0
+160.0 ADV 3.0
+# 160.0 error
+160.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 163.0 sent SL 3.0
+163.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 165.0 sent SiroccoThm9 5.0
+165.0 ADV 5.0
+# 165.0 error
+165.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 168.0 inject 3.0
+# 168.0 inject 5.0
+# 168.0 sent SiroccoThm9 3.0
+168.0 ADV 3.0
+# 168.0 error
+168.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 171.0 sent SL 3.0
+171.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 173.0 sent SiroccoThm9 5.0
+173.0 ADV 5.0
+# 173.0 error
+173.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 176.0 inject 3.0
+# 176.0 inject 5.0
+# 176.0 sent SiroccoThm9 3.0
+176.0 ADV 3.0
+# 176.0 error
+176.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 179.0 sent SL 3.0
+179.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 181.0 sent SiroccoThm9 5.0
+181.0 ADV 5.0
+# 181.0 error
+181.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 184.0 inject 3.0
+# 184.0 inject 5.0
+# 184.0 sent SiroccoThm9 3.0
+184.0 ADV 3.0
+# 184.0 error
+184.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 187.0 sent SL 3.0
+187.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 189.0 sent SiroccoThm9 5.0
+189.0 ADV 5.0
+# 189.0 error
+189.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 192.0 inject 3.0
+# 192.0 inject 5.0
+# 192.0 sent SiroccoThm9 3.0
+192.0 ADV 3.0
+# 192.0 error
+192.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 195.0 sent SL 3.0
+195.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 197.0 sent SiroccoThm9 5.0
+197.0 ADV 5.0
+# 197.0 error
+197.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 200.0 inject 3.0
+# 200.0 inject 5.0
+# 200.0 sent SiroccoThm9 3.0
+200.0 ADV 3.0
+# 200.0 error
+200.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 203.0 sent SL 3.0
+203.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 205.0 sent SiroccoThm9 5.0
+205.0 ADV 5.0
+# 205.0 error
+205.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 208.0 inject 3.0
+# 208.0 inject 5.0
+# 208.0 sent SiroccoThm9 3.0
+208.0 ADV 3.0
+# 208.0 error
+208.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 211.0 sent SL 3.0
+211.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 213.0 sent SiroccoThm9 5.0
+213.0 ADV 5.0
+# 213.0 error
+213.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 216.0 inject 3.0
+# 216.0 inject 5.0
+# 216.0 sent SiroccoThm9 3.0
+216.0 ADV 3.0
+# 216.0 error
+216.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 219.0 sent SL 3.0
+219.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 221.0 sent SiroccoThm9 5.0
+221.0 ADV 5.0
+# 221.0 error
+221.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 224.0 inject 3.0
+# 224.0 inject 5.0
+# 224.0 sent SiroccoThm9 3.0
+224.0 ADV 3.0
+# 224.0 error
+224.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 227.0 sent SL 3.0
+227.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 229.0 sent SiroccoThm9 5.0
+229.0 ADV 5.0
+# 229.0 error
+229.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 232.0 inject 3.0
+# 232.0 inject 5.0
+# 232.0 sent SiroccoThm9 3.0
+232.0 ADV 3.0
+# 232.0 error
+232.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 235.0 sent SL 3.0
+235.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 237.0 sent SiroccoThm9 5.0
+237.0 ADV 5.0
+# 237.0 error
+237.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 240.0 inject 3.0
+# 240.0 inject 5.0
+# 240.0 sent SiroccoThm9 3.0
+240.0 ADV 3.0
+# 240.0 error
+240.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 243.0 sent SL 3.0
+243.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 245.0 sent SiroccoThm9 5.0
+245.0 ADV 5.0
+# 245.0 error
+245.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 248.0 inject 3.0
+# 248.0 inject 5.0
+# 248.0 sent SiroccoThm9 3.0
+248.0 ADV 3.0
+# 248.0 error
+248.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 251.0 sent SL 3.0
+251.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 253.0 sent SiroccoThm9 5.0
+253.0 ADV 5.0
+# 253.0 error
+253.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 256.0 inject 3.0
+# 256.0 inject 5.0
+# 256.0 sent SiroccoThm9 3.0
+256.0 ADV 3.0
+# 256.0 error
+256.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 259.0 sent SL 3.0
+259.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 261.0 sent SiroccoThm9 5.0
+261.0 ADV 5.0
+# 261.0 error
+261.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 264.0 inject 3.0
+# 264.0 inject 5.0
+# 264.0 sent SiroccoThm9 3.0
+264.0 ADV 3.0
+# 264.0 error
+264.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 267.0 sent SL 3.0
+267.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 269.0 sent SiroccoThm9 5.0
+269.0 ADV 5.0
+# 269.0 error
+269.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 272.0 inject 3.0
+# 272.0 inject 5.0
+# 272.0 sent SiroccoThm9 3.0
+272.0 ADV 3.0
+# 272.0 error
+272.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 275.0 sent SL 3.0
+275.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 277.0 sent SiroccoThm9 5.0
+277.0 ADV 5.0
+# 277.0 error
+277.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 280.0 inject 3.0
+# 280.0 inject 5.0
+# 280.0 sent SiroccoThm9 3.0
+280.0 ADV 3.0
+# 280.0 error
+280.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 283.0 sent SL 3.0
+283.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 285.0 sent SiroccoThm9 5.0
+285.0 ADV 5.0
+# 285.0 error
+285.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 288.0 inject 3.0
+# 288.0 inject 5.0
+# 288.0 sent SiroccoThm9 3.0
+288.0 ADV 3.0
+# 288.0 error
+288.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 291.0 sent SL 3.0
+291.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 293.0 sent SiroccoThm9 5.0
+293.0 ADV 5.0
+# 293.0 error
+293.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 296.0 inject 3.0
+# 296.0 inject 5.0
+# 296.0 sent SiroccoThm9 3.0
+296.0 ADV 3.0
+# 296.0 error
+296.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 299.0 sent SL 3.0
+299.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 301.0 sent SiroccoThm9 5.0
+301.0 ADV 5.0
+# 301.0 error
+301.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 304.0 inject 3.0
+# 304.0 inject 5.0
+# 304.0 sent SiroccoThm9 3.0
+304.0 ADV 3.0
+# 304.0 error
+304.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 307.0 sent SL 3.0
+307.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 309.0 sent SiroccoThm9 5.0
+309.0 ADV 5.0
+# 309.0 error
+309.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 312.0 inject 3.0
+# 312.0 inject 5.0
+# 312.0 sent SiroccoThm9 3.0
+312.0 ADV 3.0
+# 312.0 error
+312.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 315.0 sent SL 3.0
+315.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 317.0 sent SiroccoThm9 5.0
+317.0 ADV 5.0
+# 317.0 error
+317.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 320.0 inject 3.0
+# 320.0 inject 5.0
+# 320.0 sent SiroccoThm9 3.0
+320.0 ADV 3.0
+# 320.0 error
+320.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 323.0 sent SL 3.0
+323.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 325.0 sent SiroccoThm9 5.0
+325.0 ADV 5.0
+# 325.0 error
+325.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 328.0 inject 3.0
+# 328.0 inject 5.0
+# 328.0 sent SiroccoThm9 3.0
+328.0 ADV 3.0
+# 328.0 error
+328.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 331.0 sent SL 3.0
+331.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 333.0 sent SiroccoThm9 5.0
+333.0 ADV 5.0
+# 333.0 error
+333.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 336.0 inject 3.0
+# 336.0 inject 5.0
+# 336.0 sent SiroccoThm9 3.0
+336.0 ADV 3.0
+# 336.0 error
+336.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 339.0 sent SL 3.0
+339.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 341.0 sent SiroccoThm9 5.0
+341.0 ADV 5.0
+# 341.0 error
+341.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 344.0 inject 3.0
+# 344.0 inject 5.0
+# 344.0 sent SiroccoThm9 3.0
+344.0 ADV 3.0
+# 344.0 error
+344.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 347.0 sent SL 3.0
+347.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 349.0 sent SiroccoThm9 5.0
+349.0 ADV 5.0
+# 349.0 error
+349.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 352.0 inject 3.0
+# 352.0 inject 5.0
+# 352.0 sent SiroccoThm9 3.0
+352.0 ADV 3.0
+# 352.0 error
+352.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 355.0 sent SL 3.0
+355.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 357.0 sent SiroccoThm9 5.0
+357.0 ADV 5.0
+# 357.0 error
+357.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 360.0 inject 3.0
+# 360.0 inject 5.0
+# 360.0 sent SiroccoThm9 3.0
+360.0 ADV 3.0
+# 360.0 error
+360.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 363.0 sent SL 3.0
+363.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 365.0 sent SiroccoThm9 5.0
+365.0 ADV 5.0
+# 365.0 error
+365.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 368.0 inject 3.0
+# 368.0 inject 5.0
+# 368.0 sent SiroccoThm9 3.0
+368.0 ADV 3.0
+# 368.0 error
+368.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 371.0 sent SL 3.0
+371.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 373.0 sent SiroccoThm9 5.0
+373.0 ADV 5.0
+# 373.0 error
+373.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 376.0 inject 3.0
+# 376.0 inject 5.0
+# 376.0 sent SiroccoThm9 3.0
+376.0 ADV 3.0
+# 376.0 error
+376.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 379.0 sent SL 3.0
+379.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 381.0 sent SiroccoThm9 5.0
+381.0 ADV 5.0
+# 381.0 error
+381.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 384.0 inject 3.0
+# 384.0 inject 5.0
+# 384.0 sent SiroccoThm9 3.0
+384.0 ADV 3.0
+# 384.0 error
+384.0 ERROR
+> SL schedules 3.0; error in None
+> SiroccoThm9 schedules 5.0
+# 387.0 sent SL 3.0
+387.0 ALG 3.0
+> SL schedules 5.0; error in 2.0
+# 389.0 sent SiroccoThm9 5.0
+389.0 ADV 5.0
+# 389.0 error
+389.0 ERROR
+> SL schedules 5.0; error in 3.0
+> SiroccoThm9 schedules 3.0
+# 392.0 inject 3.0
+# 392.0 inject 5.0
+# 392.0 sent SiroccoThm9 3.0
+392.0 ADV 3.0
