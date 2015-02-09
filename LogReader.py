@@ -4,8 +4,12 @@ def parseEntry(entry):
 	parts = entry.strip().split()
 	return float(parts[0]), parts[1], parts[2:]
 
-class SendingEntry:
-	pass
+class PacketEntry:
+	def __init__(self, packet, start, end, successful):
+		self.packet = packet
+		self.start = start
+		self.end = end
+		self.successful = successful
 
 class LogReader:
 	def __init__(self, filename):
@@ -13,37 +17,33 @@ class LogReader:
 		self.readLog()
 
 	def readLog(self):
-		# algSent, advSent = 0.0, 0.0
-		# self.times, self.ratios = [], []
-		# self.sentLog, self.errorLog = [], []
+		self.injects = []
 		self.errors = []
+		self.algPackets = []
+		self.advPackets = []
+
+		lastScheduledPacket = {}
+
+		def appendPacketEntry(algorithm, time, successful):
+			scheduledPacketTime, scheduledPacket = lastScheduledPacket[algorithm]
+			packetEntry = PacketEntry(scheduledPacket, scheduledPacketTime, time, successful)
+			if algorithm == "ALG":
+				self.algPackets.append(packetEntry)
+			elif algorithm == "ADV":
+				self.advPackets.append(packetEntry)
+			del lastScheduledPacket[algorithm]
 
 		with open(self.filename, 'r') as log:
 			for entry in log:
 				time, event, params = parseEntry(entry)
 
 				if event == 'inject':
-					print('inject')
+					self.injects.append((time, float(params[0])))
 				elif event == 'error':
-					print('error')
+					self.errors.append(time)
+					for algorithm in list(lastScheduledPacket.keys()):
+						appendPacketEntry(algorithm, time, False)
 				elif event == 'schedule':
-					print('schedule')
+					lastScheduledPacket[params[0]] = time, float(params[1])
 				elif event == 'sent':
-					print('sent')
-
-
-				# if entry[0] in "#>": continue
-				# if "ERROR" in entry:
-				# 	time, _ = entry.strip().split()
-				# 	time = float(time)
-				# 	self.errorLog.append(time)
-				# 	continue
-				# time, algorithm, packet = entry.strip().split()
-				# time, packet = float(time), float(packet)
-				# self.sentLog.append((time, algorithm, packet))
-				# if algorithm == "ALG":
-				# 	algSent += packet
-				# else:
-				# 	advSent += packet
-				# self.times.append(time)
-				# self.ratios.append(algSent / advSent if advSent > 0 else 1.0)
+					appendPacketEntry(params[0], time, True)

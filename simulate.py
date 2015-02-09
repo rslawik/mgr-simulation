@@ -18,7 +18,7 @@ def play(algorithm, adversary, events):
 	def schedule(algorithm):
 		packet = algorithm.schedule()
 		if packet:
-			events.schedule(SentEvent(time + packet, algorithm, packet))
+			events.schedule(SentEvent(time + packet, algorithm))
 			log(ScheduleEvent(time, algorithm, packet))
 		return packet
 

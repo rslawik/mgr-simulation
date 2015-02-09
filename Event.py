@@ -21,10 +21,9 @@ class InjectEvent(Event):
 		return "{} inject {}".format(self.time, self.packet)
 
 class SentEvent(Event):
-	def __init__(self, time, algorithm, packet):
+	def __init__(self, time, algorithm):
 		super(SentEvent, self).__init__(time)
 		self.algorithm = algorithm
-		self.packet = packet
 
 	def __lt__(self, other):
 		if isinstance(other, SentEvent):
@@ -32,7 +31,7 @@ class SentEvent(Event):
 		return super(SentEvent, self).__lt__(other)
 
 	def __str__(self):
-		return "{} sent {} {}".format(self.time, self.algorithm.algorithmType, self.packet)
+		return "{} sent {}".format(self.time, self.algorithm.algorithmType)
 
 class ErrorEvent(Event):
 	def __init__(self, time):
@@ -42,5 +41,9 @@ class ErrorEvent(Event):
 		return "{} error".format(self.time)
 
 class ScheduleEvent(SentEvent):
+	def __init__(self, time, algorithm, packet):
+		super(ScheduleEvent, self).__init__(time, algorithm)
+		self.packet = packet
+
 	def __str__(self):
 		return "{} schedule {} {}".format(self.time, self.algorithm.algorithmType, self.packet)
