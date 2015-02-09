@@ -12,8 +12,8 @@ if len(sys.argv) != 2 and len(sys.argv) != 3:
 
 LINEWIDTH = 2
 ROW = {"ALG" : 1, "ADV": -1}
-COLORS = ["brown", "orange", "pink", "magenta", "yellow", "red", "green", "blue", "purple"]
-shuffle(COLORS)
+COLORS = ["brown", "orange", "pink", "magenta", "yellow", "purple", "blue", "green", "red"]
+# shuffle(COLORS)
 
 limit = float(sys.argv[2]) if len(sys.argv) > 2 else None
 reader = LogReader(sys.argv[1], limit=limit)
@@ -36,7 +36,7 @@ def plotPacket(algorithm, packetEntry):
 	eb[-1][0].set_linestyle('-' if packetEntry.successful else '--')
 
 def plotError(time):
-	pyplot.plot([time, time], [-1, 1], '--', linewidth=LINEWIDTH, color='grey')
+	pyplot.plot([time, time], [-3, 3], ':', linewidth=LINEWIDTH, color='black')
 
 for packetEntry in reader.algPackets:
 	plotPacket("ALG", packetEntry)
