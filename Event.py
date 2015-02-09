@@ -32,7 +32,7 @@ class SentEvent(Event):
 		return super(SentEvent, self).__lt__(other)
 
 	def __str__(self):
-		return "{} sent {} {}".format(self.time, self.algorithm, self.packet)
+		return "{} sent {} {}".format(self.time, self.algorithm.algorithmType, self.packet)
 
 class ErrorEvent(Event):
 	def __init__(self, time):
@@ -43,4 +43,4 @@ class ErrorEvent(Event):
 
 class ScheduleEvent(SentEvent):
 	def __str__(self):
-		return "{} schedule {} {}".format(self.time, self.algorithm, self.packet)
+		return "{} schedule {} {}".format(self.time, self.algorithm.algorithmType, self.packet)

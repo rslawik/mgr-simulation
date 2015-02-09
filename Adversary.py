@@ -1,8 +1,7 @@
 from Algorithm import Algorithm
 
 class Adversary(Algorithm):
-	def __str__(self):
-		return "ADV:" + self.__class__.__name__
+	algorithmType = "ADV"
 
 	def __lt__(self, other):
 		return not isinstance(other, Adversary)

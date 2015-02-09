@@ -4,6 +4,8 @@ class LinkError(BaseException):
 	pass
 
 class Algorithm:
+	algorithmType = "ALG"
+
 	def __init__(self, model):
 		self.sending, self.model = None, model
 		self.queue = dict((packet, 0) for packet in model.packets)
@@ -13,7 +15,7 @@ class Algorithm:
 		return False
 
 	def __str__(self):
-		return "ALG:" + self.__class__.__name__
+		return self.__class__.__name__
 
 	def notify(self, event):
 		if isinstance(event, InjectEvent):
