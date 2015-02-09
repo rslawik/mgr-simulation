@@ -40,3 +40,7 @@ class ErrorEvent(Event):
 
 	def __str__(self):
 		return "{} error".format(self.time)
+
+class ScheduleEvent(SentEvent):
+	def __str__(self):
+		return "{} schedule {} {}".format(self.time, self.algorithm, self.packet)

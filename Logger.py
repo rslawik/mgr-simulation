@@ -1,22 +1,5 @@
 from Event import InjectEvent, SentEvent, ErrorEvent
 
-class Logger:
-	def __init__(self, algorithm, adversary):
-		self.algorithm, self.adversary = algorithm, adversary
-
-	def logEvent(self, event):
-		print("# {}".format(event))
-		if isinstance(event, SentEvent):
-			print("{} {} {}".format(event.time, "ALG" if event.algorithm == self.algorithm else "ADV", event.packet))
-		elif isinstance(event, ErrorEvent):
-			print("{} ERROR".format(event.time))
-
-	def logAlgorithmSchedule(self, packet, error):
-		print("> {} schedules {}; error in {}".format(self.algorithm, packet, error))
-
-	def logAdversarySchedule(self, packet):
-		print("> {} schedules {}".format(self.adversary, packet))
-
 class Reader:
 	def __init__(self, filename):
 		self.filename = filename

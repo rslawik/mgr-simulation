@@ -9,7 +9,7 @@ if len(sys.argv) != 2:
 	sys.exit(1)
 
 LINEWIDTH = 4
-LIMIT = 20
+LIMIT = 5
 row = {'ALG': -1, 'ADV': 1}
 legendmap = {}
 
@@ -51,6 +51,12 @@ for time in reader.errorLog:
 	if iteration == LIMIT: break
 	pyplot.plot([time, time], [-1, 1], '--', linewidth=LINEWIDTH/2, color='grey')
 	iteration += 1
+
+pyplot.arrow(0, 0, 5, 0, width=0.01, length_includes_head=True)
+pyplot.errorbar(0.5, 0.5, xerr=3)
+pyplot.bar(range(5), [2,5,3,4,7], yerr=[[1,4,2,3,6],[4,10,6,8,14]])
+# draw packet
+pyplot.errorbar(3, 3, xerr=[[0], [1]], capsize=10, capthick=2, linewidth=2, ecolor="red")
 
 # pyplot.ylim(ymax=10)
 pyplot.yticks([-1, 1], ['ALG', 'ADV'])

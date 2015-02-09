@@ -13,7 +13,7 @@ class Algorithm:
 		return False
 
 	def __str__(self):
-		return self.__class__.__name__
+		return "ALG:" + self.__class__.__name__
 
 	def notify(self, event):
 		if isinstance(event, InjectEvent):
