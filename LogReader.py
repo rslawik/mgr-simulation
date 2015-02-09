@@ -1,9 +1,5 @@
 from Event import InjectEvent, SentEvent, ErrorEvent
 
-def parseEntry(entry):
-	parts = entry.strip().split()
-	return float(parts[0]), parts[1], parts[2:]
-
 class PacketEntry:
 	def __init__(self, packet, start, end, successful):
 		self.packet = packet
@@ -21,6 +17,10 @@ class LogReader:
 		self.errors = []
 		self.algPackets = []
 		self.advPackets = []
+
+		def parseEntry(entry):
+			parts = entry.strip().split()
+			return float(parts[0]), parts[1], parts[2:]
 
 		lastScheduledPacket = {}
 
