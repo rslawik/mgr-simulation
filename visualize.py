@@ -1,68 +1,54 @@
 #!/usr/bin/env python3
 import sys
+from matplotlib import patches
 from matplotlib import pyplot
+from random import shuffle
 
-from Logger import Reader
+from LogReader import LogReader
 
-if len(sys.argv) != 2:
-	print("Usage: {} <simulation.log>".format(sys.argv[0]))
+if len(sys.argv) != 2 and len(sys.argv) != 3:
+	print("Usage: {} <simulation.log> [limit]".format(sys.argv[0]))
 	sys.exit(1)
 
-LINEWIDTH = 4
-LIMIT = 5
-row = {'ALG': -1, 'ADV': 1}
-legendmap = {}
+LINEWIDTH = 2
+ROW = {"ALG" : 1, "ADV": -1}
+COLORS = ["brown", "orange", "pink", "magenta", "yellow", "red", "green", "blue", "purple"]
+shuffle(COLORS)
 
-def colorGen():
-	# yield 'red', 'pink'
-	yield 'green', 'orange'
-	yield 'blue', 'yellow'
-	yield 'violet', 'brown'
-	yield 'purple', 'magenta'
-colorGenerator = colorGen()
+limit = float(sys.argv[2]) if len(sys.argv) > 2 else None
+reader = LogReader(sys.argv[1], limit=limit)
 
 colormap = {}
-def getColor(packet, algorithm):
-	if (algorithm, packet) not in colormap:
-		print("#", algorithm, packet)
-		colors = colorGenerator.__next__()
-		colormap['ALG', packet] = colors
-		colormap['ADV', packet] = colors
-	c1, c2 = colormap[algorithm, packet]
-	colormap[algorithm, packet] = c2, c1
-	return c1
+colorlegend = []
+def chooseColor(length):
+	if length not in colormap:
+		color = COLORS.pop()
+		colormap[length] = color
+		colorPatch = patches.Patch(color=color, label=str(length))
+		colorlegend.append(colorPatch)
+	return colormap[length]
 
+def plotPacket(algorithm, packetEntry):
+	y = ROW[algorithm]
+	length = packetEntry.end - packetEntry.start
+	color = chooseColor(packetEntry.packet)
+	eb = pyplot.errorbar(packetEntry.start, y, xerr=[[0], [length]], capsize=10, capthick=LINEWIDTH, linewidth=LINEWIDTH, ecolor=color)
+	eb[-1][0].set_linestyle('-' if packetEntry.successful else '--')
 
-reader = Reader(sys.argv[1])
+def plotError(time):
+	pyplot.plot([time, time], [-1, 1], '--', linewidth=LINEWIDTH, color='grey')
 
-iteration = 1
-for time, algorithm, packet in reader.sentLog:
-	if iteration == LIMIT: break
-	# print(time, algorithm, packet)
-	r = row[algorithm]
-	color = getColor(packet, algorithm)
-	ret = pyplot.plot([time-packet, time], [r, r], linewidth=LINEWIDTH, color=color, label=str(packet))
-	legendmap[packet, color] = ret
-	iteration += 1
+for packetEntry in reader.algPackets:
+	plotPacket("ALG", packetEntry)
 
+for packetEntry in reader.advPackets:
+	plotPacket("ADV", packetEntry)
 
-iteration = 1
-for time in reader.errorLog:
-	if iteration == LIMIT: break
-	pyplot.plot([time, time], [-1, 1], '--', linewidth=LINEWIDTH/2, color='grey')
-	iteration += 1
+for time in reader.errors:
+	plotError(time)
 
-pyplot.arrow(0, 0, 5, 0, width=0.01, length_includes_head=True)
-pyplot.errorbar(0.5, 0.5, xerr=3)
-pyplot.bar(range(5), [2,5,3,4,7], yerr=[[1,4,2,3,6],[4,10,6,8,14]])
-# draw packet
-pyplot.errorbar(3, 3, xerr=[[0], [1]], capsize=10, capthick=2, linewidth=2, ecolor="red")
-
-# pyplot.ylim(ymax=10)
-pyplot.yticks([-1, 1], ['ALG', 'ADV'])
-pyplot.ylim(-2, 2)
-#pyplot.ylim(-15, 15)
-#pyplot.margins(ymargin=0.5, ymin=5)
-pyplot.legend(map(lambda l: legendmap[l][0], legendmap.keys()), map(lambda l: l[0], legendmap.keys()))
+pyplot.yticks([-1, 1], ['ADV', 'ALG'])
+pyplot.ylim(-4, 4)
+pyplot.legend(handles=colorlegend)
 
 pyplot.show()

@@ -8,8 +8,9 @@ class PacketEntry:
 		self.successful = successful
 
 class LogReader:
-	def __init__(self, filename):
+	def __init__(self, filename, **args):
 		self.filename = filename
+		self.limit = args["limit"] if "limit" in args else None
 		self.readLog()
 
 	def readLog(self):
@@ -36,6 +37,7 @@ class LogReader:
 		with open(self.filename, 'r') as log:
 			for entry in log:
 				time, event, params = parseEntry(entry)
+				if self.limit and time > self.limit: break
 
 				if event == 'inject':
 					self.injects.append((time, float(params[0])))
