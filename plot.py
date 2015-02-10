@@ -26,4 +26,5 @@ for t, sAdv in advSent:
 	ratios.append(sAlg / sAdv)
 
 pyplot.plot(times, ratios)
+pyplot.ylim(0, 1)
 pyplot.show()
