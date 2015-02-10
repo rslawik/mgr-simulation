@@ -1,0 +1,4109 @@
+0.0 inject 5.0
+0.0 schedule ALG 5.0
+0.0 schedule ADV 5.0
+2.5 error
+2.5 schedule ALG 5.0
+2.5 schedule ADV 5.0
+5.0 error
+5.0 schedule ALG 5.0
+5.0 schedule ADV 5.0
+7.5 error
+7.5 schedule ALG 5.0
+7.5 schedule ADV 5.0
+10.0 error
+10.0 schedule ALG 5.0
+10.0 schedule ADV 5.0
+12.5 error
+12.5 schedule ALG 5.0
+12.5 schedule ADV 5.0
+15.0 error
+15.0 schedule ALG 5.0
+15.0 schedule ADV 5.0
+17.5 error
+17.5 schedule ALG 5.0
+17.5 schedule ADV 5.0
+20.0 error
+20.0 schedule ALG 5.0
+20.0 schedule ADV 5.0
+22.5 error
+22.5 schedule ALG 5.0
+22.5 schedule ADV 5.0
+25.0 error
+25.0 schedule ALG 5.0
+25.0 schedule ADV 5.0
+27.5 error
+27.5 schedule ALG 5.0
+27.5 schedule ADV 5.0
+30.0 error
+30.0 schedule ALG 5.0
+30.0 schedule ADV 5.0
+32.5 error
+32.5 schedule ALG 5.0
+32.5 schedule ADV 5.0
+35.0 error
+35.0 schedule ALG 5.0
+35.0 schedule ADV 5.0
+37.5 error
+37.5 schedule ALG 5.0
+37.5 schedule ADV 5.0
+40.0 error
+40.0 schedule ALG 5.0
+40.0 schedule ADV 5.0
+42.5 error
+42.5 schedule ALG 5.0
+42.5 schedule ADV 5.0
+45.0 error
+45.0 schedule ALG 5.0
+45.0 schedule ADV 5.0
+47.5 error
+47.5 schedule ALG 5.0
+47.5 schedule ADV 5.0
+50.0 error
+50.0 schedule ALG 5.0
+50.0 schedule ADV 5.0
+52.5 error
+52.5 schedule ALG 5.0
+52.5 schedule ADV 5.0
+55.0 error
+55.0 schedule ALG 5.0
+55.0 schedule ADV 5.0
+57.5 error
+57.5 schedule ALG 5.0
+57.5 schedule ADV 5.0
+60.0 error
+60.0 schedule ALG 5.0
+60.0 schedule ADV 5.0
+62.5 error
+62.5 schedule ALG 5.0
+62.5 schedule ADV 5.0
+65.0 error
+65.0 schedule ALG 5.0
+65.0 schedule ADV 5.0
+67.5 error
+67.5 schedule ALG 5.0
+67.5 schedule ADV 5.0
+70.0 error
+70.0 schedule ALG 5.0
+70.0 schedule ADV 5.0
+72.5 error
+72.5 schedule ALG 5.0
+72.5 schedule ADV 5.0
+75.0 error
+75.0 schedule ALG 5.0
+75.0 schedule ADV 5.0
+77.5 error
+77.5 schedule ALG 5.0
+77.5 schedule ADV 5.0
+80.0 error
+80.0 schedule ALG 5.0
+80.0 schedule ADV 5.0
+82.5 error
+82.5 schedule ALG 5.0
+82.5 schedule ADV 5.0
+85.0 error
+85.0 schedule ALG 5.0
+85.0 schedule ADV 5.0
+87.5 error
+87.5 schedule ALG 5.0
+87.5 schedule ADV 5.0
+90.0 error
+90.0 schedule ALG 5.0
+90.0 schedule ADV 5.0
+92.5 error
+92.5 schedule ALG 5.0
+92.5 schedule ADV 5.0
+95.0 error
+95.0 schedule ALG 5.0
+95.0 schedule ADV 5.0
+97.5 error
+97.5 schedule ALG 5.0
+97.5 schedule ADV 5.0
+100.0 error
+100.0 schedule ALG 5.0
+100.0 schedule ADV 5.0
+102.5 error
+102.5 schedule ALG 5.0
+102.5 schedule ADV 5.0
+105.0 error
+105.0 schedule ALG 5.0
+105.0 schedule ADV 5.0
+107.5 error
+107.5 schedule ALG 5.0
+107.5 schedule ADV 5.0
+107.7931661923009 inject 5.0
+110.0 error
+110.0 schedule ALG 5.0
+110.0 schedule ADV 5.0
+112.25127243405892 inject 9.0
+112.5 error
+112.5 schedule ALG 9.0
+112.5 schedule ADV 5.0
+117.5 sent ADV
+117.5 error
+117.5 schedule ALG 9.0
+117.5 schedule ADV 5.0
+122.5 sent ADV
+122.5 error
+122.5 schedule ALG 9.0
+125.0 error
+125.0 schedule ALG 9.0
+127.5 error
+127.5 schedule ALG 9.0
+130.0 error
+130.0 schedule ALG 9.0
+132.5 error
+132.5 schedule ALG 9.0
+135.0 error
+135.0 schedule ALG 9.0
+137.5 error
+137.5 schedule ALG 9.0
+140.0 error
+140.0 schedule ALG 9.0
+142.5 error
+142.5 schedule ALG 9.0
+143.01411589477345 inject 5.0
+143.01411589477345 schedule ADV 5.0
+145.0 error
+145.0 schedule ALG 9.0
+145.0 schedule ADV 5.0
+150.0 sent ADV
+150.0 error
+150.0 schedule ALG 9.0
+152.5 error
+152.5 schedule ALG 9.0
+155.0 error
+155.0 schedule ALG 9.0
+157.5 error
+157.5 schedule ALG 9.0
+160.0 error
+160.0 schedule ALG 9.0
+162.5 error
+162.5 schedule ALG 9.0
+165.0 error
+165.0 schedule ALG 9.0
+167.5 error
+167.5 schedule ALG 9.0
+170.0 error
+170.0 schedule ALG 9.0
+172.5 error
+172.5 schedule ALG 9.0
+175.0 error
+175.0 schedule ALG 9.0
+177.5 error
+177.5 schedule ALG 9.0
+180.0 error
+180.0 schedule ALG 9.0
+182.5 error
+182.5 schedule ALG 9.0
+185.0 error
+185.0 schedule ALG 9.0
+187.5 error
+187.5 schedule ALG 9.0
+190.0 error
+190.0 schedule ALG 9.0
+192.5 error
+192.5 schedule ALG 9.0
+195.0 error
+195.0 schedule ALG 9.0
+197.5 error
+197.5 schedule ALG 9.0
+200.0 error
+200.0 schedule ALG 9.0
+202.5 error
+202.5 schedule ALG 9.0
+205.0 error
+205.0 schedule ALG 9.0
+207.5 error
+207.5 schedule ALG 9.0
+210.0 error
+210.0 schedule ALG 9.0
+212.5 error
+212.5 schedule ALG 9.0
+215.0 error
+215.0 schedule ALG 9.0
+217.5 error
+217.5 schedule ALG 9.0
+220.0 error
+220.0 schedule ALG 9.0
+222.5 error
+222.5 schedule ALG 9.0
+225.0 error
+225.0 schedule ALG 9.0
+227.48532103924032 inject 5.0
+227.48532103924032 schedule ADV 5.0
+227.5 error
+227.5 schedule ALG 9.0
+227.5 schedule ADV 5.0
+232.5 sent ADV
+232.5 error
+232.5 schedule ALG 9.0
+235.0 error
+235.0 schedule ALG 9.0
+237.5 error
+237.5 schedule ALG 9.0
+240.0 error
+240.0 schedule ALG 9.0
+242.5 error
+242.5 schedule ALG 9.0
+245.0 error
+245.0 schedule ALG 9.0
+247.5 error
+247.5 schedule ALG 9.0
+250.0 error
+250.0 schedule ALG 9.0
+252.5 error
+252.5 schedule ALG 9.0
+255.0 error
+255.0 schedule ALG 9.0
+257.5 error
+257.5 schedule ALG 9.0
+260.0 error
+260.0 schedule ALG 9.0
+262.5 error
+262.5 schedule ALG 9.0
+265.0 error
+265.0 schedule ALG 9.0
+267.5 error
+267.5 schedule ALG 9.0
+270.0 error
+270.0 schedule ALG 9.0
+272.5 error
+272.5 schedule ALG 9.0
+275.0 error
+275.0 schedule ALG 9.0
+277.5 error
+277.5 schedule ALG 9.0
+280.0 error
+280.0 schedule ALG 9.0
+282.5 error
+282.5 schedule ALG 9.0
+285.0 error
+285.0 schedule ALG 9.0
+287.5 error
+287.5 schedule ALG 9.0
+290.0 error
+290.0 schedule ALG 9.0
+292.5 error
+292.5 schedule ALG 9.0
+295.0 error
+295.0 schedule ALG 9.0
+297.5 error
+297.5 schedule ALG 9.0
+300.0 error
+300.0 schedule ALG 9.0
+302.5 error
+302.5 schedule ALG 9.0
+305.0 error
+305.0 schedule ALG 9.0
+307.5 error
+307.5 schedule ALG 9.0
+310.0 error
+310.0 schedule ALG 9.0
+312.5 error
+312.5 schedule ALG 9.0
+313.4062065786276 inject 9.0
+315.0 error
+315.0 schedule ALG 9.0
+317.5 error
+317.5 schedule ALG 9.0
+320.0 error
+320.0 schedule ALG 9.0
+322.5 error
+322.5 schedule ALG 9.0
+325.0 error
+325.0 schedule ALG 9.0
+327.5 error
+327.5 schedule ALG 9.0
+330.0 error
+330.0 schedule ALG 9.0
+332.5 error
+332.5 schedule ALG 9.0
+335.0 error
+335.0 schedule ALG 9.0
+336.87284413451187 inject 5.0
+336.87284413451187 schedule ADV 5.0
+337.5 error
+337.5 schedule ALG 9.0
+337.5 schedule ADV 5.0
+342.5 sent ADV
+342.5 error
+342.5 schedule ALG 9.0
+345.0 error
+345.0 schedule ALG 9.0
+347.5 error
+347.5 schedule ALG 9.0
+350.0 error
+350.0 schedule ALG 9.0
+352.5 error
+352.5 schedule ALG 9.0
+355.0 error
+355.0 schedule ALG 9.0
+356.97529707853863 inject 5.0
+356.97529707853863 schedule ADV 5.0
+357.5 error
+357.5 schedule ALG 9.0
+357.5 schedule ADV 5.0
+357.8353006257817 inject 5.0
+362.5 sent ADV
+362.5 error
+362.5 schedule ALG 9.0
+362.5 schedule ADV 5.0
+367.5 sent ADV
+367.5 error
+367.5 schedule ALG 9.0
+370.0 error
+370.0 schedule ALG 9.0
+372.5 error
+372.5 schedule ALG 9.0
+375.0 error
+375.0 schedule ALG 9.0
+377.5 error
+377.5 schedule ALG 9.0
+380.0 error
+380.0 schedule ALG 9.0
+382.5 error
+382.5 schedule ALG 9.0
+385.0 error
+385.0 schedule ALG 9.0
+387.5 error
+387.5 schedule ALG 9.0
+390.0 error
+390.0 schedule ALG 9.0
+392.5 error
+392.5 schedule ALG 9.0
+395.0 error
+395.0 schedule ALG 9.0
+397.5 error
+397.5 schedule ALG 9.0
+400.0 error
+400.0 schedule ALG 9.0
+402.5 error
+402.5 schedule ALG 9.0
+405.0 error
+405.0 schedule ALG 9.0
+407.5 error
+407.5 schedule ALG 9.0
+410.0 error
+410.0 schedule ALG 9.0
+412.5 error
+412.5 schedule ALG 9.0
+415.0 error
+415.0 schedule ALG 9.0
+417.5 error
+417.5 schedule ALG 9.0
+420.0 error
+420.0 schedule ALG 9.0
+422.5 error
+422.5 schedule ALG 9.0
+425.0 error
+425.0 schedule ALG 9.0
+427.5 error
+427.5 schedule ALG 9.0
+430.0 error
+430.0 schedule ALG 9.0
+432.5 error
+432.5 schedule ALG 9.0
+435.0 error
+435.0 schedule ALG 9.0
+437.5 error
+437.5 schedule ALG 9.0
+440.0 error
+440.0 schedule ALG 9.0
+442.5 error
+442.5 schedule ALG 9.0
+445.0 error
+445.0 schedule ALG 9.0
+447.5 error
+447.5 schedule ALG 9.0
+450.0 error
+450.0 schedule ALG 9.0
+452.5 error
+452.5 schedule ALG 9.0
+452.8010715547507 inject 5.0
+452.8010715547507 schedule ADV 5.0
+455.0 error
+455.0 schedule ALG 9.0
+455.0 schedule ADV 5.0
+460.0 sent ADV
+460.0 error
+460.0 schedule ALG 9.0
+462.5 error
+462.5 schedule ALG 9.0
+465.0 error
+465.0 schedule ALG 9.0
+467.5 error
+467.5 schedule ALG 9.0
+470.0 error
+470.0 schedule ALG 9.0
+472.5 error
+472.5 schedule ALG 9.0
+475.0 error
+475.0 schedule ALG 9.0
+477.5 error
+477.5 schedule ALG 9.0
+480.0 error
+480.0 schedule ALG 9.0
+482.5 error
+482.5 schedule ALG 9.0
+485.0 error
+485.0 schedule ALG 9.0
+487.5 error
+487.5 schedule ALG 9.0
+490.0 error
+490.0 schedule ALG 9.0
+492.5 error
+492.5 schedule ALG 9.0
+495.0 error
+495.0 schedule ALG 9.0
+497.5 error
+497.5 schedule ALG 9.0
+500.0 error
+500.0 schedule ALG 9.0
+502.5 error
+502.5 schedule ALG 9.0
+505.0 error
+505.0 schedule ALG 9.0
+505.5851875952092 inject 5.0
+505.5851875952092 schedule ADV 5.0
+507.5 error
+507.5 schedule ALG 9.0
+507.5 schedule ADV 5.0
+512.5 sent ADV
+512.5 error
+512.5 schedule ALG 9.0
+515.0 error
+515.0 schedule ALG 9.0
+517.5 error
+517.5 schedule ALG 9.0
+520.0 error
+520.0 schedule ALG 9.0
+522.5 error
+522.5 schedule ALG 9.0
+525.0 error
+525.0 schedule ALG 9.0
+527.5 error
+527.5 schedule ALG 9.0
+530.0 error
+530.0 schedule ALG 9.0
+532.5 error
+532.5 schedule ALG 9.0
+535.0 error
+535.0 schedule ALG 9.0
+537.5 error
+537.5 schedule ALG 9.0
+540.0 error
+540.0 schedule ALG 9.0
+542.5 error
+542.5 schedule ALG 9.0
+545.0 error
+545.0 schedule ALG 9.0
+547.5 error
+547.5 schedule ALG 9.0
+550.0 error
+550.0 schedule ALG 9.0
+552.5 error
+552.5 schedule ALG 9.0
+555.0 error
+555.0 schedule ALG 9.0
+557.5 error
+557.5 schedule ALG 9.0
+560.0 error
+560.0 schedule ALG 9.0
+562.5 error
+562.5 schedule ALG 9.0
+565.0 error
+565.0 schedule ALG 9.0
+567.5 error
+567.5 schedule ALG 9.0
+569.7020154237292 inject 5.0
+569.7020154237292 schedule ADV 5.0
+570.0 error
+570.0 schedule ALG 9.0
+570.0 schedule ADV 5.0
+575.0 sent ADV
+575.0 error
+575.0 schedule ALG 9.0
+577.5 error
+577.5 schedule ALG 9.0
+580.0 error
+580.0 schedule ALG 9.0
+582.5 error
+582.5 schedule ALG 9.0
+585.0 error
+585.0 schedule ALG 9.0
+587.5 error
+587.5 schedule ALG 9.0
+590.0 error
+590.0 schedule ALG 9.0
+592.5 error
+592.5 schedule ALG 9.0
+595.0 error
+595.0 schedule ALG 9.0
+597.5 error
+597.5 schedule ALG 9.0
+600.0 error
+600.0 schedule ALG 9.0
+602.5 error
+602.5 schedule ALG 9.0
+605.0 error
+605.0 schedule ALG 9.0
+607.5 error
+607.5 schedule ALG 9.0
+610.0 error
+610.0 schedule ALG 9.0
+612.5 error
+612.5 schedule ALG 9.0
+615.0 error
+615.0 schedule ALG 9.0
+617.5 error
+617.5 schedule ALG 9.0
+620.0 error
+620.0 schedule ALG 9.0
+622.5 error
+622.5 schedule ALG 9.0
+625.0 error
+625.0 schedule ALG 9.0
+627.5 error
+627.5 schedule ALG 9.0
+630.0 error
+630.0 schedule ALG 9.0
+632.5 error
+632.5 schedule ALG 9.0
+635.0 error
+635.0 schedule ALG 9.0
+637.5 error
+637.5 schedule ALG 9.0
+640.0 error
+640.0 schedule ALG 9.0
+642.5 error
+642.5 schedule ALG 9.0
+645.0 error
+645.0 schedule ALG 9.0
+647.5 error
+647.5 schedule ALG 9.0
+650.0 error
+650.0 schedule ALG 9.0
+652.5 error
+652.5 schedule ALG 9.0
+655.0 error
+655.0 schedule ALG 9.0
+657.5 error
+657.5 schedule ALG 9.0
+660.0 error
+660.0 schedule ALG 9.0
+662.5 error
+662.5 schedule ALG 9.0
+665.0 error
+665.0 schedule ALG 9.0
+667.5 error
+667.5 schedule ALG 9.0
+670.0 error
+670.0 schedule ALG 9.0
+672.5 error
+672.5 schedule ALG 9.0
+675.0 error
+675.0 schedule ALG 9.0
+677.5 error
+677.5 schedule ALG 9.0
+680.0 error
+680.0 schedule ALG 9.0
+682.5 error
+682.5 schedule ALG 9.0
+685.0 error
+685.0 schedule ALG 9.0
+687.5 error
+687.5 schedule ALG 9.0
+690.0 error
+690.0 schedule ALG 9.0
+692.5 error
+692.5 schedule ALG 9.0
+695.0 error
+695.0 schedule ALG 9.0
+697.5 error
+697.5 schedule ALG 9.0
+700.0 error
+700.0 schedule ALG 9.0
+702.5 error
+702.5 schedule ALG 9.0
+705.0 error
+705.0 schedule ALG 9.0
+706.572380723927 inject 5.0
+706.572380723927 schedule ADV 5.0
+707.5 error
+707.5 schedule ALG 9.0
+707.5 schedule ADV 5.0
+712.5 sent ADV
+712.5 error
+712.5 schedule ALG 9.0
+715.0 error
+715.0 schedule ALG 9.0
+717.5 error
+717.5 schedule ALG 9.0
+720.0 error
+720.0 schedule ALG 9.0
+722.5 error
+722.5 schedule ALG 9.0
+725.0 error
+725.0 schedule ALG 9.0
+727.5 error
+727.5 schedule ALG 9.0
+730.0 error
+730.0 schedule ALG 9.0
+732.5 error
+732.5 schedule ALG 9.0
+735.0 error
+735.0 schedule ALG 9.0
+737.5 error
+737.5 schedule ALG 9.0
+740.0 error
+740.0 schedule ALG 9.0
+742.5 error
+742.5 schedule ALG 9.0
+743.7276260933658 inject 5.0
+743.7276260933658 schedule ADV 5.0
+745.0 error
+745.0 schedule ALG 9.0
+745.0 schedule ADV 5.0
+750.0 sent ADV
+750.0 error
+750.0 schedule ALG 9.0
+752.5 error
+752.5 schedule ALG 9.0
+752.5573384477495 inject 5.0
+752.5573384477495 schedule ADV 5.0
+755.0 error
+755.0 schedule ALG 9.0
+755.0 schedule ADV 5.0
+760.0 sent ADV
+760.0 error
+760.0 schedule ALG 9.0
+762.5 error
+762.5 schedule ALG 9.0
+765.0 error
+765.0 schedule ALG 9.0
+767.5 error
+767.5 schedule ALG 9.0
+770.0 error
+770.0 schedule ALG 9.0
+772.5 error
+772.5 schedule ALG 9.0
+775.0 error
+775.0 schedule ALG 9.0
+777.5 error
+777.5 schedule ALG 9.0
+780.0 error
+780.0 schedule ALG 9.0
+782.5 error
+782.5 schedule ALG 9.0
+785.0 error
+785.0 schedule ALG 9.0
+787.5 error
+787.5 schedule ALG 9.0
+790.0 error
+790.0 schedule ALG 9.0
+792.5 error
+792.5 schedule ALG 9.0
+795.0 error
+795.0 schedule ALG 9.0
+797.5 error
+797.5 schedule ALG 9.0
+800.0 error
+800.0 schedule ALG 9.0
+802.5 error
+802.5 schedule ALG 9.0
+805.0 error
+805.0 schedule ALG 9.0
+807.5 error
+807.5 schedule ALG 9.0
+810.0 error
+810.0 schedule ALG 9.0
+812.5 error
+812.5 schedule ALG 9.0
+813.9862312905103 inject 5.0
+813.9862312905103 schedule ADV 5.0
+815.0 error
+815.0 schedule ALG 9.0
+815.0 schedule ADV 5.0
+820.0 sent ADV
+820.0 error
+820.0 schedule ALG 9.0
+822.5 error
+822.5 schedule ALG 9.0
+825.0 error
+825.0 schedule ALG 9.0
+827.5 error
+827.5 schedule ALG 9.0
+830.0 error
+830.0 schedule ALG 9.0
+832.5 error
+832.5 schedule ALG 9.0
+835.0 error
+835.0 schedule ALG 9.0
+835.0408513574087 inject 5.0
+835.0408513574087 schedule ADV 5.0
+837.5 error
+837.5 schedule ALG 9.0
+837.5 schedule ADV 5.0
+842.5 sent ADV
+842.5 error
+842.5 schedule ALG 9.0
+845.0 error
+845.0 schedule ALG 9.0
+847.5 error
+847.5 schedule ALG 9.0
+850.0 error
+850.0 schedule ALG 9.0
+852.5 error
+852.5 schedule ALG 9.0
+855.0 error
+855.0 schedule ALG 9.0
+857.5 error
+857.5 schedule ALG 9.0
+860.0 error
+860.0 schedule ALG 9.0
+862.4476071651206 inject 5.0
+862.4476071651206 schedule ADV 5.0
+862.5 error
+862.5 schedule ALG 9.0
+862.5 schedule ADV 5.0
+867.5 sent ADV
+867.5 error
+867.5 schedule ALG 9.0
+868.8362847888928 inject 5.0
+868.8362847888928 schedule ADV 5.0
+870.0 error
+870.0 schedule ALG 9.0
+870.0 schedule ADV 5.0
+875.0 sent ADV
+875.0 error
+875.0 schedule ALG 9.0
+877.5 error
+877.5 schedule ALG 9.0
+880.0 error
+880.0 schedule ALG 9.0
+882.5 error
+882.5 schedule ALG 9.0
+885.0 error
+885.0 schedule ALG 9.0
+887.5 error
+887.5 schedule ALG 9.0
+890.0 error
+890.0 schedule ALG 9.0
+892.5 error
+892.5 schedule ALG 9.0
+895.0 error
+895.0 schedule ALG 9.0
+897.5 error
+897.5 schedule ALG 9.0
+899.1197118489554 inject 5.0
+899.1197118489554 schedule ADV 5.0
+900.0 error
+900.0 schedule ALG 9.0
+900.0 schedule ADV 5.0
+905.0 sent ADV
+905.0 error
+905.0 schedule ALG 9.0
+907.5 error
+907.5 schedule ALG 9.0
+910.0 error
+910.0 schedule ALG 9.0
+912.5 error
+912.5 schedule ALG 9.0
+915.0 error
+915.0 schedule ALG 9.0
+917.5 error
+917.5 schedule ALG 9.0
+920.0 error
+920.0 schedule ALG 9.0
+922.5 error
+922.5 schedule ALG 9.0
+925.0 error
+925.0 schedule ALG 9.0
+927.5 error
+927.5 schedule ALG 9.0
+930.0 error
+930.0 schedule ALG 9.0
+931.4808986463081 inject 9.0
+932.5 error
+932.5 schedule ALG 9.0
+935.0 error
+935.0 schedule ALG 9.0
+937.5 error
+937.5 schedule ALG 9.0
+940.0 error
+940.0 schedule ALG 9.0
+942.5 error
+942.5 schedule ALG 9.0
+945.0 error
+945.0 schedule ALG 9.0
+947.5 error
+947.5 schedule ALG 9.0
+950.0 error
+950.0 schedule ALG 9.0
+952.5 error
+952.5 schedule ALG 9.0
+955.0 error
+955.0 schedule ALG 9.0
+957.5 error
+957.5 schedule ALG 9.0
+960.0 error
+960.0 schedule ALG 9.0
+962.5 error
+962.5 schedule ALG 9.0
+965.0 error
+965.0 schedule ALG 9.0
+967.5 error
+967.5 schedule ALG 9.0
+970.0 error
+970.0 schedule ALG 9.0
+972.5 error
+972.5 schedule ALG 9.0
+975.0 error
+975.0 schedule ALG 9.0
+977.5 error
+977.5 schedule ALG 9.0
+980.0 error
+980.0 schedule ALG 9.0
+982.5 error
+982.5 schedule ALG 9.0
+985.0 error
+985.0 schedule ALG 9.0
+987.5 error
+987.5 schedule ALG 9.0
+990.0 error
+990.0 schedule ALG 9.0
+992.5 error
+992.5 schedule ALG 9.0
+995.0 error
+995.0 schedule ALG 9.0
+997.5 error
+997.5 schedule ALG 9.0
+1000.0 error
+1000.0 schedule ALG 9.0
+1002.5 error
+1002.5 schedule ALG 9.0
+1005.0 error
+1005.0 schedule ALG 9.0
+1007.5 error
+1007.5 schedule ALG 9.0
+1010.0 error
+1010.0 schedule ALG 9.0
+1012.5 error
+1012.5 schedule ALG 9.0
+1015.0 error
+1015.0 schedule ALG 9.0
+1017.5 error
+1017.5 schedule ALG 9.0
+1020.0 error
+1020.0 schedule ALG 9.0
+1022.5 error
+1022.5 schedule ALG 9.0
+1025.0 error
+1025.0 schedule ALG 9.0
+1027.5 error
+1027.5 schedule ALG 9.0
+1030.0 error
+1030.0 schedule ALG 9.0
+1032.5 error
+1032.5 schedule ALG 9.0
+1035.0 error
+1035.0 schedule ALG 9.0
+1037.5 error
+1037.5 schedule ALG 9.0
+1040.0 error
+1040.0 schedule ALG 9.0
+1042.5 error
+1042.5 schedule ALG 9.0
+1045.0 error
+1045.0 schedule ALG 9.0
+1047.5 error
+1047.5 schedule ALG 9.0
+1050.0 error
+1050.0 schedule ALG 9.0
+1052.5 error
+1052.5 schedule ALG 9.0
+1055.0 error
+1055.0 schedule ALG 9.0
+1057.5 error
+1057.5 schedule ALG 9.0
+1060.0 error
+1060.0 schedule ALG 9.0
+1062.5 error
+1062.5 schedule ALG 9.0
+1065.0 error
+1065.0 schedule ALG 9.0
+1065.4742653984222 inject 9.0
+1067.5 error
+1067.5 schedule ALG 9.0
+1070.0 error
+1070.0 schedule ALG 9.0
+1072.5 error
+1072.5 schedule ALG 9.0
+1075.0 error
+1075.0 schedule ALG 9.0
+1077.5 error
+1077.5 schedule ALG 9.0
+1080.0 error
+1080.0 schedule ALG 9.0
+1082.5 error
+1082.5 schedule ALG 9.0
+1085.0 error
+1085.0 schedule ALG 9.0
+1087.5 error
+1087.5 schedule ALG 9.0
+1090.0 error
+1090.0 schedule ALG 9.0
+1092.5 error
+1092.5 schedule ALG 9.0
+1095.0 error
+1095.0 schedule ALG 9.0
+1097.5 error
+1097.5 schedule ALG 9.0
+1100.0 error
+1100.0 schedule ALG 9.0
+1102.5 error
+1102.5 schedule ALG 9.0
+1105.0 error
+1105.0 schedule ALG 9.0
+1107.5 error
+1107.5 schedule ALG 9.0
+1109.5856517631757 inject 5.0
+1109.5856517631757 schedule ADV 5.0
+1110.0 error
+1110.0 schedule ALG 9.0
+1110.0 schedule ADV 5.0
+1115.0 sent ADV
+1115.0 error
+1115.0 schedule ALG 9.0
+1117.5 error
+1117.5 schedule ALG 9.0
+1120.0 error
+1120.0 schedule ALG 9.0
+1121.2247895111534 inject 9.0
+1122.5 error
+1122.5 schedule ALG 9.0
+1125.0 error
+1125.0 schedule ALG 9.0
+1127.5 error
+1127.5 schedule ALG 9.0
+1130.0 error
+1130.0 schedule ALG 9.0
+1132.5 error
+1132.5 schedule ALG 9.0
+1135.0 error
+1135.0 schedule ALG 9.0
+1137.5 error
+1137.5 schedule ALG 9.0
+1140.0 error
+1140.0 schedule ALG 9.0
+1142.5 error
+1142.5 schedule ALG 9.0
+1145.0 error
+1145.0 schedule ALG 9.0
+1147.5 error
+1147.5 schedule ALG 9.0
+1150.0 error
+1150.0 schedule ALG 9.0
+1152.5 error
+1152.5 schedule ALG 9.0
+1155.0 error
+1155.0 schedule ALG 9.0
+1157.5 error
+1157.5 schedule ALG 9.0
+1160.0 error
+1160.0 schedule ALG 9.0
+1160.7681979591684 inject 5.0
+1160.7681979591684 schedule ADV 5.0
+1162.5 error
+1162.5 schedule ALG 9.0
+1162.5 schedule ADV 5.0
+1167.5 sent ADV
+1167.5 error
+1167.5 schedule ALG 9.0
+1170.0 error
+1170.0 schedule ALG 9.0
+1172.5 error
+1172.5 schedule ALG 9.0
+1175.0 error
+1175.0 schedule ALG 9.0
+1177.469745859012 inject 5.0
+1177.469745859012 schedule ADV 5.0
+1177.5 error
+1177.5 schedule ALG 9.0
+1177.5 schedule ADV 5.0
+1182.5 sent ADV
+1182.5 error
+1182.5 schedule ALG 9.0
+1185.0 error
+1185.0 schedule ALG 9.0
+1187.5 error
+1187.5 schedule ALG 9.0
+1190.0 error
+1190.0 schedule ALG 9.0
+1192.5 error
+1192.5 schedule ALG 9.0
+1195.0 error
+1195.0 schedule ALG 9.0
+1197.5 error
+1197.5 schedule ALG 9.0
+1200.0 error
+1200.0 schedule ALG 9.0
+1202.5 error
+1202.5 schedule ALG 9.0
+1205.0 error
+1205.0 schedule ALG 9.0
+1205.22833912875 inject 5.0
+1205.22833912875 schedule ADV 5.0
+1207.5 error
+1207.5 schedule ALG 9.0
+1207.5 schedule ADV 5.0
+1212.5 sent ADV
+1212.5 error
+1212.5 schedule ALG 9.0
+1215.0 error
+1215.0 schedule ALG 9.0
+1217.5 error
+1217.5 schedule ALG 9.0
+1220.0 error
+1220.0 schedule ALG 9.0
+1222.5 error
+1222.5 schedule ALG 9.0
+1225.0 error
+1225.0 schedule ALG 9.0
+1227.5 error
+1227.5 schedule ALG 9.0
+1230.0 error
+1230.0 schedule ALG 9.0
+1232.5 error
+1232.5 schedule ALG 9.0
+1235.0 error
+1235.0 schedule ALG 9.0
+1237.5 error
+1237.5 schedule ALG 9.0
+1240.0 error
+1240.0 schedule ALG 9.0
+1242.5 error
+1242.5 schedule ALG 9.0
+1245.0 error
+1245.0 schedule ALG 9.0
+1247.5 error
+1247.5 schedule ALG 9.0
+1250.0 error
+1250.0 schedule ALG 9.0
+1252.5 error
+1252.5 schedule ALG 9.0
+1255.0 error
+1255.0 schedule ALG 9.0
+1257.5 error
+1257.5 schedule ALG 9.0
+1260.0 error
+1260.0 schedule ALG 9.0
+1262.5 error
+1262.5 schedule ALG 9.0
+1265.0 error
+1265.0 schedule ALG 9.0
+1267.5 error
+1267.5 schedule ALG 9.0
+1270.0 error
+1270.0 schedule ALG 9.0
+1272.5 error
+1272.5 schedule ALG 9.0
+1275.0 error
+1275.0 schedule ALG 9.0
+1277.5 error
+1277.5 schedule ALG 9.0
+1280.0 error
+1280.0 schedule ALG 9.0
+1282.5 error
+1282.5 schedule ALG 9.0
+1285.0 error
+1285.0 schedule ALG 9.0
+1287.5 error
+1287.5 schedule ALG 9.0
+1290.0 error
+1290.0 schedule ALG 9.0
+1292.5 error
+1292.5 schedule ALG 9.0
+1295.0 error
+1295.0 schedule ALG 9.0
+1297.5 error
+1297.5 schedule ALG 9.0
+1300.0 error
+1300.0 schedule ALG 9.0
+1302.5 error
+1302.5 schedule ALG 9.0
+1305.0 error
+1305.0 schedule ALG 9.0
+1307.5 error
+1307.5 schedule ALG 9.0
+1310.0 error
+1310.0 schedule ALG 9.0
+1312.5 error
+1312.5 schedule ALG 9.0
+1315.0 error
+1315.0 schedule ALG 9.0
+1317.5 error
+1317.5 schedule ALG 9.0
+1320.0 error
+1320.0 schedule ALG 9.0
+1322.5 error
+1322.5 schedule ALG 9.0
+1325.0 error
+1325.0 schedule ALG 9.0
+1327.5 error
+1327.5 schedule ALG 9.0
+1330.0 error
+1330.0 schedule ALG 9.0
+1332.5 error
+1332.5 schedule ALG 9.0
+1335.0 error
+1335.0 schedule ALG 9.0
+1337.5 error
+1337.5 schedule ALG 9.0
+1340.0 error
+1340.0 schedule ALG 9.0
+1342.5 error
+1342.5 schedule ALG 9.0
+1345.0 error
+1345.0 schedule ALG 9.0
+1347.5 error
+1347.5 schedule ALG 9.0
+1350.0 error
+1350.0 schedule ALG 9.0
+1352.5 error
+1352.5 schedule ALG 9.0
+1355.0 error
+1355.0 schedule ALG 9.0
+1357.5 error
+1357.5 schedule ALG 9.0
+1360.0 error
+1360.0 schedule ALG 9.0
+1362.5 error
+1362.5 schedule ALG 9.0
+1365.0 error
+1365.0 schedule ALG 9.0
+1367.5 error
+1367.5 schedule ALG 9.0
+1370.0 error
+1370.0 schedule ALG 9.0
+1372.5 error
+1372.5 schedule ALG 9.0
+1375.0 error
+1375.0 schedule ALG 9.0
+1377.5 error
+1377.5 schedule ALG 9.0
+1380.0 error
+1380.0 schedule ALG 9.0
+1382.5 error
+1382.5 schedule ALG 9.0
+1385.0 error
+1385.0 schedule ALG 9.0
+1385.932969074101 inject 5.0
+1385.932969074101 schedule ADV 5.0
+1387.5 error
+1387.5 schedule ALG 9.0
+1387.5 schedule ADV 5.0
+1392.5 sent ADV
+1392.5 error
+1392.5 schedule ALG 9.0
+1395.0 error
+1395.0 schedule ALG 9.0
+1397.5 error
+1397.5 schedule ALG 9.0
+1400.0 error
+1400.0 schedule ALG 9.0
+1402.5 error
+1402.5 schedule ALG 9.0
+1405.0 error
+1405.0 schedule ALG 9.0
+1407.5 error
+1407.5 schedule ALG 9.0
+1410.0 error
+1410.0 schedule ALG 9.0
+1412.5 error
+1412.5 schedule ALG 9.0
+1415.0 error
+1415.0 schedule ALG 9.0
+1417.5 error
+1417.5 schedule ALG 9.0
+1420.0 error
+1420.0 schedule ALG 9.0
+1422.5 error
+1422.5 schedule ALG 9.0
+1425.0 error
+1425.0 schedule ALG 9.0
+1427.5 error
+1427.5 schedule ALG 9.0
+1430.0 error
+1430.0 schedule ALG 9.0
+1432.5 error
+1432.5 schedule ALG 9.0
+1435.0 error
+1435.0 schedule ALG 9.0
+1437.5 error
+1437.5 schedule ALG 9.0
+1440.0 error
+1440.0 schedule ALG 9.0
+1441.9467586175556 inject 5.0
+1441.9467586175556 schedule ADV 5.0
+1442.5 error
+1442.5 schedule ALG 9.0
+1442.5 schedule ADV 5.0
+1443.4424716065687 inject 9.0
+1447.5 sent ADV
+1447.5 error
+1447.5 schedule ALG 9.0
+1450.0 error
+1450.0 schedule ALG 9.0
+1452.5 error
+1452.5 schedule ALG 9.0
+1454.3391766653517 inject 5.0
+1454.3391766653517 schedule ADV 5.0
+1455.0 error
+1455.0 schedule ALG 9.0
+1455.0 schedule ADV 5.0
+1460.0 sent ADV
+1460.0 error
+1460.0 schedule ALG 9.0
+1462.5 error
+1462.5 schedule ALG 9.0
+1465.0 error
+1465.0 schedule ALG 9.0
+1467.5 error
+1467.5 schedule ALG 9.0
+1470.0 error
+1470.0 schedule ALG 9.0
+1472.5 error
+1472.5 schedule ALG 9.0
+1475.0 error
+1475.0 schedule ALG 9.0
+1477.5 error
+1477.5 schedule ALG 9.0
+1478.0939831011415 inject 5.0
+1478.0939831011415 schedule ADV 5.0
+1480.0 error
+1480.0 schedule ALG 9.0
+1480.0 schedule ADV 5.0
+1485.0 sent ADV
+1485.0 error
+1485.0 schedule ALG 9.0
+1487.5 error
+1487.5 schedule ALG 9.0
+1490.0 error
+1490.0 schedule ALG 9.0
+1492.5 error
+1492.5 schedule ALG 9.0
+1495.0 error
+1495.0 schedule ALG 9.0
+1497.5 error
+1497.5 schedule ALG 9.0
+1500.0 error
+1500.0 schedule ALG 9.0
+1502.5 error
+1502.5 schedule ALG 9.0
+1505.0 error
+1505.0 schedule ALG 9.0
+1507.5 error
+1507.5 schedule ALG 9.0
+1510.0 error
+1510.0 schedule ALG 9.0
+1512.5 error
+1512.5 schedule ALG 9.0
+1515.0 error
+1515.0 schedule ALG 9.0
+1517.5 error
+1517.5 schedule ALG 9.0
+1520.0 error
+1520.0 schedule ALG 9.0
+1522.5 error
+1522.5 schedule ALG 9.0
+1525.0 error
+1525.0 schedule ALG 9.0
+1527.5 error
+1527.5 schedule ALG 9.0
+1530.0 error
+1530.0 schedule ALG 9.0
+1532.5 error
+1532.5 schedule ALG 9.0
+1535.0 error
+1535.0 schedule ALG 9.0
+1537.5 error
+1537.5 schedule ALG 9.0
+1540.0 error
+1540.0 schedule ALG 9.0
+1540.3411867990678 inject 9.0
+1542.5 error
+1542.5 schedule ALG 9.0
+1545.0 error
+1545.0 schedule ALG 9.0
+1547.5 error
+1547.5 schedule ALG 9.0
+1550.0 error
+1550.0 schedule ALG 9.0
+1552.5 error
+1552.5 schedule ALG 9.0
+1555.0 error
+1555.0 schedule ALG 9.0
+1556.8152990470305 inject 5.0
+1556.8152990470305 schedule ADV 5.0
+1557.5 error
+1557.5 schedule ALG 9.0
+1557.5 schedule ADV 5.0
+1562.5 sent ADV
+1562.5 error
+1562.5 schedule ALG 9.0
+1565.0 error
+1565.0 schedule ALG 9.0
+1567.5 error
+1567.5 schedule ALG 9.0
+1570.0 error
+1570.0 schedule ALG 9.0
+1572.5 error
+1572.5 schedule ALG 9.0
+1575.0 error
+1575.0 schedule ALG 9.0
+1577.5 error
+1577.5 schedule ALG 9.0
+1580.0 error
+1580.0 schedule ALG 9.0
+1582.5 error
+1582.5 schedule ALG 9.0
+1585.0 error
+1585.0 schedule ALG 9.0
+1587.5 error
+1587.5 schedule ALG 9.0
+1590.0 error
+1590.0 schedule ALG 9.0
+1592.5 error
+1592.5 schedule ALG 9.0
+1595.0 error
+1595.0 schedule ALG 9.0
+1597.5 error
+1597.5 schedule ALG 9.0
+1600.0 error
+1600.0 schedule ALG 9.0
+1602.5 error
+1602.5 schedule ALG 9.0
+1605.0 error
+1605.0 schedule ALG 9.0
+1607.5 error
+1607.5 schedule ALG 9.0
+1610.0 error
+1610.0 schedule ALG 9.0
+1612.5 error
+1612.5 schedule ALG 9.0
+1615.0 error
+1615.0 schedule ALG 9.0
+1617.5 error
+1617.5 schedule ALG 9.0
+1620.0 error
+1620.0 schedule ALG 9.0
+1622.5 error
+1622.5 schedule ALG 9.0
+1625.0 error
+1625.0 schedule ALG 9.0
+1627.5 error
+1627.5 schedule ALG 9.0
+1630.0 error
+1630.0 schedule ALG 9.0
+1632.5 error
+1632.5 schedule ALG 9.0
+1635.0 error
+1635.0 schedule ALG 9.0
+1637.5 error
+1637.5 schedule ALG 9.0
+1640.0 error
+1640.0 schedule ALG 9.0
+1642.5 error
+1642.5 schedule ALG 9.0
+1645.0 error
+1645.0 schedule ALG 9.0
+1647.5 error
+1647.5 schedule ALG 9.0
+1650.0 error
+1650.0 schedule ALG 9.0
+1652.5 error
+1652.5 schedule ALG 9.0
+1655.0 error
+1655.0 schedule ALG 9.0
+1657.5 error
+1657.5 schedule ALG 9.0
+1660.0 error
+1660.0 schedule ALG 9.0
+1662.5 error
+1662.5 schedule ALG 9.0
+1665.0 error
+1665.0 schedule ALG 9.0
+1667.5 error
+1667.5 schedule ALG 9.0
+1670.0 error
+1670.0 schedule ALG 9.0
+1672.5 error
+1672.5 schedule ALG 9.0
+1675.0 error
+1675.0 schedule ALG 9.0
+1677.5 error
+1677.5 schedule ALG 9.0
+1680.0 error
+1680.0 schedule ALG 9.0
+1682.5 error
+1682.5 schedule ALG 9.0
+1685.0 error
+1685.0 schedule ALG 9.0
+1687.5 error
+1687.5 schedule ALG 9.0
+1690.0 error
+1690.0 schedule ALG 9.0
+1691.6207440577232 inject 5.0
+1691.6207440577232 schedule ADV 5.0
+1692.5 error
+1692.5 schedule ALG 9.0
+1692.5 schedule ADV 5.0
+1692.997018688355 inject 5.0
+1697.5 sent ADV
+1697.5 error
+1697.5 schedule ALG 9.0
+1697.5 schedule ADV 5.0
+1702.5 sent ADV
+1702.5 error
+1702.5 schedule ALG 9.0
+1705.0 error
+1705.0 schedule ALG 9.0
+1707.5 error
+1707.5 schedule ALG 9.0
+1710.0 error
+1710.0 schedule ALG 9.0
+1711.0860305968286 inject 5.0
+1711.0860305968286 schedule ADV 5.0
+1712.5 error
+1712.5 schedule ALG 9.0
+1712.5 schedule ADV 5.0
+1717.5 sent ADV
+1717.5 error
+1717.5 schedule ALG 9.0
+1720.0 error
+1720.0 schedule ALG 9.0
+1722.5 error
+1722.5 schedule ALG 9.0
+1725.0 error
+1725.0 schedule ALG 9.0
+1727.5 error
+1727.5 schedule ALG 9.0
+1730.0 error
+1730.0 schedule ALG 9.0
+1732.5 error
+1732.5 schedule ALG 9.0
+1735.0 error
+1735.0 schedule ALG 9.0
+1737.5 error
+1737.5 schedule ALG 9.0
+1740.0 error
+1740.0 schedule ALG 9.0
+1742.5 error
+1742.5 schedule ALG 9.0
+1745.0 error
+1745.0 schedule ALG 9.0
+1747.5 error
+1747.5 schedule ALG 9.0
+1750.0 error
+1750.0 schedule ALG 9.0
+1752.5 error
+1752.5 schedule ALG 9.0
+1755.0 error
+1755.0 schedule ALG 9.0
+1757.5 error
+1757.5 schedule ALG 9.0
+1760.0 error
+1760.0 schedule ALG 9.0
+1762.5 error
+1762.5 schedule ALG 9.0
+1765.0 error
+1765.0 schedule ALG 9.0
+1767.5 error
+1767.5 schedule ALG 9.0
+1770.0 error
+1770.0 schedule ALG 9.0
+1772.5 error
+1772.5 schedule ALG 9.0
+1775.0 error
+1775.0 schedule ALG 9.0
+1777.5 error
+1777.5 schedule ALG 9.0
+1780.0 error
+1780.0 schedule ALG 9.0
+1782.5 error
+1782.5 schedule ALG 9.0
+1785.0 error
+1785.0 schedule ALG 9.0
+1787.5 error
+1787.5 schedule ALG 9.0
+1790.0 error
+1790.0 schedule ALG 9.0
+1792.5 error
+1792.5 schedule ALG 9.0
+1795.0 error
+1795.0 schedule ALG 9.0
+1797.5 error
+1797.5 schedule ALG 9.0
+1800.0 error
+1800.0 schedule ALG 9.0
+1802.5 error
+1802.5 schedule ALG 9.0
+1805.0 error
+1805.0 schedule ALG 9.0
+1807.5 error
+1807.5 schedule ALG 9.0
+1810.0 error
+1810.0 schedule ALG 9.0
+1812.5 error
+1812.5 schedule ALG 9.0
+1815.0 error
+1815.0 schedule ALG 9.0
+1817.5 error
+1817.5 schedule ALG 9.0
+1820.0 error
+1820.0 schedule ALG 9.0
+1822.5 error
+1822.5 schedule ALG 9.0
+1825.0 error
+1825.0 schedule ALG 9.0
+1827.5 error
+1827.5 schedule ALG 9.0
+1830.0 error
+1830.0 schedule ALG 9.0
+1832.5 error
+1832.5 schedule ALG 9.0
+1835.0 error
+1835.0 schedule ALG 9.0
+1837.5 error
+1837.5 schedule ALG 9.0
+1840.0 error
+1840.0 schedule ALG 9.0
+1842.5 error
+1842.5 schedule ALG 9.0
+1845.0 error
+1845.0 schedule ALG 9.0
+1847.5 error
+1847.5 schedule ALG 9.0
+1850.0 error
+1850.0 schedule ALG 9.0
+1852.5 error
+1852.5 schedule ALG 9.0
+1855.0 error
+1855.0 schedule ALG 9.0
+1857.5 error
+1857.5 schedule ALG 9.0
+1860.0 error
+1860.0 schedule ALG 9.0
+1862.5 error
+1862.5 schedule ALG 9.0
+1865.0 error
+1865.0 schedule ALG 9.0
+1867.5 error
+1867.5 schedule ALG 9.0
+1870.0 error
+1870.0 schedule ALG 9.0
+1872.5 error
+1872.5 schedule ALG 9.0
+1875.0 error
+1875.0 schedule ALG 9.0
+1877.5 error
+1877.5 schedule ALG 9.0
+1880.0 error
+1880.0 schedule ALG 9.0
+1882.5 error
+1882.5 schedule ALG 9.0
+1885.0 error
+1885.0 schedule ALG 9.0
+1887.5 error
+1887.5 schedule ALG 9.0
+1890.0 error
+1890.0 schedule ALG 9.0
+1892.5 error
+1892.5 schedule ALG 9.0
+1895.0 error
+1895.0 schedule ALG 9.0
+1897.5 error
+1897.5 schedule ALG 9.0
+1900.0 error
+1900.0 schedule ALG 9.0
+1902.5 error
+1902.5 schedule ALG 9.0
+1905.0 error
+1905.0 schedule ALG 9.0
+1907.5 error
+1907.5 schedule ALG 9.0
+1910.0 error
+1910.0 schedule ALG 9.0
+1912.5 error
+1912.5 schedule ALG 9.0
+1913.811862694813 inject 9.0
+1915.0 error
+1915.0 schedule ALG 9.0
+1917.5 error
+1917.5 schedule ALG 9.0
+1920.0 error
+1920.0 schedule ALG 9.0
+1922.5 error
+1922.5 schedule ALG 9.0
+1925.0 error
+1925.0 schedule ALG 9.0
+1927.5 error
+1927.5 schedule ALG 9.0
+1930.0 error
+1930.0 schedule ALG 9.0
+1930.8274935753739 inject 5.0
+1930.8274935753739 schedule ADV 5.0
+1932.5 error
+1932.5 schedule ALG 9.0
+1932.5 schedule ADV 5.0
+1937.5 sent ADV
+1937.5 error
+1937.5 schedule ALG 9.0
+1940.0 error
+1940.0 schedule ALG 9.0
+1942.5 error
+1942.5 schedule ALG 9.0
+1945.0 error
+1945.0 schedule ALG 9.0
+1947.5 error
+1947.5 schedule ALG 9.0
+1950.0 error
+1950.0 schedule ALG 9.0
+1952.5 error
+1952.5 schedule ALG 9.0
+1955.0 error
+1955.0 schedule ALG 9.0
+1957.5 error
+1957.5 schedule ALG 9.0
+1960.0 error
+1960.0 schedule ALG 9.0
+1962.5 error
+1962.5 schedule ALG 9.0
+1965.0 error
+1965.0 schedule ALG 9.0
+1967.5 error
+1967.5 schedule ALG 9.0
+1970.0 error
+1970.0 schedule ALG 9.0
+1972.5 error
+1972.5 schedule ALG 9.0
+1975.0 error
+1975.0 schedule ALG 9.0
+1977.5 error
+1977.5 schedule ALG 9.0
+1980.0 error
+1980.0 schedule ALG 9.0
+1982.5 error
+1982.5 schedule ALG 9.0
+1985.0 error
+1985.0 schedule ALG 9.0
+1987.5 error
+1987.5 schedule ALG 9.0
+1990.0 error
+1990.0 schedule ALG 9.0
+1992.5 error
+1992.5 schedule ALG 9.0
+1995.0 error
+1995.0 schedule ALG 9.0
+1997.5 error
+1997.5 schedule ALG 9.0
+2000.0 error
+2000.0 schedule ALG 9.0
+2002.5 error
+2002.5 schedule ALG 9.0
+2003.9928770605088 inject 5.0
+2003.9928770605088 schedule ADV 5.0
+2005.0 error
+2005.0 schedule ALG 9.0
+2005.0 schedule ADV 5.0
+2010.0 sent ADV
+2010.0 error
+2010.0 schedule ALG 9.0
+2012.5 error
+2012.5 schedule ALG 9.0
+2015.0 error
+2015.0 schedule ALG 9.0
+2017.5 error
+2017.5 schedule ALG 9.0
+2020.0 error
+2020.0 schedule ALG 9.0
+2022.5 error
+2022.5 schedule ALG 9.0
+2025.0 error
+2025.0 schedule ALG 9.0
+2027.5 error
+2027.5 schedule ALG 9.0
+2030.0 error
+2030.0 schedule ALG 9.0
+2032.5 error
+2032.5 schedule ALG 9.0
+2035.0 error
+2035.0 schedule ALG 9.0
+2037.5 error
+2037.5 schedule ALG 9.0
+2038.8147430977103 inject 9.0
+2040.0 error
+2040.0 schedule ALG 9.0
+2042.5 error
+2042.5 schedule ALG 9.0
+2045.0 error
+2045.0 schedule ALG 9.0
+2047.5 error
+2047.5 schedule ALG 9.0
+2050.0 error
+2050.0 schedule ALG 9.0
+2051.472484326394 inject 5.0
+2051.472484326394 schedule ADV 5.0
+2052.5 error
+2052.5 schedule ALG 9.0
+2052.5 schedule ADV 5.0
+2057.5 sent ADV
+2057.5 error
+2057.5 schedule ALG 9.0
+2060.0 error
+2060.0 schedule ALG 9.0
+2062.5 error
+2062.5 schedule ALG 9.0
+2065.0 error
+2065.0 schedule ALG 9.0
+2067.5 error
+2067.5 schedule ALG 9.0
+2070.0 error
+2070.0 schedule ALG 9.0
+2072.5 error
+2072.5 schedule ALG 9.0
+2075.0 error
+2075.0 schedule ALG 9.0
+2077.5 error
+2077.5 schedule ALG 9.0
+2080.0 error
+2080.0 schedule ALG 9.0
+2082.5 error
+2082.5 schedule ALG 9.0
+2085.0 error
+2085.0 schedule ALG 9.0
+2087.5 error
+2087.5 schedule ALG 9.0
+2090.0 error
+2090.0 schedule ALG 9.0
+2092.5 error
+2092.5 schedule ALG 9.0
+2095.0 error
+2095.0 schedule ALG 9.0
+2097.5 error
+2097.5 schedule ALG 9.0
+2100.0 error
+2100.0 schedule ALG 9.0
+2102.5 error
+2102.5 schedule ALG 9.0
+2105.0 error
+2105.0 schedule ALG 9.0
+2107.5 error
+2107.5 schedule ALG 9.0
+2110.0 error
+2110.0 schedule ALG 9.0
+2112.5 error
+2112.5 schedule ALG 9.0
+2115.0 error
+2115.0 schedule ALG 9.0
+2117.5 error
+2117.5 schedule ALG 9.0
+2120.0 error
+2120.0 schedule ALG 9.0
+2122.5 error
+2122.5 schedule ALG 9.0
+2125.0 error
+2125.0 schedule ALG 9.0
+2127.5 error
+2127.5 schedule ALG 9.0
+2130.0 error
+2130.0 schedule ALG 9.0
+2132.5 error
+2132.5 schedule ALG 9.0
+2135.0 error
+2135.0 schedule ALG 9.0
+2137.5 error
+2137.5 schedule ALG 9.0
+2140.0 error
+2140.0 schedule ALG 9.0
+2142.5 error
+2142.5 schedule ALG 9.0
+2145.0 error
+2145.0 schedule ALG 9.0
+2147.5 error
+2147.5 schedule ALG 9.0
+2150.0 error
+2150.0 schedule ALG 9.0
+2152.5 error
+2152.5 schedule ALG 9.0
+2155.0 error
+2155.0 schedule ALG 9.0
+2157.5 error
+2157.5 schedule ALG 9.0
+2160.0 error
+2160.0 schedule ALG 9.0
+2162.5 error
+2162.5 schedule ALG 9.0
+2165.0 error
+2165.0 schedule ALG 9.0
+2167.5 error
+2167.5 schedule ALG 9.0
+2170.0 error
+2170.0 schedule ALG 9.0
+2172.5 error
+2172.5 schedule ALG 9.0
+2175.0 error
+2175.0 schedule ALG 9.0
+2177.5 error
+2177.5 schedule ALG 9.0
+2180.0 error
+2180.0 schedule ALG 9.0
+2182.5 error
+2182.5 schedule ALG 9.0
+2185.0 error
+2185.0 schedule ALG 9.0
+2187.5 error
+2187.5 schedule ALG 9.0
+2190.0 error
+2190.0 schedule ALG 9.0
+2192.5 error
+2192.5 schedule ALG 9.0
+2195.0 error
+2195.0 schedule ALG 9.0
+2197.5 error
+2197.5 schedule ALG 9.0
+2200.0 error
+2200.0 schedule ALG 9.0
+2202.5 error
+2202.5 schedule ALG 9.0
+2205.0 error
+2205.0 schedule ALG 9.0
+2207.5 error
+2207.5 schedule ALG 9.0
+2210.0 error
+2210.0 schedule ALG 9.0
+2212.5 error
+2212.5 schedule ALG 9.0
+2215.0 error
+2215.0 schedule ALG 9.0
+2217.5 error
+2217.5 schedule ALG 9.0
+2220.0 error
+2220.0 schedule ALG 9.0
+2222.5 error
+2222.5 schedule ALG 9.0
+2225.0 error
+2225.0 schedule ALG 9.0
+2227.5 error
+2227.5 schedule ALG 9.0
+2230.0 error
+2230.0 schedule ALG 9.0
+2232.5 error
+2232.5 schedule ALG 9.0
+2235.0 error
+2235.0 schedule ALG 9.0
+2237.5 error
+2237.5 schedule ALG 9.0
+2240.0 error
+2240.0 schedule ALG 9.0
+2242.5 error
+2242.5 schedule ALG 9.0
+2245.0 error
+2245.0 schedule ALG 9.0
+2247.5 error
+2247.5 schedule ALG 9.0
+2250.0 error
+2250.0 schedule ALG 9.0
+2252.5 error
+2252.5 schedule ALG 9.0
+2253.635871541334 inject 9.0
+2255.0 error
+2255.0 schedule ALG 9.0
+2257.5 error
+2257.5 schedule ALG 9.0
+2258.1404078393653 inject 5.0
+2258.1404078393653 schedule ADV 5.0
+2260.0 error
+2260.0 schedule ALG 9.0
+2260.0 schedule ADV 5.0
+2265.0 sent ADV
+2265.0 error
+2265.0 schedule ALG 9.0
+2267.5 error
+2267.5 schedule ALG 9.0
+2270.0 error
+2270.0 schedule ALG 9.0
+2272.5 error
+2272.5 schedule ALG 9.0
+2275.0 error
+2275.0 schedule ALG 9.0
+2277.5 error
+2277.5 schedule ALG 9.0
+2280.0 error
+2280.0 schedule ALG 9.0
+2282.5 error
+2282.5 schedule ALG 9.0
+2283.141500768406 inject 5.0
+2283.141500768406 schedule ADV 5.0
+2285.0 error
+2285.0 schedule ALG 9.0
+2285.0 schedule ADV 5.0
+2290.0 sent ADV
+2290.0 error
+2290.0 schedule ALG 9.0
+2292.5 error
+2292.5 schedule ALG 9.0
+2295.0 error
+2295.0 schedule ALG 9.0
+2297.5 error
+2297.5 schedule ALG 9.0
+2300.0 error
+2300.0 schedule ALG 9.0
+2302.5 error
+2302.5 schedule ALG 9.0
+2305.0 error
+2305.0 schedule ALG 9.0
+2307.5 error
+2307.5 schedule ALG 9.0
+2310.0 error
+2310.0 schedule ALG 9.0
+2312.5 error
+2312.5 schedule ALG 9.0
+2315.0 error
+2315.0 schedule ALG 9.0
+2317.5 error
+2317.5 schedule ALG 9.0
+2320.0 error
+2320.0 schedule ALG 9.0
+2322.5 error
+2322.5 schedule ALG 9.0
+2325.0 error
+2325.0 schedule ALG 9.0
+2327.5 error
+2327.5 schedule ALG 9.0
+2330.0 error
+2330.0 schedule ALG 9.0
+2332.5 error
+2332.5 schedule ALG 9.0
+2335.0 error
+2335.0 schedule ALG 9.0
+2337.5 error
+2337.5 schedule ALG 9.0
+2340.0 error
+2340.0 schedule ALG 9.0
+2342.5 error
+2342.5 schedule ALG 9.0
+2345.0 error
+2345.0 schedule ALG 9.0
+2347.5 error
+2347.5 schedule ALG 9.0
+2349.9582180969346 inject 9.0
+2350.0 error
+2350.0 schedule ALG 9.0
+2352.5 error
+2352.5 schedule ALG 9.0
+2355.0 error
+2355.0 schedule ALG 9.0
+2357.5 error
+2357.5 schedule ALG 9.0
+2360.0 error
+2360.0 schedule ALG 9.0
+2362.5 error
+2362.5 schedule ALG 9.0
+2365.0 error
+2365.0 schedule ALG 9.0
+2367.5 error
+2367.5 schedule ALG 9.0
+2370.0 error
+2370.0 schedule ALG 9.0
+2372.5 error
+2372.5 schedule ALG 9.0
+2375.0 error
+2375.0 schedule ALG 9.0
+2377.5 error
+2377.5 schedule ALG 9.0
+2380.0 error
+2380.0 schedule ALG 9.0
+2382.5 error
+2382.5 schedule ALG 9.0
+2385.0 error
+2385.0 schedule ALG 9.0
+2387.5 error
+2387.5 schedule ALG 9.0
+2390.0 error
+2390.0 schedule ALG 9.0
+2392.5 error
+2392.5 schedule ALG 9.0
+2395.0 error
+2395.0 schedule ALG 9.0
+2397.5 error
+2397.5 schedule ALG 9.0
+2400.0 error
+2400.0 schedule ALG 9.0
+2402.5 error
+2402.5 schedule ALG 9.0
+2405.0 error
+2405.0 schedule ALG 9.0
+2407.5 error
+2407.5 schedule ALG 9.0
+2410.0 error
+2410.0 schedule ALG 9.0
+2412.5 error
+2412.5 schedule ALG 9.0
+2415.0 error
+2415.0 schedule ALG 9.0
+2417.5 error
+2417.5 schedule ALG 9.0
+2417.9405101454663 inject 9.0
+2420.0 error
+2420.0 schedule ALG 9.0
+2422.5 error
+2422.5 schedule ALG 9.0
+2425.0 error
+2425.0 schedule ALG 9.0
+2427.5 error
+2427.5 schedule ALG 9.0
+2430.0 error
+2430.0 schedule ALG 9.0
+2432.5 error
+2432.5 schedule ALG 9.0
+2435.0 error
+2435.0 schedule ALG 9.0
+2437.5 error
+2437.5 schedule ALG 9.0
+2440.0 error
+2440.0 schedule ALG 9.0
+2442.5 error
+2442.5 schedule ALG 9.0
+2445.0 error
+2445.0 schedule ALG 9.0
+2447.5 error
+2447.5 schedule ALG 9.0
+2450.0 error
+2450.0 schedule ALG 9.0
+2452.5 error
+2452.5 schedule ALG 9.0
+2455.0 error
+2455.0 schedule ALG 9.0
+2457.5 error
+2457.5 schedule ALG 9.0
+2460.0 error
+2460.0 schedule ALG 9.0
+2462.5 error
+2462.5 schedule ALG 9.0
+2464.1507954845615 inject 9.0
+2465.0 error
+2465.0 schedule ALG 9.0
+2467.5 error
+2467.5 schedule ALG 9.0
+2470.0 error
+2470.0 schedule ALG 9.0
+2472.5 error
+2472.5 schedule ALG 9.0
+2475.0 error
+2475.0 schedule ALG 9.0
+2477.5 error
+2477.5 schedule ALG 9.0
+2478.4575739901516 inject 5.0
+2478.4575739901516 schedule ADV 5.0
+2480.0 error
+2480.0 schedule ALG 9.0
+2480.0 schedule ADV 5.0
+2485.0 sent ADV
+2485.0 error
+2485.0 schedule ALG 9.0
+2487.5 error
+2487.5 schedule ALG 9.0
+2490.0 error
+2490.0 schedule ALG 9.0
+2492.5 error
+2492.5 schedule ALG 9.0
+2495.0 error
+2495.0 schedule ALG 9.0
+2497.5 error
+2497.5 schedule ALG 9.0
+2500.0 error
+2500.0 schedule ALG 9.0
+2502.5 error
+2502.5 schedule ALG 9.0
+2505.0 error
+2505.0 schedule ALG 9.0
+2507.5 error
+2507.5 schedule ALG 9.0
+2510.0 error
+2510.0 schedule ALG 9.0
+2512.5 error
+2512.5 schedule ALG 9.0
+2515.0 error
+2515.0 schedule ALG 9.0
+2517.5 error
+2517.5 schedule ALG 9.0
+2520.0 error
+2520.0 schedule ALG 9.0
+2522.5 error
+2522.5 schedule ALG 9.0
+2525.0 error
+2525.0 schedule ALG 9.0
+2527.5 error
+2527.5 schedule ALG 9.0
+2530.0 error
+2530.0 schedule ALG 9.0
+2532.5 error
+2532.5 schedule ALG 9.0
+2535.0 error
+2535.0 schedule ALG 9.0
+2537.5 error
+2537.5 schedule ALG 9.0
+2540.0 error
+2540.0 schedule ALG 9.0
+2542.5 error
+2542.5 schedule ALG 9.0
+2545.0 error
+2545.0 schedule ALG 9.0
+2547.5 error
+2547.5 schedule ALG 9.0
+2550.0 error
+2550.0 schedule ALG 9.0
+2552.5 error
+2552.5 schedule ALG 9.0
+2555.0 error
+2555.0 schedule ALG 9.0
+2557.5 error
+2557.5 schedule ALG 9.0
+2560.0 error
+2560.0 schedule ALG 9.0
+2561.7793701247233 inject 5.0
+2561.7793701247233 schedule ADV 5.0
+2562.5 error
+2562.5 schedule ALG 9.0
+2562.5 schedule ADV 5.0
+2567.5 sent ADV
+2567.5 error
+2567.5 schedule ALG 9.0
+2570.0 error
+2570.0 schedule ALG 9.0
+2572.5 error
+2572.5 schedule ALG 9.0
+2575.0 error
+2575.0 schedule ALG 9.0
+2577.5 error
+2577.5 schedule ALG 9.0
+2580.0 error
+2580.0 schedule ALG 9.0
+2582.5 error
+2582.5 schedule ALG 9.0
+2585.0 error
+2585.0 schedule ALG 9.0
+2587.5 error
+2587.5 schedule ALG 9.0
+2590.0 error
+2590.0 schedule ALG 9.0
+2592.5 error
+2592.5 schedule ALG 9.0
+2595.0 error
+2595.0 schedule ALG 9.0
+2596.9354430676062 inject 5.0
+2596.9354430676062 schedule ADV 5.0
+2597.5 error
+2597.5 schedule ALG 9.0
+2597.5 schedule ADV 5.0
+2602.5 sent ADV
+2602.5 error
+2602.5 schedule ALG 9.0
+2605.0 error
+2605.0 schedule ALG 9.0
+2607.5 error
+2607.5 schedule ALG 9.0
+2610.0 error
+2610.0 schedule ALG 9.0
+2612.5 error
+2612.5 schedule ALG 9.0
+2615.0 error
+2615.0 schedule ALG 9.0
+2617.5 error
+2617.5 schedule ALG 9.0
+2620.0 error
+2620.0 schedule ALG 9.0
+2622.5 error
+2622.5 schedule ALG 9.0
+2625.0 error
+2625.0 schedule ALG 9.0
+2627.5 error
+2627.5 schedule ALG 9.0
+2630.0 error
+2630.0 schedule ALG 9.0
+2632.5 error
+2632.5 schedule ALG 9.0
+2635.0 error
+2635.0 schedule ALG 9.0
+2637.5 error
+2637.5 schedule ALG 9.0
+2640.0 error
+2640.0 schedule ALG 9.0
+2642.5 error
+2642.5 schedule ALG 9.0
+2645.0 error
+2645.0 schedule ALG 9.0
+2647.5 error
+2647.5 schedule ALG 9.0
+2650.0 error
+2650.0 schedule ALG 9.0
+2652.5 error
+2652.5 schedule ALG 9.0
+2655.0 error
+2655.0 schedule ALG 9.0
+2657.5 error
+2657.5 schedule ALG 9.0
+2660.0 error
+2660.0 schedule ALG 9.0
+2662.5 error
+2662.5 schedule ALG 9.0
+2665.0 error
+2665.0 schedule ALG 9.0
+2667.5 error
+2667.5 schedule ALG 9.0
+2670.0 error
+2670.0 schedule ALG 9.0
+2672.5 error
+2672.5 schedule ALG 9.0
+2674.780266265746 inject 5.0
+2674.780266265746 schedule ADV 5.0
+2675.0 error
+2675.0 schedule ALG 9.0
+2675.0 schedule ADV 5.0
+2680.0 sent ADV
+2680.0 error
+2680.0 schedule ALG 9.0
+2682.5 error
+2682.5 schedule ALG 9.0
+2685.0 error
+2685.0 schedule ALG 9.0
+2687.5 error
+2687.5 schedule ALG 9.0
+2690.0 error
+2690.0 schedule ALG 9.0
+2692.5 error
+2692.5 schedule ALG 9.0
+2695.0 error
+2695.0 schedule ALG 9.0
+2697.5 error
+2697.5 schedule ALG 9.0
+2700.0 error
+2700.0 schedule ALG 9.0
+2702.5 error
+2702.5 schedule ALG 9.0
+2705.0 error
+2705.0 schedule ALG 9.0
+2707.5 error
+2707.5 schedule ALG 9.0
+2710.0 error
+2710.0 schedule ALG 9.0
+2712.5 error
+2712.5 schedule ALG 9.0
+2715.0 error
+2715.0 schedule ALG 9.0
+2717.5 error
+2717.5 schedule ALG 9.0
+2720.0 error
+2720.0 schedule ALG 9.0
+2722.5 error
+2722.5 schedule ALG 9.0
+2725.0 error
+2725.0 schedule ALG 9.0
+2727.5 error
+2727.5 schedule ALG 9.0
+2730.0 error
+2730.0 schedule ALG 9.0
+2732.5 error
+2732.5 schedule ALG 9.0
+2735.0 error
+2735.0 schedule ALG 9.0
+2737.5 error
+2737.5 schedule ALG 9.0
+2740.0 error
+2740.0 schedule ALG 9.0
+2742.5 error
+2742.5 schedule ALG 9.0
+2745.0 error
+2745.0 schedule ALG 9.0
+2747.5 error
+2747.5 schedule ALG 9.0
+2750.0 error
+2750.0 schedule ALG 9.0
+2752.5 error
+2752.5 schedule ALG 9.0
+2755.0 error
+2755.0 schedule ALG 9.0
+2757.5 error
+2757.5 schedule ALG 9.0
+2760.0 error
+2760.0 schedule ALG 9.0
+2762.5 error
+2762.5 schedule ALG 9.0
+2765.0 error
+2765.0 schedule ALG 9.0
+2767.5 error
+2767.5 schedule ALG 9.0
+2770.0 error
+2770.0 schedule ALG 9.0
+2772.5 error
+2772.5 schedule ALG 9.0
+2775.0 error
+2775.0 schedule ALG 9.0
+2777.5 error
+2777.5 schedule ALG 9.0
+2780.0 error
+2780.0 schedule ALG 9.0
+2782.5 error
+2782.5 schedule ALG 9.0
+2785.0 error
+2785.0 schedule ALG 9.0
+2787.5 error
+2787.5 schedule ALG 9.0
+2790.0 error
+2790.0 schedule ALG 9.0
+2792.5 error
+2792.5 schedule ALG 9.0
+2795.0 error
+2795.0 schedule ALG 9.0
+2797.5 error
+2797.5 schedule ALG 9.0
+2800.0 error
+2800.0 schedule ALG 9.0
+2802.5 error
+2802.5 schedule ALG 9.0
+2805.0 error
+2805.0 schedule ALG 9.0
+2807.5 error
+2807.5 schedule ALG 9.0
+2810.0 error
+2810.0 schedule ALG 9.0
+2812.5 error
+2812.5 schedule ALG 9.0
+2815.0 error
+2815.0 schedule ALG 9.0
+2817.5 error
+2817.5 schedule ALG 9.0
+2820.0 error
+2820.0 schedule ALG 9.0
+2822.5 error
+2822.5 schedule ALG 9.0
+2825.0 error
+2825.0 schedule ALG 9.0
+2827.5 error
+2827.5 schedule ALG 9.0
+2830.0 error
+2830.0 schedule ALG 9.0
+2832.5 error
+2832.5 schedule ALG 9.0
+2835.0 error
+2835.0 schedule ALG 9.0
+2837.5 error
+2837.5 schedule ALG 9.0
+2840.0 error
+2840.0 schedule ALG 9.0
+2842.5 error
+2842.5 schedule ALG 9.0
+2845.0 error
+2845.0 schedule ALG 9.0
+2847.5 error
+2847.5 schedule ALG 9.0
+2850.0 error
+2850.0 schedule ALG 9.0
+2852.5 error
+2852.5 schedule ALG 9.0
+2855.0 error
+2855.0 schedule ALG 9.0
+2857.5 error
+2857.5 schedule ALG 9.0
+2860.0 error
+2860.0 schedule ALG 9.0
+2862.5 error
+2862.5 schedule ALG 9.0
+2865.0 error
+2865.0 schedule ALG 9.0
+2867.5 error
+2867.5 schedule ALG 9.0
+2870.0 error
+2870.0 schedule ALG 9.0
+2872.5 error
+2872.5 schedule ALG 9.0
+2875.0 error
+2875.0 schedule ALG 9.0
+2877.5 error
+2877.5 schedule ALG 9.0
+2880.0 error
+2880.0 schedule ALG 9.0
+2882.5 error
+2882.5 schedule ALG 9.0
+2885.0 error
+2885.0 schedule ALG 9.0
+2887.5 error
+2887.5 schedule ALG 9.0
+2890.0 error
+2890.0 schedule ALG 9.0
+2892.5 error
+2892.5 schedule ALG 9.0
+2895.0 error
+2895.0 schedule ALG 9.0
+2897.5 error
+2897.5 schedule ALG 9.0
+2900.0 error
+2900.0 schedule ALG 9.0
+2902.5 error
+2902.5 schedule ALG 9.0
+2905.0 error
+2905.0 schedule ALG 9.0
+2907.5 error
+2907.5 schedule ALG 9.0
+2910.0 error
+2910.0 schedule ALG 9.0
+2912.5 error
+2912.5 schedule ALG 9.0
+2915.0 error
+2915.0 schedule ALG 9.0
+2917.5 error
+2917.5 schedule ALG 9.0
+2920.0 error
+2920.0 schedule ALG 9.0
+2922.5 error
+2922.5 schedule ALG 9.0
+2925.0 error
+2925.0 schedule ALG 9.0
+2927.5 error
+2927.5 schedule ALG 9.0
+2930.0 error
+2930.0 schedule ALG 9.0
+2932.5 error
+2932.5 schedule ALG 9.0
+2935.0 error
+2935.0 schedule ALG 9.0
+2937.5 error
+2937.5 schedule ALG 9.0
+2940.0 error
+2940.0 schedule ALG 9.0
+2942.5 error
+2942.5 schedule ALG 9.0
+2945.0 error
+2945.0 schedule ALG 9.0
+2947.5 error
+2947.5 schedule ALG 9.0
+2950.0 error
+2950.0 schedule ALG 9.0
+2952.5 error
+2952.5 schedule ALG 9.0
+2955.0 error
+2955.0 schedule ALG 9.0
+2957.5 error
+2957.5 schedule ALG 9.0
+2960.0 error
+2960.0 schedule ALG 9.0
+2960.2539633214014 inject 5.0
+2960.2539633214014 schedule ADV 5.0
+2962.5 error
+2962.5 schedule ALG 9.0
+2962.5 schedule ADV 5.0
+2967.5 sent ADV
+2967.5 error
+2967.5 schedule ALG 9.0
+2970.0 error
+2970.0 schedule ALG 9.0
+2972.5 error
+2972.5 schedule ALG 9.0
+2975.0 error
+2975.0 schedule ALG 9.0
+2977.5 error
+2977.5 schedule ALG 9.0
+2980.0 error
+2980.0 schedule ALG 9.0
+2982.5 error
+2982.5 schedule ALG 9.0
+2985.0 error
+2985.0 schedule ALG 9.0
+2987.5 error
+2987.5 schedule ALG 9.0
+2990.0 error
+2990.0 schedule ALG 9.0
+2992.5 error
+2992.5 schedule ALG 9.0
+2995.0 error
+2995.0 schedule ALG 9.0
+2997.5 error
+2997.5 schedule ALG 9.0
+3000.0 error
+3000.0 schedule ALG 9.0
+3002.5 error
+3002.5 schedule ALG 9.0
+3005.0 error
+3005.0 schedule ALG 9.0
+3007.5 error
+3007.5 schedule ALG 9.0
+3010.0 error
+3010.0 schedule ALG 9.0
+3012.5 error
+3012.5 schedule ALG 9.0
+3015.0 error
+3015.0 schedule ALG 9.0
+3017.5 error
+3017.5 schedule ALG 9.0
+3020.0 error
+3020.0 schedule ALG 9.0
+3022.5 error
+3022.5 schedule ALG 9.0
+3025.0 error
+3025.0 schedule ALG 9.0
+3027.5 error
+3027.5 schedule ALG 9.0
+3030.0 error
+3030.0 schedule ALG 9.0
+3032.5 error
+3032.5 schedule ALG 9.0
+3035.0 error
+3035.0 schedule ALG 9.0
+3035.5265244516195 inject 5.0
+3035.5265244516195 schedule ADV 5.0
+3037.5 error
+3037.5 schedule ALG 9.0
+3037.5 schedule ADV 5.0
+3042.5 sent ADV
+3042.5 error
+3042.5 schedule ALG 9.0
+3045.0 error
+3045.0 schedule ALG 9.0
+3047.5 error
+3047.5 schedule ALG 9.0
+3050.0 error
+3050.0 schedule ALG 9.0
+3052.5 error
+3052.5 schedule ALG 9.0
+3055.0 error
+3055.0 schedule ALG 9.0
+3057.5 error
+3057.5 schedule ALG 9.0
+3060.0 error
+3060.0 schedule ALG 9.0
+3062.5 error
+3062.5 schedule ALG 9.0
+3065.0 error
+3065.0 schedule ALG 9.0
+3067.5 error
+3067.5 schedule ALG 9.0
+3070.0 error
+3070.0 schedule ALG 9.0
+3072.5 error
+3072.5 schedule ALG 9.0
+3075.0 error
+3075.0 schedule ALG 9.0
+3077.5 error
+3077.5 schedule ALG 9.0
+3080.0 error
+3080.0 schedule ALG 9.0
+3082.5 error
+3082.5 schedule ALG 9.0
+3085.0 error
+3085.0 schedule ALG 9.0
+3087.5 error
+3087.5 schedule ALG 9.0
+3090.0 error
+3090.0 schedule ALG 9.0
+3092.5 error
+3092.5 schedule ALG 9.0
+3093.949237589522 inject 9.0
+3095.0 error
+3095.0 schedule ALG 9.0
+3097.5 error
+3097.5 schedule ALG 9.0
+3100.0 error
+3100.0 schedule ALG 9.0
+3102.5 error
+3102.5 schedule ALG 9.0
+3105.0 error
+3105.0 schedule ALG 9.0
+3107.5 error
+3107.5 schedule ALG 9.0
+3110.0 error
+3110.0 schedule ALG 9.0
+3112.5 error
+3112.5 schedule ALG 9.0
+3115.0 error
+3115.0 schedule ALG 9.0
+3117.5 error
+3117.5 schedule ALG 9.0
+3120.0 error
+3120.0 schedule ALG 9.0
+3122.5 error
+3122.5 schedule ALG 9.0
+3125.0 error
+3125.0 schedule ALG 9.0
+3127.5 error
+3127.5 schedule ALG 9.0
+3130.0 error
+3130.0 schedule ALG 9.0
+3132.5 error
+3132.5 schedule ALG 9.0
+3135.0 error
+3135.0 schedule ALG 9.0
+3137.5 error
+3137.5 schedule ALG 9.0
+3140.0 error
+3140.0 schedule ALG 9.0
+3142.5 error
+3142.5 schedule ALG 9.0
+3145.0 error
+3145.0 schedule ALG 9.0
+3147.5 error
+3147.5 schedule ALG 9.0
+3148.3118158539205 inject 5.0
+3148.3118158539205 schedule ADV 5.0
+3150.0 error
+3150.0 schedule ALG 9.0
+3150.0 schedule ADV 5.0
+3155.0 sent ADV
+3155.0 error
+3155.0 schedule ALG 9.0
+3157.5 error
+3157.5 schedule ALG 9.0
+3159.6109260587223 inject 5.0
+3159.6109260587223 schedule ADV 5.0
+3160.0 error
+3160.0 schedule ALG 9.0
+3160.0 schedule ADV 5.0
+3165.0 sent ADV
+3165.0 error
+3165.0 schedule ALG 9.0
+3167.5 error
+3167.5 schedule ALG 9.0
+3170.0 error
+3170.0 schedule ALG 9.0
+3172.5 error
+3172.5 schedule ALG 9.0
+3175.0 error
+3175.0 schedule ALG 9.0
+3177.5 error
+3177.5 schedule ALG 9.0
+3180.0 error
+3180.0 schedule ALG 9.0
+3182.5 error
+3182.5 schedule ALG 9.0
+3185.0 error
+3185.0 schedule ALG 9.0
+3187.5 error
+3187.5 schedule ALG 9.0
+3190.0 error
+3190.0 schedule ALG 9.0
+3192.5 error
+3192.5 schedule ALG 9.0
+3195.0 error
+3195.0 schedule ALG 9.0
+3195.0297531914534 inject 5.0
+3195.0297531914534 schedule ADV 5.0
+3197.5 error
+3197.5 schedule ALG 9.0
+3197.5 schedule ADV 5.0
+3202.5 sent ADV
+3202.5 error
+3202.5 schedule ALG 9.0
+3205.0 error
+3205.0 schedule ALG 9.0
+3207.5 error
+3207.5 schedule ALG 9.0
+3210.0 error
+3210.0 schedule ALG 9.0
+3212.5 error
+3212.5 schedule ALG 9.0
+3215.0 error
+3215.0 schedule ALG 9.0
+3217.5 error
+3217.5 schedule ALG 9.0
+3218.4999247519086 inject 5.0
+3218.4999247519086 schedule ADV 5.0
+3220.0 error
+3220.0 schedule ALG 9.0
+3220.0 schedule ADV 5.0
+3225.0 sent ADV
+3225.0 error
+3225.0 schedule ALG 9.0
+3227.5 error
+3227.5 schedule ALG 9.0
+3230.0 error
+3230.0 schedule ALG 9.0
+3232.5 error
+3232.5 schedule ALG 9.0
+3235.0 error
+3235.0 schedule ALG 9.0
+3237.5 error
+3237.5 schedule ALG 9.0
+3240.0 error
+3240.0 schedule ALG 9.0
+3242.5 error
+3242.5 schedule ALG 9.0
+3245.0 error
+3245.0 schedule ALG 9.0
+3247.5 error
+3247.5 schedule ALG 9.0
+3249.193059562523 inject 5.0
+3249.193059562523 schedule ADV 5.0
+3250.0 error
+3250.0 schedule ALG 9.0
+3250.0 schedule ADV 5.0
+3255.0 sent ADV
+3255.0 error
+3255.0 schedule ALG 9.0
+3257.5 error
+3257.5 schedule ALG 9.0
+3260.0 error
+3260.0 schedule ALG 9.0
+3262.5 error
+3262.5 schedule ALG 9.0
+3265.0 error
+3265.0 schedule ALG 9.0
+3267.5 error
+3267.5 schedule ALG 9.0
+3270.0 error
+3270.0 schedule ALG 9.0
+3272.5 error
+3272.5 schedule ALG 9.0
+3275.0 error
+3275.0 schedule ALG 9.0
+3277.5 error
+3277.5 schedule ALG 9.0
+3280.0 error
+3280.0 schedule ALG 9.0
+3282.5 error
+3282.5 schedule ALG 9.0
+3284.1749110916226 inject 5.0
+3284.1749110916226 schedule ADV 5.0
+3285.0 error
+3285.0 schedule ALG 9.0
+3285.0 schedule ADV 5.0
+3290.0 sent ADV
+3290.0 error
+3290.0 schedule ALG 9.0
+3292.5 error
+3292.5 schedule ALG 9.0
+3295.0 error
+3295.0 schedule ALG 9.0
+3297.5 error
+3297.5 schedule ALG 9.0
+3300.0 error
+3300.0 schedule ALG 9.0
+3302.5 error
+3302.5 schedule ALG 9.0
+3305.0 error
+3305.0 schedule ALG 9.0
+3307.5 error
+3307.5 schedule ALG 9.0
+3310.0 error
+3310.0 schedule ALG 9.0
+3312.5 error
+3312.5 schedule ALG 9.0
+3315.0 error
+3315.0 schedule ALG 9.0
+3317.5 error
+3317.5 schedule ALG 9.0
+3320.0 error
+3320.0 schedule ALG 9.0
+3322.5 error
+3322.5 schedule ALG 9.0
+3325.0 error
+3325.0 schedule ALG 9.0
+3327.5 error
+3327.5 schedule ALG 9.0
+3330.0 error
+3330.0 schedule ALG 9.0
+3332.5 error
+3332.5 schedule ALG 9.0
+3335.0 error
+3335.0 schedule ALG 9.0
+3337.5 error
+3337.5 schedule ALG 9.0
+3340.0 error
+3340.0 schedule ALG 9.0
+3342.5 error
+3342.5 schedule ALG 9.0
+3345.0 error
+3345.0 schedule ALG 9.0
+3347.5 error
+3347.5 schedule ALG 9.0
+3350.0 error
+3350.0 schedule ALG 9.0
+3352.5 error
+3352.5 schedule ALG 9.0
+3355.0 error
+3355.0 schedule ALG 9.0
+3357.5 error
+3357.5 schedule ALG 9.0
+3360.0 error
+3360.0 schedule ALG 9.0
+3362.5 error
+3362.5 schedule ALG 9.0
+3365.0 error
+3365.0 schedule ALG 9.0
+3367.5 error
+3367.5 schedule ALG 9.0
+3370.0 error
+3370.0 schedule ALG 9.0
+3372.5 error
+3372.5 schedule ALG 9.0
+3375.0 error
+3375.0 schedule ALG 9.0
+3377.5 error
+3377.5 schedule ALG 9.0
+3380.0 error
+3380.0 schedule ALG 9.0
+3382.5 error
+3382.5 schedule ALG 9.0
+3385.0 error
+3385.0 schedule ALG 9.0
+3387.5 error
+3387.5 schedule ALG 9.0
+3390.0 error
+3390.0 schedule ALG 9.0
+3392.5 error
+3392.5 schedule ALG 9.0
+3395.0 error
+3395.0 schedule ALG 9.0
+3397.5 error
+3397.5 schedule ALG 9.0
+3400.0 error
+3400.0 schedule ALG 9.0
+3402.5 error
+3402.5 schedule ALG 9.0
+3405.0 error
+3405.0 schedule ALG 9.0
+3407.5 error
+3407.5 schedule ALG 9.0
+3410.0 error
+3410.0 schedule ALG 9.0
+3412.5 error
+3412.5 schedule ALG 9.0
+3415.0 error
+3415.0 schedule ALG 9.0
+3417.5 error
+3417.5 schedule ALG 9.0
+3417.931831779056 inject 5.0
+3417.931831779056 schedule ADV 5.0
+3420.0 error
+3420.0 schedule ALG 9.0
+3420.0 schedule ADV 5.0
+3425.0 sent ADV
+3425.0 error
+3425.0 schedule ALG 9.0
+3427.5 error
+3427.5 schedule ALG 9.0
+3430.0 error
+3430.0 schedule ALG 9.0
+3432.5 error
+3432.5 schedule ALG 9.0
+3435.0 error
+3435.0 schedule ALG 9.0
+3437.5 error
+3437.5 schedule ALG 9.0
+3440.0 error
+3440.0 schedule ALG 9.0
+3442.5 error
+3442.5 schedule ALG 9.0
+3445.0 error
+3445.0 schedule ALG 9.0
+3447.317957362483 inject 5.0
+3447.317957362483 schedule ADV 5.0
+3447.5 error
+3447.5 schedule ALG 9.0
+3447.5 schedule ADV 5.0
+3452.5 sent ADV
+3452.5 error
+3452.5 schedule ALG 9.0
+3455.0 error
+3455.0 schedule ALG 9.0
+3457.5 error
+3457.5 schedule ALG 9.0
+3460.0 error
+3460.0 schedule ALG 9.0
+3462.5 error
+3462.5 schedule ALG 9.0
+3465.0 error
+3465.0 schedule ALG 9.0
+3467.5 error
+3467.5 schedule ALG 9.0
+3470.0 error
+3470.0 schedule ALG 9.0
+3470.6633493656677 inject 5.0
+3470.6633493656677 schedule ADV 5.0
+3472.5 error
+3472.5 schedule ALG 9.0
+3472.5 schedule ADV 5.0
+3477.5 sent ADV
+3477.5 error
+3477.5 schedule ALG 9.0
+3480.0 error
+3480.0 schedule ALG 9.0
+3482.5 error
+3482.5 schedule ALG 9.0
+3485.0 error
+3485.0 schedule ALG 9.0
+3487.5 error
+3487.5 schedule ALG 9.0
+3490.0 error
+3490.0 schedule ALG 9.0
+3492.5 error
+3492.5 schedule ALG 9.0
+3495.0 error
+3495.0 schedule ALG 9.0
+3496.771524619246 inject 5.0
+3496.771524619246 schedule ADV 5.0
+3497.5 error
+3497.5 schedule ALG 9.0
+3497.5 schedule ADV 5.0
+3502.5 sent ADV
+3502.5 error
+3502.5 schedule ALG 9.0
+3505.0 error
+3505.0 schedule ALG 9.0
+3507.5 error
+3507.5 schedule ALG 9.0
+3510.0 error
+3510.0 schedule ALG 9.0
+3512.5 error
+3512.5 schedule ALG 9.0
+3515.0 error
+3515.0 schedule ALG 9.0
+3517.5 error
+3517.5 schedule ALG 9.0
+3520.0 error
+3520.0 schedule ALG 9.0
+3522.5 error
+3522.5 schedule ALG 9.0
+3525.0 error
+3525.0 schedule ALG 9.0
+3527.5 error
+3527.5 schedule ALG 9.0
+3530.0 error
+3530.0 schedule ALG 9.0
+3532.5 error
+3532.5 schedule ALG 9.0
+3535.0 error
+3535.0 schedule ALG 9.0
+3537.5 error
+3537.5 schedule ALG 9.0
+3540.0 error
+3540.0 schedule ALG 9.0
+3542.5 error
+3542.5 schedule ALG 9.0
+3545.0 error
+3545.0 schedule ALG 9.0
+3547.5 error
+3547.5 schedule ALG 9.0
+3550.0 error
+3550.0 schedule ALG 9.0
+3552.5 error
+3552.5 schedule ALG 9.0
+3555.0 error
+3555.0 schedule ALG 9.0
+3557.5 error
+3557.5 schedule ALG 9.0
+3560.0 error
+3560.0 schedule ALG 9.0
+3562.5 error
+3562.5 schedule ALG 9.0
+3562.9557576918833 inject 9.0
+3565.0 error
+3565.0 schedule ALG 9.0
+3567.5 error
+3567.5 schedule ALG 9.0
+3570.0 error
+3570.0 schedule ALG 9.0
+3572.5 error
+3572.5 schedule ALG 9.0
+3575.0 error
+3575.0 schedule ALG 9.0
+3577.5 error
+3577.5 schedule ALG 9.0
+3580.0 error
+3580.0 schedule ALG 9.0
+3582.5 error
+3582.5 schedule ALG 9.0
+3585.0 error
+3585.0 schedule ALG 9.0
+3587.5 error
+3587.5 schedule ALG 9.0
+3588.3518563530492 inject 9.0
+3590.0 error
+3590.0 schedule ALG 9.0
+3592.5 error
+3592.5 schedule ALG 9.0
+3595.0 error
+3595.0 schedule ALG 9.0
+3597.5 error
+3597.5 schedule ALG 9.0
+3600.0 error
+3600.0 schedule ALG 9.0
+3602.5 error
+3602.5 schedule ALG 9.0
+3605.0 error
+3605.0 schedule ALG 9.0
+3607.5 error
+3607.5 schedule ALG 9.0
+3610.0 error
+3610.0 schedule ALG 9.0
+3612.5 error
+3612.5 schedule ALG 9.0
+3615.0 error
+3615.0 schedule ALG 9.0
+3617.5 error
+3617.5 schedule ALG 9.0
+3620.0 error
+3620.0 schedule ALG 9.0
+3622.5 error
+3622.5 schedule ALG 9.0
+3625.0 error
+3625.0 schedule ALG 9.0
+3627.5 error
+3627.5 schedule ALG 9.0
+3627.6393902647937 inject 5.0
+3627.6393902647937 schedule ADV 5.0
+3630.0 error
+3630.0 schedule ALG 9.0
+3630.0 schedule ADV 5.0
+3635.0 sent ADV
+3635.0 error
+3635.0 schedule ALG 9.0
+3635.9967503924636 inject 9.0
+3637.5 error
+3637.5 schedule ALG 9.0
+3640.0 error
+3640.0 schedule ALG 9.0
+3642.5 error
+3642.5 schedule ALG 9.0
+3645.0 error
+3645.0 schedule ALG 9.0
+3647.5 error
+3647.5 schedule ALG 9.0
+3650.0 error
+3650.0 schedule ALG 9.0
+3652.5 error
+3652.5 schedule ALG 9.0
+3655.0 error
+3655.0 schedule ALG 9.0
+3657.5 error
+3657.5 schedule ALG 9.0
+3660.0 error
+3660.0 schedule ALG 9.0
+3662.5 error
+3662.5 schedule ALG 9.0
+3665.0 error
+3665.0 schedule ALG 9.0
+3667.5 error
+3667.5 schedule ALG 9.0
+3670.0 error
+3670.0 schedule ALG 9.0
+3672.5 error
+3672.5 schedule ALG 9.0
+3675.0 error
+3675.0 schedule ALG 9.0
+3677.5 error
+3677.5 schedule ALG 9.0
+3680.0 error
+3680.0 schedule ALG 9.0
+3682.5 error
+3682.5 schedule ALG 9.0
+3685.0 error
+3685.0 schedule ALG 9.0
+3687.5 error
+3687.5 schedule ALG 9.0
+3689.0863978968673 inject 5.0
+3689.0863978968673 schedule ADV 5.0
+3690.0 error
+3690.0 schedule ALG 9.0
+3690.0 schedule ADV 5.0
+3695.0 sent ADV
+3695.0 error
+3695.0 schedule ALG 9.0
+3697.5 error
+3697.5 schedule ALG 9.0
+3700.0 error
+3700.0 schedule ALG 9.0
+3702.5 error
+3702.5 schedule ALG 9.0
+3705.0 error
+3705.0 schedule ALG 9.0
+3707.5 error
+3707.5 schedule ALG 9.0
+3710.0 error
+3710.0 schedule ALG 9.0
+3712.5 error
+3712.5 schedule ALG 9.0
+3715.0 error
+3715.0 schedule ALG 9.0
+3717.5 error
+3717.5 schedule ALG 9.0
+3720.0 error
+3720.0 schedule ALG 9.0
+3722.5 error
+3722.5 schedule ALG 9.0
+3725.0 error
+3725.0 schedule ALG 9.0
+3727.5 error
+3727.5 schedule ALG 9.0
+3730.0 error
+3730.0 schedule ALG 9.0
+3732.5 error
+3732.5 schedule ALG 9.0
+3735.0 error
+3735.0 schedule ALG 9.0
+3737.5 error
+3737.5 schedule ALG 9.0
+3740.0 error
+3740.0 schedule ALG 9.0
+3742.5 error
+3742.5 schedule ALG 9.0
+3745.0 error
+3745.0 schedule ALG 9.0
+3747.5 error
+3747.5 schedule ALG 9.0
+3750.0 error
+3750.0 schedule ALG 9.0
+3752.3085099472364 inject 5.0
+3752.3085099472364 schedule ADV 5.0
+3752.5 error
+3752.5 schedule ALG 9.0
+3752.5 schedule ADV 5.0
+3757.5 sent ADV
+3757.5 error
+3757.5 schedule ALG 9.0
+3760.0 error
+3760.0 schedule ALG 9.0
+3762.5 error
+3762.5 schedule ALG 9.0
+3765.0 error
+3765.0 schedule ALG 9.0
+3767.5 error
+3767.5 schedule ALG 9.0
+3770.0 error
+3770.0 schedule ALG 9.0
+3772.5 error
+3772.5 schedule ALG 9.0
+3775.0 error
+3775.0 schedule ALG 9.0
+3777.5 error
+3777.5 schedule ALG 9.0
+3780.0 error
+3780.0 schedule ALG 9.0
+3782.5 error
+3782.5 schedule ALG 9.0
+3785.0 error
+3785.0 schedule ALG 9.0
+3787.5 error
+3787.5 schedule ALG 9.0
+3790.0 error
+3790.0 schedule ALG 9.0
+3792.5 error
+3792.5 schedule ALG 9.0
+3795.0 error
+3795.0 schedule ALG 9.0
+3797.5 error
+3797.5 schedule ALG 9.0
+3800.0 error
+3800.0 schedule ALG 9.0
+3802.5 error
+3802.5 schedule ALG 9.0
+3805.0 error
+3805.0 schedule ALG 9.0
+3807.5 error
+3807.5 schedule ALG 9.0
+3810.0 error
+3810.0 schedule ALG 9.0
+3812.5 error
+3812.5 schedule ALG 9.0
+3815.0 error
+3815.0 schedule ALG 9.0
+3816.5064277727465 inject 5.0
+3816.5064277727465 schedule ADV 5.0
+3817.5 error
+3817.5 schedule ALG 9.0
+3817.5 schedule ADV 5.0
+3822.5 sent ADV
+3822.5 error
+3822.5 schedule ALG 9.0
+3825.0 error
+3825.0 schedule ALG 9.0
+3827.5 error
+3827.5 schedule ALG 9.0
+3830.0 error
+3830.0 schedule ALG 9.0
+3832.5 error
+3832.5 schedule ALG 9.0
+3835.0 error
+3835.0 schedule ALG 9.0
+3837.5 error
+3837.5 schedule ALG 9.0
+3840.0 error
+3840.0 schedule ALG 9.0
+3842.212681836395 inject 9.0
+3842.5 error
+3842.5 schedule ALG 9.0
+3845.0 error
+3845.0 schedule ALG 9.0
+3847.5 error
+3847.5 schedule ALG 9.0
+3850.0 error
+3850.0 schedule ALG 9.0
+3852.5 error
+3852.5 schedule ALG 9.0
+3855.0 error
+3855.0 schedule ALG 9.0
+3857.5 error
+3857.5 schedule ALG 9.0
+3860.0 error
+3860.0 schedule ALG 9.0
+3862.5 error
+3862.5 schedule ALG 9.0
+3865.0 error
+3865.0 schedule ALG 9.0
+3867.5 error
+3867.5 schedule ALG 9.0
+3868.870299274089 inject 5.0
+3868.870299274089 schedule ADV 5.0
+3870.0 error
+3870.0 schedule ALG 9.0
+3870.0 schedule ADV 5.0
+3875.0 sent ADV
+3875.0 error
+3875.0 schedule ALG 9.0
+3877.5 error
+3877.5 schedule ALG 9.0
+3880.0 error
+3880.0 schedule ALG 9.0
+3882.5 error
+3882.5 schedule ALG 9.0
+3885.0 error
+3885.0 schedule ALG 9.0
+3887.5 error
+3887.5 schedule ALG 9.0
+3890.0 error
+3890.0 schedule ALG 9.0
+3892.5 error
+3892.5 schedule ALG 9.0
+3895.0 error
+3895.0 schedule ALG 9.0
+3896.6692441014825 inject 5.0
+3896.6692441014825 schedule ADV 5.0
+3897.5 error
+3897.5 schedule ALG 9.0
+3897.5 schedule ADV 5.0
+3902.5 sent ADV
+3902.5 error
+3902.5 schedule ALG 9.0
+3905.0 error
+3905.0 schedule ALG 9.0
+3907.5 error
+3907.5 schedule ALG 9.0
+3910.0 error
+3910.0 schedule ALG 9.0
+3912.5 error
+3912.5 schedule ALG 9.0
+3915.0 error
+3915.0 schedule ALG 9.0
+3917.5 error
+3917.5 schedule ALG 9.0
+3920.0 error
+3920.0 schedule ALG 9.0
+3922.5 error
+3922.5 schedule ALG 9.0
+3925.0 error
+3925.0 schedule ALG 9.0
+3927.5 error
+3927.5 schedule ALG 9.0
+3930.0 error
+3930.0 schedule ALG 9.0
+3932.5 error
+3932.5 schedule ALG 9.0
+3935.0 error
+3935.0 schedule ALG 9.0
+3937.5 error
+3937.5 schedule ALG 9.0
+3940.0 error
+3940.0 schedule ALG 9.0
+3942.5 error
+3942.5 schedule ALG 9.0
+3945.0 error
+3945.0 schedule ALG 9.0
+3947.5 error
+3947.5 schedule ALG 9.0
+3950.0 error
+3950.0 schedule ALG 9.0
+3952.5 error
+3952.5 schedule ALG 9.0
+3955.0 error
+3955.0 schedule ALG 9.0
+3957.5 error
+3957.5 schedule ALG 9.0
+3960.0 error
+3960.0 schedule ALG 9.0
+3961.6271868668837 inject 9.0
+3962.5 error
+3962.5 schedule ALG 9.0
+3965.0 error
+3965.0 schedule ALG 9.0
+3967.5 error
+3967.5 schedule ALG 9.0
+3970.0 error
+3970.0 schedule ALG 9.0
+3972.5 error
+3972.5 schedule ALG 9.0
+3973.79562616619 inject 5.0
+3973.79562616619 schedule ADV 5.0
+3975.0 error
+3975.0 schedule ALG 9.0
+3975.0 schedule ADV 5.0
+3980.0 sent ADV
+3980.0 error
+3980.0 schedule ALG 9.0
+3982.5 error
+3982.5 schedule ALG 9.0
+3985.0 error
+3985.0 schedule ALG 9.0
+3987.5 error
+3987.5 schedule ALG 9.0
+3990.0 error
+3990.0 schedule ALG 9.0
+3992.5 error
+3992.5 schedule ALG 9.0
+3995.0 error
+3995.0 schedule ALG 9.0
+3997.5 error
+3997.5 schedule ALG 9.0
+4000.0 error
+4000.0 schedule ALG 9.0
+4002.5 error
+4002.5 schedule ALG 9.0
+4005.0 error
+4005.0 schedule ALG 9.0
+4007.5 error
+4007.5 schedule ALG 9.0
+4010.0 error
+4010.0 schedule ALG 9.0
+4012.5 error
+4012.5 schedule ALG 9.0
+4015.0 error
+4015.0 schedule ALG 9.0
+4017.5 error
+4017.5 schedule ALG 9.0
+4020.0 error
+4020.0 schedule ALG 9.0
+4022.5 error
+4022.5 schedule ALG 9.0
+4025.0 error
+4025.0 schedule ALG 9.0
+4027.5 error
+4027.5 schedule ALG 9.0
+4030.0 error
+4030.0 schedule ALG 9.0
+4031.3123606924496 inject 5.0
+4031.3123606924496 schedule ADV 5.0
+4032.5 error
+4032.5 schedule ALG 9.0
+4032.5 schedule ADV 5.0
+4035.401394602297 inject 5.0
+4037.5 sent ADV
+4037.5 error
+4037.5 schedule ALG 9.0
+4037.5 schedule ADV 5.0
+4042.5 sent ADV
+4042.5 error
+4042.5 schedule ALG 9.0
+4045.0 error
+4045.0 schedule ALG 9.0
+4047.5 error
+4047.5 schedule ALG 9.0
+4050.0 error
+4050.0 schedule ALG 9.0
+4052.5 error
+4052.5 schedule ALG 9.0
+4055.0 error
+4055.0 schedule ALG 9.0
+4057.5 error
+4057.5 schedule ALG 9.0
+4060.0 error
+4060.0 schedule ALG 9.0
+4062.5 error
+4062.5 schedule ALG 9.0
+4065.0 error
+4065.0 schedule ALG 9.0
+4067.5 error
+4067.5 schedule ALG 9.0
+4070.0 error
+4070.0 schedule ALG 9.0
+4072.5 error
+4072.5 schedule ALG 9.0
+4075.0 error
+4075.0 schedule ALG 9.0
+4077.5 error
+4077.5 schedule ALG 9.0
+4080.0 error
+4080.0 schedule ALG 9.0
+4082.5 error
+4082.5 schedule ALG 9.0
+4085.0 error
+4085.0 schedule ALG 9.0
+4087.5 error
+4087.5 schedule ALG 9.0
+4090.0 error
+4090.0 schedule ALG 9.0
+4092.5 error
+4092.5 schedule ALG 9.0
+4095.0 error
+4095.0 schedule ALG 9.0
+4097.5 error
+4097.5 schedule ALG 9.0
+4100.0 error
+4100.0 schedule ALG 9.0
+4102.5 error
+4102.5 schedule ALG 9.0
+4105.0 error
+4105.0 schedule ALG 9.0
+4107.5 error
+4107.5 schedule ALG 9.0
+4110.0 error
+4110.0 schedule ALG 9.0
+4112.5 error
+4112.5 schedule ALG 9.0
+4115.0 error
+4115.0 schedule ALG 9.0
+4117.5 error
+4117.5 schedule ALG 9.0
+4120.0 error
+4120.0 schedule ALG 9.0
+4122.5 error
+4122.5 schedule ALG 9.0
+4125.0 error
+4125.0 schedule ALG 9.0
+4127.5 error
+4127.5 schedule ALG 9.0
+4130.0 error
+4130.0 schedule ALG 9.0
+4132.5 error
+4132.5 schedule ALG 9.0
+4135.0 error
+4135.0 schedule ALG 9.0
+4137.5 error
+4137.5 schedule ALG 9.0
+4140.0 error
+4140.0 schedule ALG 9.0
+4142.5 error
+4142.5 schedule ALG 9.0
+4145.0 error
+4145.0 schedule ALG 9.0
+4147.5 error
+4147.5 schedule ALG 9.0
+4150.0 error
+4150.0 schedule ALG 9.0
+4152.5 error
+4152.5 schedule ALG 9.0
+4155.0 error
+4155.0 schedule ALG 9.0
+4157.5 error
+4157.5 schedule ALG 9.0
+4160.0 error
+4160.0 schedule ALG 9.0
+4162.5 error
+4162.5 schedule ALG 9.0
+4165.0 error
+4165.0 schedule ALG 9.0
+4167.5 error
+4167.5 schedule ALG 9.0
+4170.0 error
+4170.0 schedule ALG 9.0
+4172.5 error
+4172.5 schedule ALG 9.0
+4175.0 error
+4175.0 schedule ALG 9.0
+4177.5 error
+4177.5 schedule ALG 9.0
+4180.0 error
+4180.0 schedule ALG 9.0
+4182.5 error
+4182.5 schedule ALG 9.0
+4185.0 error
+4185.0 schedule ALG 9.0
+4187.5 error
+4187.5 schedule ALG 9.0
+4190.0 error
+4190.0 schedule ALG 9.0
+4192.5 error
+4192.5 schedule ALG 9.0
+4195.0 error
+4195.0 schedule ALG 9.0
+4197.5 error
+4197.5 schedule ALG 9.0
+4197.98672908117 inject 5.0
+4197.98672908117 schedule ADV 5.0
+4200.0 error
+4200.0 schedule ALG 9.0
+4200.0 schedule ADV 5.0
+4201.225315003098 inject 5.0
+4205.0 sent ADV
+4205.0 error
+4205.0 schedule ALG 9.0
+4205.0 schedule ADV 5.0
+4210.0 sent ADV
+4210.0 error
+4210.0 schedule ALG 9.0
+4212.5 error
+4212.5 schedule ALG 9.0
+4215.0 error
+4215.0 schedule ALG 9.0
+4217.5 error
+4217.5 schedule ALG 9.0
+4220.0 error
+4220.0 schedule ALG 9.0
+4222.5 error
+4222.5 schedule ALG 9.0
+4225.0 error
+4225.0 schedule ALG 9.0
+4227.5 error
+4227.5 schedule ALG 9.0
+4230.0 error
+4230.0 schedule ALG 9.0
+4232.5 error
+4232.5 schedule ALG 9.0
+4235.0 error
+4235.0 schedule ALG 9.0
+4237.5 error
+4237.5 schedule ALG 9.0
+4240.0 error
+4240.0 schedule ALG 9.0
+4242.5 error
+4242.5 schedule ALG 9.0
+4245.0 error
+4245.0 schedule ALG 9.0
+4247.5 error
+4247.5 schedule ALG 9.0
+4250.0 error
+4250.0 schedule ALG 9.0
+4252.5 error
+4252.5 schedule ALG 9.0
+4255.0 error
+4255.0 schedule ALG 9.0
+4257.5 error
+4257.5 schedule ALG 9.0
+4260.0 error
+4260.0 schedule ALG 9.0
+4262.5 error
+4262.5 schedule ALG 9.0
+4265.0 error
+4265.0 schedule ALG 9.0
+4267.5 error
+4267.5 schedule ALG 9.0
+4270.0 error
+4270.0 schedule ALG 9.0
+4272.5 error
+4272.5 schedule ALG 9.0
+4275.0 error
+4275.0 schedule ALG 9.0
+4277.5 error
+4277.5 schedule ALG 9.0
+4280.0 error
+4280.0 schedule ALG 9.0
+4281.498657531359 inject 9.0
+4282.5 error
+4282.5 schedule ALG 9.0
+4285.0 error
+4285.0 schedule ALG 9.0
+4287.5 error
+4287.5 schedule ALG 9.0
+4290.0 error
+4290.0 schedule ALG 9.0
+4292.5 error
+4292.5 schedule ALG 9.0
+4292.907203276541 inject 5.0
+4292.907203276541 schedule ADV 5.0
+4295.0 error
+4295.0 schedule ALG 9.0
+4295.0 schedule ADV 5.0
+4300.0 sent ADV
+4300.0 error
+4300.0 schedule ALG 9.0
+4302.039173009017 inject 5.0
+4302.039173009017 schedule ADV 5.0
+4302.5 error
+4302.5 schedule ALG 9.0
+4302.5 schedule ADV 5.0
+4305.652850795331 inject 9.0
+4307.5 sent ADV
+4307.5 error
+4307.5 schedule ALG 9.0
+4309.53073472192 inject 5.0
+4309.53073472192 schedule ADV 5.0
+4310.0 error
+4310.0 schedule ALG 9.0
+4310.0 schedule ADV 5.0
+4315.0 sent ADV
+4315.0 error
+4315.0 schedule ALG 9.0
+4317.5 error
+4317.5 schedule ALG 9.0
+4320.0 error
+4320.0 schedule ALG 9.0
+4322.5 error
+4322.5 schedule ALG 9.0
+4325.0 error
+4325.0 schedule ALG 9.0
+4327.5 error
+4327.5 schedule ALG 9.0
+4330.0 error
+4330.0 schedule ALG 9.0
+4332.5 error
+4332.5 schedule ALG 9.0
+4335.0 error
+4335.0 schedule ALG 9.0
+4337.5 error
+4337.5 schedule ALG 9.0
+4340.0 error
+4340.0 schedule ALG 9.0
+4342.5 error
+4342.5 schedule ALG 9.0
+4345.0 error
+4345.0 schedule ALG 9.0
+4347.5 error
+4347.5 schedule ALG 9.0
+4350.0 error
+4350.0 schedule ALG 9.0
+4352.5 error
+4352.5 schedule ALG 9.0
+4355.0 error
+4355.0 schedule ALG 9.0
+4357.5 error
+4357.5 schedule ALG 9.0
+4360.0 error
+4360.0 schedule ALG 9.0
+4362.5 error
+4362.5 schedule ALG 9.0
+4365.0 error
+4365.0 schedule ALG 9.0
+4367.5 error
+4367.5 schedule ALG 9.0
+4370.0 error
+4370.0 schedule ALG 9.0
+4372.5 error
+4372.5 schedule ALG 9.0
+4375.0 error
+4375.0 schedule ALG 9.0
+4377.5 error
+4377.5 schedule ALG 9.0
+4380.0 error
+4380.0 schedule ALG 9.0
+4380.644234639977 inject 5.0
+4380.644234639977 schedule ADV 5.0
+4382.5 error
+4382.5 schedule ALG 9.0
+4382.5 schedule ADV 5.0
+4387.5 sent ADV
+4387.5 error
+4387.5 schedule ALG 9.0
+4390.0 error
+4390.0 schedule ALG 9.0
+4392.5 error
+4392.5 schedule ALG 9.0
+4395.0 error
+4395.0 schedule ALG 9.0
+4397.5 error
+4397.5 schedule ALG 9.0
+4400.0 error
+4400.0 schedule ALG 9.0
+4402.5 error
+4402.5 schedule ALG 9.0
+4405.0 error
+4405.0 schedule ALG 9.0
+4407.5 error
+4407.5 schedule ALG 9.0
+4410.0 error
+4410.0 schedule ALG 9.0
+4412.5 error
+4412.5 schedule ALG 9.0
+4415.0 error
+4415.0 schedule ALG 9.0
+4417.5 error
+4417.5 schedule ALG 9.0
+4420.0 error
+4420.0 schedule ALG 9.0
+4422.5 error
+4422.5 schedule ALG 9.0
+4425.0 error
+4425.0 schedule ALG 9.0
+4427.5 error
+4427.5 schedule ALG 9.0
+4430.0 error
+4430.0 schedule ALG 9.0
+4432.5 error
+4432.5 schedule ALG 9.0
+4435.0 error
+4435.0 schedule ALG 9.0
+4437.5 error
+4437.5 schedule ALG 9.0
+4440.0 error
+4440.0 schedule ALG 9.0
+4442.5 error
+4442.5 schedule ALG 9.0
+4445.0 error
+4445.0 schedule ALG 9.0
+4447.5 error
+4447.5 schedule ALG 9.0
+4450.0 error
+4450.0 schedule ALG 9.0
+4452.5 error
+4452.5 schedule ALG 9.0
+4455.0 error
+4455.0 schedule ALG 9.0
+4457.5 error
+4457.5 schedule ALG 9.0
+4460.0 error
+4460.0 schedule ALG 9.0
+4462.5 error
+4462.5 schedule ALG 9.0
+4465.0 error
+4465.0 schedule ALG 9.0
+4467.5 error
+4467.5 schedule ALG 9.0
+4470.0 error
+4470.0 schedule ALG 9.0
+4471.377536884708 inject 5.0
+4471.377536884708 schedule ADV 5.0
+4472.5 error
+4472.5 schedule ALG 9.0
+4472.5 schedule ADV 5.0
+4472.9707741186485 inject 5.0
+4477.5 sent ADV
+4477.5 error
+4477.5 schedule ALG 9.0
+4477.5 schedule ADV 5.0
+4482.5 sent ADV
+4482.5 error
+4482.5 schedule ALG 9.0
+4485.0 error
+4485.0 schedule ALG 9.0
+4487.5 error
+4487.5 schedule ALG 9.0
+4489.421468030434 inject 5.0
+4489.421468030434 schedule ADV 5.0
+4490.0 error
+4490.0 schedule ALG 9.0
+4490.0 schedule ADV 5.0
+4495.0 sent ADV
+4495.0 error
+4495.0 schedule ALG 9.0
+4497.5 error
+4497.5 schedule ALG 9.0
+4500.0 error
+4500.0 schedule ALG 9.0
+4502.5 error
+4502.5 schedule ALG 9.0
+4505.0 error
+4505.0 schedule ALG 9.0
+4507.5 error
+4507.5 schedule ALG 9.0
+4510.0 error
+4510.0 schedule ALG 9.0
+4510.833411917377 inject 5.0
+4510.833411917377 schedule ADV 5.0
+4512.5 error
+4512.5 schedule ALG 9.0
+4512.5 schedule ADV 5.0
+4517.5 sent ADV
+4517.5 error
+4517.5 schedule ALG 9.0
+4520.0 error
+4520.0 schedule ALG 9.0
+4522.5 error
+4522.5 schedule ALG 9.0
+4525.0 error
+4525.0 schedule ALG 9.0
+4527.5 error
+4527.5 schedule ALG 9.0
+4530.0 error
+4530.0 schedule ALG 9.0
+4532.5 error
+4532.5 schedule ALG 9.0
+4535.0 error
+4535.0 schedule ALG 9.0
+4537.5 error
+4537.5 schedule ALG 9.0
+4540.0 error
+4540.0 schedule ALG 9.0
+4542.5 error
+4542.5 schedule ALG 9.0
+4545.0 error
+4545.0 schedule ALG 9.0
+4547.5 error
+4547.5 schedule ALG 9.0
+4550.0 error
+4550.0 schedule ALG 9.0
+4552.5 error
+4552.5 schedule ALG 9.0
+4555.0 error
+4555.0 schedule ALG 9.0
+4557.5 error
+4557.5 schedule ALG 9.0
+4559.629398815845 inject 9.0
+4560.0 error
+4560.0 schedule ALG 9.0
+4562.5 error
+4562.5 schedule ALG 9.0
+4565.0 error
+4565.0 schedule ALG 9.0
+4567.5 error
+4567.5 schedule ALG 9.0
+4570.0 error
+4570.0 schedule ALG 9.0
+4572.5 error
+4572.5 schedule ALG 9.0
+4575.0 error
+4575.0 schedule ALG 9.0
+4576.862357183218 inject 5.0
+4576.862357183218 schedule ADV 5.0
+4577.5 error
+4577.5 schedule ALG 9.0
+4577.5 schedule ADV 5.0
+4582.5 sent ADV
+4582.5 error
+4582.5 schedule ALG 9.0
+4585.0 error
+4585.0 schedule ALG 9.0
+4587.5 error
+4587.5 schedule ALG 9.0
+4590.0 error
+4590.0 schedule ALG 9.0
+4592.5 error
+4592.5 schedule ALG 9.0
+4595.0 error
+4595.0 schedule ALG 9.0
+4597.5 error
+4597.5 schedule ALG 9.0
+4600.0 error
+4600.0 schedule ALG 9.0
+4602.5 error
+4602.5 schedule ALG 9.0
+4605.0 error
+4605.0 schedule ALG 9.0
+4607.5 error
+4607.5 schedule ALG 9.0
+4610.0 error
+4610.0 schedule ALG 9.0
+4612.5 error
+4612.5 schedule ALG 9.0
+4615.0 error
+4615.0 schedule ALG 9.0
+4617.5 error
+4617.5 schedule ALG 9.0
+4620.0 error
+4620.0 schedule ALG 9.0
+4622.5 error
+4622.5 schedule ALG 9.0
+4625.0 error
+4625.0 schedule ALG 9.0
+4627.5 error
+4627.5 schedule ALG 9.0
+4630.0 error
+4630.0 schedule ALG 9.0
+4632.5 error
+4632.5 schedule ALG 9.0
+4635.0 error
+4635.0 schedule ALG 9.0
+4637.5 error
+4637.5 schedule ALG 9.0
+4640.0 error
+4640.0 schedule ALG 9.0
+4642.5 error
+4642.5 schedule ALG 9.0
+4645.0 error
+4645.0 schedule ALG 9.0
+4647.5 error
+4647.5 schedule ALG 9.0
+4648.851026473631 inject 5.0
+4648.851026473631 schedule ADV 5.0
+4650.0 error
+4650.0 schedule ALG 9.0
+4650.0 schedule ADV 5.0
+4655.0 sent ADV
+4655.0 error
+4655.0 schedule ALG 9.0
+4657.5 error
+4657.5 schedule ALG 9.0
+4660.0 error
+4660.0 schedule ALG 9.0
+4662.5 error
+4662.5 schedule ALG 9.0
+4665.0 error
+4665.0 schedule ALG 9.0
+4667.5 error
+4667.5 schedule ALG 9.0
+4670.0 error
+4670.0 schedule ALG 9.0
+4672.5 error
+4672.5 schedule ALG 9.0
+4675.0 error
+4675.0 schedule ALG 9.0
+4677.5 error
+4677.5 schedule ALG 9.0
+4680.0 error
+4680.0 schedule ALG 9.0
+4682.5 error
+4682.5 schedule ALG 9.0
+4685.0 error
+4685.0 schedule ALG 9.0
+4687.5 error
+4687.5 schedule ALG 9.0
+4690.0 error
+4690.0 schedule ALG 9.0
+4692.5 error
+4692.5 schedule ALG 9.0
+4695.0 error
+4695.0 schedule ALG 9.0
+4695.821154291511 inject 5.0
+4695.821154291511 schedule ADV 5.0
+4697.5 error
+4697.5 schedule ALG 9.0
+4697.5 schedule ADV 5.0
+4702.5 sent ADV
+4702.5 error
+4702.5 schedule ALG 9.0
+4705.0 error
+4705.0 schedule ALG 9.0
+4707.5 error
+4707.5 schedule ALG 9.0
+4710.0 error
+4710.0 schedule ALG 9.0
+4712.5 error
+4712.5 schedule ALG 9.0
+4715.0 error
+4715.0 schedule ALG 9.0
+4717.5 error
+4717.5 schedule ALG 9.0
+4720.0 error
+4720.0 schedule ALG 9.0
+4722.5 error
+4722.5 schedule ALG 9.0
+4725.0 error
+4725.0 schedule ALG 9.0
+4727.5 error
+4727.5 schedule ALG 9.0
+4730.0 error
+4730.0 schedule ALG 9.0
+4731.561484263872 inject 5.0
+4731.561484263872 schedule ADV 5.0
+4732.5 error
+4732.5 schedule ALG 9.0
+4732.5 schedule ADV 5.0
+4733.973260280988 inject 5.0
+4737.5 sent ADV
+4737.5 error
+4737.5 schedule ALG 9.0
+4737.5 schedule ADV 5.0
+4742.5 sent ADV
+4742.5 error
+4742.5 schedule ALG 9.0
+4745.0 error
+4745.0 schedule ALG 9.0
+4747.5 error
+4747.5 schedule ALG 9.0
+4750.0 error
+4750.0 schedule ALG 9.0
+4752.5 error
+4752.5 schedule ALG 9.0
+4755.0 error
+4755.0 schedule ALG 9.0
+4757.5 error
+4757.5 schedule ALG 9.0
+4760.0 error
+4760.0 schedule ALG 9.0
+4762.5 error
+4762.5 schedule ALG 9.0
+4765.0 error
+4765.0 schedule ALG 9.0
+4767.5 error
+4767.5 schedule ALG 9.0
+4770.0 error
+4770.0 schedule ALG 9.0
+4770.996740570043 inject 9.0
+4772.5 error
+4772.5 schedule ALG 9.0
+4775.0 error
+4775.0 schedule ALG 9.0
+4777.5 error
+4777.5 schedule ALG 9.0
+4780.0 error
+4780.0 schedule ALG 9.0
+4782.5 error
+4782.5 schedule ALG 9.0
+4785.0 error
+4785.0 schedule ALG 9.0
+4787.5 error
+4787.5 schedule ALG 9.0
+4790.0 error
+4790.0 schedule ALG 9.0
+4792.5 error
+4792.5 schedule ALG 9.0
+4795.0 error
+4795.0 schedule ALG 9.0
+4797.5 error
+4797.5 schedule ALG 9.0
+4800.0 error
+4800.0 schedule ALG 9.0
+4802.5 error
+4802.5 schedule ALG 9.0
+4805.0 error
+4805.0 schedule ALG 9.0
+4807.5 error
+4807.5 schedule ALG 9.0
+4810.0 error
+4810.0 schedule ALG 9.0
+4812.5 error
+4812.5 schedule ALG 9.0
+4815.0 error
+4815.0 schedule ALG 9.0
+4817.5 error
+4817.5 schedule ALG 9.0
+4820.0 error
+4820.0 schedule ALG 9.0
+4822.5 error
+4822.5 schedule ALG 9.0
+4825.0 error
+4825.0 schedule ALG 9.0
+4827.5 error
+4827.5 schedule ALG 9.0
+4829.6783705940215 inject 5.0
+4829.6783705940215 schedule ADV 5.0
+4830.0 error
+4830.0 schedule ALG 9.0
+4830.0 schedule ADV 5.0
+4835.0 sent ADV
+4835.0 error
+4835.0 schedule ALG 9.0
+4837.5 error
+4837.5 schedule ALG 9.0
+4840.0 error
+4840.0 schedule ALG 9.0
+4842.5 error
+4842.5 schedule ALG 9.0
+4845.0 error
+4845.0 schedule ALG 9.0
+4847.5 error
+4847.5 schedule ALG 9.0
+4850.0 error
+4850.0 schedule ALG 9.0
+4852.5 error
+4852.5 schedule ALG 9.0
+4855.0 error
+4855.0 schedule ALG 9.0
+4857.5 error
+4857.5 schedule ALG 9.0
+4860.0 error
+4860.0 schedule ALG 9.0
+4862.5 error
+4862.5 schedule ALG 9.0
+4865.0 error
+4865.0 schedule ALG 9.0
+4867.5 error
+4867.5 schedule ALG 9.0
+4869.310893073816 inject 5.0
+4869.310893073816 schedule ADV 5.0

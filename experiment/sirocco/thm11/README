@@ -1,0 +1,7 @@
+1:
+Packet generator: sirocco_thm9
+Adversary: SiroccoThm11
+
+2:
+Packet generator: stochastic
+Adversary: SiroccoThm11
