@@ -1,5 +1,7 @@
 from Algorithm import Algorithm
 
+epsilon = 0.00001
+
 class Adversary(Algorithm):
 	algorithmType = "ADV"
 
@@ -50,7 +52,6 @@ class Sirocco(Adversary):
 
 	def scheduleError(self, packet):
 		l1, l2 = self.model.packets
-		epsilon = l1 / 2
 		if not self.sending:
 			if packet == l2:
 				self.mode = 'short'
@@ -78,7 +79,6 @@ class ESirocco(Adversary):
 
 	def scheduleError(self, packet):
 		l1 = self.model.packets[0]
-		epsilon = l1 / 2
 		if packet and not self.sending:
 			if packet == l1:
 				self.mode = 'long'
