@@ -12,12 +12,28 @@ It is required to write down algorithm and adversary in special form.
 == Installation
 
 Requirements:
-* Python 3.4
-* matplotlib
 
-=== Linux / OS X
+* https://www.python.org/[Python 3.4]
+* http://matplotlib.org/[matplotlib]
+
+=== Linux
+
+. Install latest Python 3.
+. Execute `pip install matplotlib`
+
+=== OS X
+
+. Install http://brew.sh/[Homebrew]
+. Install Python 3 `brew install python3`
+. Execute `pip3 install matplotlib`
 
 === Windows
+
+. Install latest Python 3 from https://www.python.org/[www.python.org].
+. Open Command Line and go to `C:\Python34\Scripts` (assuming default installation path).
+. Execute `pip.exe install matplotlib`.
+  This step may fail if Visual $$C++$$ 2010 (part of Visual Studio 2010) is not installed.
+  Visual C++ is available http://www.dobreprogramy.pl/Visual-C,Program,Windows,12107.html[here].
 
 == Algorithm
 
