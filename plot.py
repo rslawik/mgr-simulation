@@ -9,6 +9,8 @@ if len(sys.argv) != 2:
 	print("Usage: {} <simulation.log>".format(sys.argv[0]))
 	sys.exit(1)
 
+pyplot.rcParams["figure.figsize"] = [5.75, 4.0]
+
 reader = LogReader(sys.argv[1])
 
 def calculateSent(packets):
@@ -25,6 +27,7 @@ for t, sAdv in advSent:
 	times.append(t)
 	ratios.append(sAlg / sAdv)
 
-pyplot.plot(times, ratios)
+tx, = pyplot.plot(times, ratios)
 pyplot.ylim(0, 1)
+pyplot.legend([tx], ["$T_\mathsf{ALG}$"], loc=4)
 pyplot.show()
