@@ -594,7 +594,7 @@ When algorithm under test makes a scheduling decision, adversary is asked to sch
 <div class="sect2">
 <h3 id="_input">Input</h3>
 <div class="paragraph">
-<p>File describing system contains parameters such as packet length, probability distribution.</p>
+<p>File describing system (model) contains parameters such as packet length, probability distribution.</p>
 </div>
 <div class="listingblock">
 <div class="title">packets.in</div>
@@ -640,24 +640,21 @@ Lines 2 and 3 are optional.
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>generate.py &lt;generator&gt; &lt;n&gt; &lt;distribution info file&gt;</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Generator can be either <code>experiment1</code> or <code>stochastic</code>.
-<code>n</code> denotes number of events to generate.</p>
-</div>
-<div class="sect3">
-<h4 id="__code_experiment1_code_generator"><code>experiment1</code> generator</h4>
-<div class="paragraph">
-<p>Generates inject event sequance using strategy described in Theorem 9.</p>
+<pre>generate.py &lt;generator&gt; &lt;n&gt; &lt;model&gt;</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="__code_stochastic_code_generator"><code>stochastic</code> generator</h4>
-<div class="paragraph">
-<p>Generates inject events from exponential distribution with parameter &#955;.
+<h4 id="_generator">Generator</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sirocco_thm9</code> generator&#8201;&#8212;&#8201;Generates inject event sequance using strategy described in Theorem 9.</p>
+</li>
+<li>
+<p><code>stochastic</code> generator&#8201;&#8212;&#8201;Generates inject events from exponential distribution with parameter &#955;.
 Packet length is randomly chosen with corresping probability (from distribution info file).</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -665,22 +662,36 @@ Packet length is randomly chosen with corresping probability (from distribution 
 <h3 id="_simulate_py">simulate.py</h3>
 <div class="literalblock">
 <div class="content">
-<pre>simulate.py &lt;algorithm&gt; &lt;adversary&gt; &lt;events file&gt; &lt;distribution info file&gt;</pre>
+<pre>simulate.py &lt;algorithm&gt; &lt;adversary&gt; &lt;events file&gt; &lt;model&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Simulation producest two files: <code>alg.log</code> and <code>adv.log</code>.
-They contain recors of moments when each algorithm have successfully transmitted a packet.</p>
+<p>Simulation produces a log, that containa records of moments when each algorithm have successfully transmitted a packet.</p>
 </div>
 <div class="sect3">
 <h4 id="_algorithm_2">Algorithm</h4>
 <div class="ulist">
 <ul>
 <li>
-<p><code>SLAlgorithm</code>&#8201;&#8212;&#8201;Shortest Length</p>
+<p><code>SL</code>&#8201;&#8212;&#8201;Shortest Length</p>
 </li>
 <li>
-<p><code>LLAlgorithm</code>&#8201;&#8212;&#8201;Longest Length</p>
+<p><code>LL</code>&#8201;&#8212;&#8201;Longest Length</p>
+</li>
+<li>
+<p><code>SLPreamble</code></p>
+</li>
+<li>
+<p><code>CSLPreamble</code></p>
+</li>
+<li>
+<p><code>Greedy</code></p>
+</li>
+<li>
+<p><code>Prudent</code></p>
+</li>
+<li>
+<p><code>ESLPreamble</code></p>
 </li>
 </ul>
 </div>
@@ -690,13 +701,16 @@ They contain recors of moments when each algorithm have successfully transmitted
 <div class="ulist">
 <ul>
 <li>
-<p><code>Experiment1Adv</code>&#8201;&#8212;&#8201;Adversary from Theorem 9</p>
+<p><code>SiroccoThm9</code>&#8201;&#8212;&#8201;Adversary from Theorem 9</p>
 </li>
 <li>
-<p><code>Experiment3Adv</code>&#8201;&#8212;&#8201;Adversary from Theorem 11</p>
+<p><code>SiroccoThm11</code>&#8201;&#8212;&#8201;Adversary from Theorem 11</p>
 </li>
 <li>
-<p><code>SiroccoStochasticAdv</code>&#8201;&#8212;&#8201;Adversary from section 4.1 in paper</p>
+<p><code>Sirocco</code>&#8201;&#8212;&#8201;Adversary from section 4.1 in paper</p>
+</li>
+<li>
+<p><code>ESirocco</code>&#8201;&#8212;&#8201;Adversary from part 3.2.1 in thesis</p>
 </li>
 </ul>
 </div>
@@ -706,44 +720,11 @@ They contain recors of moments when each algorithm have successfully transmitted
 <h3 id="_plot_py">plot.py</h3>
 <div class="literalblock">
 <div class="content">
-<pre>plot.py &lt;alg.log&gt; &lt;adv.log&gt;</pre>
+<pre>plot.py &lt;log&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Draw a simple graph of ratio: (sent by alg up to time t) / (sent by adv up to time t) over time t.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_experimental_results">Experimental Results</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_sirocco">Sirocco</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Theorem 9</p>
-</li>
-<li>
-<p>Theorem 10</p>
-</li>
-<li>
-<p>Theorem 11</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_greedy">Greedy</h3>
-<div class="paragraph">
-<p><em>TODO</em></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_prudent">Prudent</h3>
-<div class="paragraph">
-<p><em>TODO</em></p>
 </div>
 </div>
 </div>
@@ -755,13 +736,18 @@ They contain recors of moments when each algorithm have successfully transmitted
 <ul>
 <li>
 <p>Januray 2015</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
-<p>Visualition in matplotlib</p>
+<p>Visualization in matplotlib</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>18.11-20.11.2014</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>Experiment can be performed with single command</p>
 </li>
@@ -771,80 +757,127 @@ They contain recors of moments when each algorithm have successfully transmitted
 <li>
 <p>Simplified experiment recording</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p>11.11-13.11.2014</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>Greedy algorithm implementation</p>
 </li>
-<li>
-<p>02.11-04.11.2014</p>
+</ul>
+</div>
 </li>
 <li>
+<p>02.11-04.11.2014</p>
+<div class="ulist">
+<ul>
+<li>
 <p>Experiments</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>26.10.2014</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>Experiments</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p>25.10.2014</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>Framework modifications</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p>24.10.2014</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>Adversarial input generation</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p>21.10.2014</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>Attempt to perform first expermient</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p>20.10.2014</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>Stochastic input generation</p>
 </li>
 <li>
 <p>Shortest and Longest Length Algorithm implementation</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p>11.10.2014</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>Plot drawing</p>
 </li>
 <li>
 <p>Stochastic input generation</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p>09.10.2014</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>Plot drawing</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p>08.10.2014</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>Simulation framework</p>
 </li>
 <li>
 <p>Algorithm, Adversary, Event, Events ported to python3</p>
 </li>
-<li>
-<p>06.10.2014</p>
+</ul>
+</div>
 </li>
 <li>
+<p>06.10.2014</p>
+<div class="ulist">
+<ul>
+<li>
 <p>created repository</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -853,7 +886,7 @@ They contain recors of moments when each algorithm have successfully transmitted
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-02-12 18:14:14 CET
+Last updated 2015-02-12 18:36:21 CET
 </div>
 </div>
 </body>

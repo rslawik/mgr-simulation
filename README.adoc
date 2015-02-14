@@ -80,7 +80,7 @@ When algorithm under test makes a scheduling decision, adversary is asked to sch
 
 === Input
 
-File describing system contains parameters such as packet length, probability distribution.
+File describing system (model) contains parameters such as packet length, probability distribution.
 
 .packets.in
 ----
@@ -98,88 +98,72 @@ NOTE: Lines 2 and 3 are optional.
 
 To generate sequence of inject events use:
 
- generate.py <generator> <n> <distribution info file>
+ generate.py <generator> <n> <model>
 
-Generator can be either `experiment1` or `stochastic`.
-`n` denotes number of events to generate.
+==== Generator
 
-==== `experiment1` generator
-
-Generates inject event sequance using strategy described in Theorem 9.
-
-==== `stochastic` generator
-
-Generates inject events from exponential distribution with parameter &#955;.
-Packet length is randomly chosen with corresping probability (from distribution info file).
+* `sirocco_thm9` generator -- Generates inject event sequance using strategy described in Theorem 9.
+* `stochastic` generator -- Generates inject events from exponential distribution with parameter &#955;.
+   Packet length is randomly chosen with corresping probability (from distribution info file).
 
 === simulate.py
 
- simulate.py <algorithm> <adversary> <events file> <distribution info file>
+ simulate.py <algorithm> <adversary> <events file> <model>
 
-Simulation producest two files: `alg.log` and `adv.log`.
-They contain recors of moments when each algorithm have successfully transmitted a packet.
+Simulation produces a log, that containa records of moments when each algorithm have successfully transmitted a packet.
 
 ==== Algorithm
 
-* `SLAlgorithm` -- Shortest Length
-* `LLAlgorithm` -- Longest Length
+* `SL` -- Shortest Length
+* `LL` -- Longest Length
+* `SLPreamble`
+* `CSLPreamble`
+* `Greedy`
+* `Prudent`
+* `ESLPreamble`
 
 ==== Adversary
 
-* `Experiment1Adv` -- Adversary from Theorem 9
-* `Experiment3Adv` -- Adversary from Theorem 11
-* `SiroccoStochasticAdv` -- Adversary from section 4.1 in paper
+* `SiroccoThm9` -- Adversary from Theorem 9
+* `SiroccoThm11` -- Adversary from Theorem 11
+* `Sirocco` -- Adversary from section 4.1 in paper
+* `ESirocco` -- Adversary from part 3.2.1 in thesis
 
 === plot.py
 
- plot.py <alg.log> <adv.log>
+ plot.py <log>
 
 Draw a simple graph of ratio: (sent by alg up to time t) / (sent by adv up to time t) over time t.
 
-== Experimental Results
-
-=== Sirocco
-. Theorem 9
-. Theorem 10
-. Theorem 11
-
-=== Greedy
-
-_TODO_
-
-=== Prudent
-
-_TODO_
-
 == Changelog
 * Januray 2015
-  * Visualition in matplotlib
+** Visualization in matplotlib
 * 18.11-20.11.2014
-  * Experiment can be performed with single command
-  * Algorithm implementation makes use of Python generators
-  * Simplified experiment recording
+** Experiment can be performed with single command
+** Algorithm implementation makes use of Python generators
+** Simplified experiment recording
 * 11.11-13.11.2014
-  * Greedy algorithm implementation
+** Greedy algorithm implementation
 * 02.11-04.11.2014
-  * Experiments
+** Experiments
 * 26.10.2014
-  * Experiments
+** Experiments
 * 25.10.2014
-  * Framework modifications
+** Framework modifications
 * 24.10.2014
-  * Adversarial input generation
+** Adversarial input generation
 * 21.10.2014
-  * Attempt to perform first expermient
+** Attempt to perform first expermient
 * 20.10.2014
-  * Stochastic input generation
-  * Shortest and Longest Length Algorithm implementation
+** Stochastic input generation
+** Shortest and Longest Length Algorithm implementation
 * 11.10.2014
-  * Plot drawing
-  * Stochastic input generation
+** Plot drawing
+** Stochastic input generation
 * 09.10.2014
-  * Plot drawing
+** Plot drawing
 * 08.10.2014
-  * Simulation framework
-  * Algorithm, Adversary, Event, Events ported to python3
+** Simulation framework
+** Algorithm, Adversary, Event, Events ported to python3
 * 06.10.2014
-  * created repository
+** created repository
