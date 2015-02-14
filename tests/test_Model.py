@@ -25,12 +25,12 @@ class InvalidModelTestCase(ModelTestCase):
 class ModelFromFileTestCase(ModelTestCase):
 	def test_createModel_NoFile(self):
 		with self.assertRaises(FileNotFoundError):
-			model = Model.fromFile('tests/example/model.inXXX')
+			model = Model.fromFile('tests/example/modelXXX.in')
 
 	def test_createModel(self):
-		model = Model.fromFile('tests/example/model.in1')
+		model = Model.fromFile('tests/example/model1.in')
 		self.assertModelEqual(model, 5, {3.0: 0.33, 5.0: 0.17, 7.0: 0.5})
 
 	def test_createDistributionWithoutInfo(self):
-		model = Model.fromFile('tests/example/model.in2')
+		model = Model.fromFile('tests/example/model2.in')
 		self.assertModelEqual(model, None, {3.0: None, 5.0: None, 7.0: None})

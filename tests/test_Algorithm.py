@@ -13,7 +13,7 @@ class AlgorithmTestCase(unittest.TestCase):
 		for packet in packets:
 			scheduled = self.algorithm.schedule()
 			self.assertEqual(scheduled, packet)
-			self.algorithm.notify(SentEvent(0, self.algorithm, scheduled))
+			self.algorithm.notify(SentEvent(0, self.algorithm))
 
 	def assertScheduleAndError(self, packet):
 		scheduled = self.algorithm.schedule()

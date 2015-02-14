@@ -13,12 +13,12 @@ class EmptyEventsTestCase(unittest.TestCase):
 		self.assertEqual(self.events.hasNext(), False)
 
 	def test_canScheduleEvent(self):
-		event = SentEvent(1.1, None, None)
+		event = SentEvent(1.1, None)
 		self.events.schedule(event)
 		self.assertEqual(self.events.hasNext(), True)
 
 	def test_canGetNextScheduledEvent(self):
-		event = SentEvent(1.2, None, None)
+		event = SentEvent(1.2, None)
 		self.events.schedule(event)
 		nextEvent = self.events.next()
 		self.assertEqual(nextEvent, event)
@@ -27,7 +27,7 @@ class EmptyEventsTestCase(unittest.TestCase):
 		self.assertEqual(self.events.next(), None)
 
 	def test_canGetNextEventsInOrder(self):
-		e1, e2, e3 = SentEvent(4.3, None, None), SentEvent(7.1, None, None), SentEvent(2.3, None, None)
+		e1, e2, e3 = SentEvent(4.3, None), SentEvent(7.1, None), SentEvent(2.3, None)
 		for e in [e1, e2, e3]: self.events.schedule(e)
 		for e in [e3, e1, e2]:
 			self.assertEqual(self.events.hasNext(), True)
@@ -50,24 +50,24 @@ class EventsTestCase(unittest.TestCase):
 			self.assertEqual(ne, e)
 
 	def test_canScheduleSentEvent(self):
-		event = SentEvent(2.7, None, None)
+		event = SentEvent(2.7, None)
 		self.events.schedule(event)
 		self.assertHasEventsInOrder([self.ie1, event, self.ie2, self.ie3])
 
 	def test_canScheduleSentAndErrorEvent(self):
-		sentEvent, errorEvent = SentEvent(2.7, None, None), ErrorEvent(2.8)
+		sentEvent, errorEvent = SentEvent(2.7, None), ErrorEvent(2.8)
 		self.events.schedule(sentEvent)
 		self.events.schedule(errorEvent)
 		self.assertHasEventsInOrder([self.ie1, sentEvent, errorEvent, self.ie2, self.ie3])
 
 	def test_canScheduleSentAndErrorEventBefore(self):
-		sentEvent, errorEvent = SentEvent(2.9, None, None), ErrorEvent(2.8)
+		sentEvent, errorEvent = SentEvent(2.9, None), ErrorEvent(2.8)
 		self.events.schedule(sentEvent)
 		self.events.schedule(errorEvent)
 		self.assertHasEventsInOrder([self.ie1, errorEvent, self.ie2, self.ie3])
 
 	def test_canGetNextEventInjectBeforeSent(self):
-		se = SentEvent(4.2, None, None)
+		se = SentEvent(4.2, None)
 		self.events.schedule(se)
 		self.assertHasEventsInOrder([self.ie1, self.ie2, se, self.ie3])
 
@@ -87,9 +87,9 @@ class SimultaneousEventsTestCase(unittest.TestCase):
 	def test_SimultaneousSentAndError(self):
 		ie1, ie2 = InjectEvent(1, None), InjectEvent(2, None)
 		events = Events([ie1, ie2])
-		se1 = SentEvent(1.5, None, None)
+		se1 = SentEvent(1.5, None)
 		events.schedule(se1)
-		se2 = SentEvent(2, None, None)
+		se2 = SentEvent(2, None)
 		events.schedule(se2)
 		ee = ErrorEvent(1.5)
 		events.schedule(ee)
@@ -102,7 +102,7 @@ class SimultaneousEventsTestCase(unittest.TestCase):
 	def test_adversaryFinishesBeforeAlgorithm(self):
 		class Model:
 			packets = [1, 2, 3]
-		se1, se2 = SentEvent(1, SL(Model()), 5), SentEvent(1, SiroccoThm9(Model()), 2)
+		se1, se2 = SentEvent(1, SL(Model())), SentEvent(1, SiroccoThm9(Model()))
 		events = Events([])
 		events.schedule(se1)
 		events.schedule(se2)
@@ -139,21 +139,21 @@ class Experiment1TestCase(unittest.TestCase):
 		events = Events([ie1, ie2])
 		self.assertEqual(events.next(), ie1)
 		self.assertEqual(events.next(), ie2)
-		se1, se2 = SentEvent(3, "alg", 3), SentEvent(5, "adv", 5)
+		se1, se2 = SentEvent(3, "alg"), SentEvent(5, "adv")
 		events.schedule(se1)
 		events.schedule(se2)
 		ee1 = ErrorEvent(5)
 		events.schedule(ee1)
 		# t=3
 		self.assertEqual(events.next(), se1)
-		se3 = SentEvent(8, "alg", 5)
+		se3 = SentEvent(8, "alg")
 		events.schedule(se3)
 		ee2 = ErrorEvent(8)
 		events.schedule(ee2)
 		# t=5
 		self.assertEqual(events.next(), se2)
 		self.assertEqual(events.next(), ee1)
-		se4 = SentEvent(8, "adv", 3)
+		se4 = SentEvent(8, "adv")
 		events.schedule(se4)
 		# t=8
 		self.assertEqual(events.next(), se4)
