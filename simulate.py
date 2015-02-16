@@ -24,7 +24,7 @@ def play(algorithm, adversary, events):
 
 	def scheduleError(time, error):
 		if error:
-			events.schedule(ErrorEvent(time + error) if error > 0 else WaitEvent())
+			events.schedule(ErrorEvent(time + error) if error >= 0 else WaitEvent())
 
 	while events.hasNext():
 		event = events.next()
