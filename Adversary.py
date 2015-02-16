@@ -1,6 +1,9 @@
+import math
+
 from Algorithm import Algorithm
 
-epsilon = 0.00001
+epsilon = 0.001
+wait = -1
 
 class Adversary(Algorithm):
 	algorithmType = "ADV"
@@ -9,6 +12,20 @@ class Adversary(Algorithm):
 		return not isinstance(other, Adversary)
 
 	def scheduleError(self, packet):
+		pass
+
+class NoErrors(Adversary):
+	def generate(self):
+		while True:
+			for p in self.model.packets:
+				if self.queue[p]:
+					yield p
+					break
+
+	def algorithmSchedules(self, packet):
+		pass
+
+	def adversarySchedules(self, packet):
 		pass
 
 class SiroccoThm9(Adversary):
@@ -62,6 +79,45 @@ class Sirocco(Adversary):
 					return l2
 				else:
 					return epsilon
+
+class SiroccoI(Adversary):
+	mode = None
+	sentShort = 0
+
+	def generate(self):
+		l1, l2 = self.model.packets
+		self.shortInPhase = math.ceil(l2 / l1) - 1
+		while True:
+			if self.mode == "short":
+				packet = l1 if self.queue[l1] else None
+				if packet:
+					self.sentShort += 1
+				else:
+					self.sentShort = self.shortInPhase
+				yield packet
+			else:
+				yield ([packet for packet in reversed(self.model.packets) if self.queue[packet]] or [None])[0]
+
+	def algorithmSchedules(self, packet):
+		l1, l2 = self.model.packets
+		if not self.sending:
+			self.sentShort = 0
+			if packet == l2:
+				self.mode = "short"
+				if not self.queue[l1]: return wait
+			elif packet == l1:
+				self.mode = "long"
+				return l2 if self.queue[l2] else wait
+			elif packet is None:
+				self.mode = "long"
+
+	def adversarySchedules(self, packet):
+		l1, l2 = self.model.packets
+		if self.sending and self.sentShort == self.shortInPhase:
+			# print("% shortInPhase", self.sentShort, self.shortInPhase)
+			return l1
+		if not self.sending:
+			return wait
 
 class ESirocco(Adversary):
 	mode = None

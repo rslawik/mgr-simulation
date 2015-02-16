@@ -184,3 +184,10 @@ class ESLPreamble(Algorithm):
 					yield send
 			except LinkError:
 				pass
+
+class Short(Algorithm):
+	def generate(self):
+		assert len(self.model.packets) == 2
+		l1, l2 = self.model.packets
+		while True:
+			yield l1 if self.queue[l1] else None

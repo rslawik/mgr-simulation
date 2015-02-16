@@ -47,3 +47,6 @@ class ScheduleEvent(SentEvent):
 
 	def __str__(self):
 		return "{} schedule {} {}".format(self.time, self.algorithm.algorithmType, self.packet)
+
+class WaitEvent:
+	pass

@@ -8,7 +8,7 @@ if len(sys.argv) != 5 or not hasattr(Algorithm, sys.argv[1]) or not hasattr(Adve
 	sys.exit(1)
 
 from Model import Model
-from Event import InjectEvent, SentEvent, ErrorEvent, ScheduleEvent
+from Event import InjectEvent, SentEvent, ErrorEvent, ScheduleEvent, WaitEvent
 from Events import Events
 
 def log(event):
@@ -22,6 +22,10 @@ def play(algorithm, adversary, events):
 			log(ScheduleEvent(time, algorithm, packet))
 		return packet
 
+	def scheduleError(time, error):
+		if error:
+			events.schedule(ErrorEvent(time + error) if error > 0 else WaitEvent())
+
 	while events.hasNext():
 		event = events.next()
 		time = event.time
@@ -34,11 +38,13 @@ def play(algorithm, adversary, events):
 
 		if not algorithm.sending:
 			packet = schedule(algorithm)
-			error = adversary.scheduleError(packet)
-			if error: events.schedule(ErrorEvent(time + error))
+			error = adversary.algorithmSchedules(packet)
+			scheduleError(time, error)
 
 		if not adversary.sending:
 			advpacket = schedule(adversary)
+			error = adversary.adversarySchedules(advpacket)
+			scheduleError(time, error)
 
 model = Model.fromFile(sys.argv[4])
 algorithm = getattr(Algorithm, sys.argv[1])(model)

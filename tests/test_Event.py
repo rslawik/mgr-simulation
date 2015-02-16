@@ -33,6 +33,10 @@ class EventTestCase(unittest.TestCase):
 		e1, e2 = InjectEvent(1, None), ErrorEvent(2)
 		self.assertEqual(e1 < e2, True)
 
+	def test_createWaitEvent(self):
+		e = WaitEvent()
+		self.assertIsNotNone(e)
+
 if __name__ == '__main__':
 	print("TestEvent")
 	unittest.main()

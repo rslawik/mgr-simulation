@@ -1,14 +1,15 @@
 from collections import deque
 from itertools import takewhile
 
-from Event import InjectEvent, SentEvent, ErrorEvent
+from Event import InjectEvent, SentEvent, ErrorEvent, WaitEvent
 
 class Events:
     def __init__(self, injectEvents):
     	self.injectEvents, self.sentEvents, self.errorEvents = deque(injectEvents), [], []
 
     def hasNext(self):
-    	return True if self.injectEvents or self.sentEvents else False
+    	# return True if self.injectEvents or self.sentEvents else False
+        return bool(self.injectEvents)
 
     def hasNextNow(self, time):
         event = self.selectNext()
@@ -21,6 +22,11 @@ class Events:
         elif isinstance(event, SentEvent):
             if not self.errorEvents or self.errorEvents and event <= self.errorEvents[0]:
                 Events.scheduleEventInList(self.sentEvents, event)
+        elif isinstance(event, WaitEvent):
+            if self.injectEvents:
+                error = ErrorEvent(self.injectEvents[0].time)
+                self.sentEvents = []
+                self.schedule(error)
 
     def scheduleEventInList(eventList, event):
         pos = 0

@@ -1,6 +1,6 @@
 import unittest
 
-from Event import InjectEvent, SentEvent, ErrorEvent
+from Event import InjectEvent, SentEvent, ErrorEvent, WaitEvent
 from Events import Events
 from Algorithm import SL
 from Adversary import SiroccoThm9
@@ -160,7 +160,41 @@ class Experiment1TestCase(unittest.TestCase):
 		self.assertEqual(events.next(), ee2)
 		self.assertFalse(events.hasNext())
 
+class EventsWithWait(unittest.TestCase):
+	def test_injectWait(self):
+		events = Events([InjectEvent(1, None), InjectEvent(2, None)])
+		
+		events.schedule(WaitEvent())
 
+		event = events.next()
+		self.assertIsInstance(event, InjectEvent)
+		self.assertEqual(event.time, 1)
+
+		event = events.next()
+		self.assertIsInstance(event, ErrorEvent)
+		self.assertEqual(event.time, 1)
+
+		event = events.next()
+		self.assertIsInstance(event, InjectEvent)
+		self.assertEqual(event.time, 2)
+
+	def test_injectWait_WithSent(self):
+		events = Events([InjectEvent(1, None), InjectEvent(2, None)])
+		
+		events.schedule(SentEvent(1, "ALG"))
+		events.schedule(WaitEvent())
+
+		event = events.next()
+		self.assertIsInstance(event, InjectEvent)
+		self.assertEqual(event.time, 1)
+
+		event = events.next()
+		self.assertIsInstance(event, ErrorEvent)
+		self.assertEqual(event.time, 1)
+
+		event = events.next()
+		self.assertIsInstance(event, InjectEvent)
+		self.assertEqual(event.time, 2)
 
 if __name__ == '__main__':
 	unittest.main()
