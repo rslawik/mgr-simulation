@@ -24,8 +24,11 @@ class Events:
                 Events.scheduleEventInList(self.sentEvents, event)
         elif isinstance(event, WaitEvent):
             if self.injectEvents:
-                error = ErrorEvent(self.injectEvents[0].time)
-                self.sentEvents = []
+                errorTime = self.injectEvents[0].time
+                if self.sentEvents:
+                    errorTime = min(errorTime, self.sentEvents[0].time)
+                    self.sentEvents = []
+                error = ErrorEvent(errorTime)
                 self.schedule(error)
 
     def scheduleEventInList(eventList, event):

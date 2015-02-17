@@ -11,9 +11,6 @@ class Adversary(Algorithm):
 	def __lt__(self, other):
 		return not isinstance(other, Adversary)
 
-	def scheduleError(self, packet):
-		pass
-
 class NoErrors(Adversary):
 	def generate(self):
 		while True:
@@ -36,12 +33,15 @@ class SiroccoThm9(Adversary):
 			send = ([packet for packet in reversed(self.model.packets) if self.queue[packet]] or [None])[0]
 			yield send
 
-	def scheduleError(self, packet):
+	def algorithmSchedules(self, packet):
 		l1, l2 = self.model.packets
 		if packet == l2:
 			error = l2-l1 if self.counter % 2 == 0 else l1
 			self.counter += 1
 			return error
+
+	def adversarySchedules(self, packet):
+		pass
 
 class SiroccoThm11(Adversary):
 	def generate(self):
@@ -49,9 +49,12 @@ class SiroccoThm11(Adversary):
 		while True:
 			yield l1 if self.queue[l1] else None
 
-	def scheduleError(self, packet):
+	def algorithmSchedules(self, packet):
 		l1, l2 = self.model.packets
 		return l1 / (1 if self.queue[l1] and self.queue[l2] else 2)
+
+	def adversarySchedules(self, packet):
+		pass
 
 class Sirocco(Adversary):
 	mode = 'short'
@@ -67,7 +70,7 @@ class Sirocco(Adversary):
 				send = ([packet for packet in reversed(self.model.packets) if self.queue[packet]] or [None])[0]
 				yield send
 
-	def scheduleError(self, packet):
+	def algorithmSchedules(self, packet):
 		l1, l2 = self.model.packets
 		if not self.sending:
 			if packet == l2:
@@ -79,6 +82,9 @@ class Sirocco(Adversary):
 					return l2
 				else:
 					return epsilon
+
+	def adversarySchedules(self, packet):
+		pass
 
 class SiroccoI(Adversary):
 	mode = None
@@ -121,25 +127,53 @@ class SiroccoI(Adversary):
 
 class ESirocco(Adversary):
 	mode = None
+	sentInPhase = 0
 
 	def generate(self):
 		while True:
-			if self.mode == 'short':
-				selected = self.model.packets
-			elif self.mode == 'long':
-				selected = self.model.packets[1:]
+			if self.mode == "short":
+				leftInPhase = self.algPacket - self.sentInPhase
+				packets = list(filter(lambda p: self.queue[p] and p < leftInPhase, self.model.packets))
+				if packets:
+					packet = packets[0]
+					self.sentInPhase += packet
+					yield packet
+				else:
+					yield None
+			elif self.mode == "long":
+				packets = list(filter(lambda p: self.queue[p] and p > self.algPacket, self.model.packets))
+				yield packets[0] if packets else None
 			else:
-				selected = []
-			send = ([packet for packet in selected if self.queue[packet]] or [None])[0]
-			yield send
+				packets = list(filter(lambda p: self.queue[p], self.model.packets))
+				yield packets[0] if packets else None
 
-	def scheduleError(self, packet):
-		l1 = self.model.packets[0]
-		if packet and not self.sending:
-			if packet == l1:
-				self.mode = 'long'
-				select = ([packet for packet in self.model.packets[1:] if self.queue[packet]] or [None])[0]
-				return select or epsilon
+			# if self.mode == 'short':
+			# 	selected = self.model.packets
+			# elif self.mode == 'long':
+			# 	selected = self.model.packets[1:]
+			# else:
+			# 	selected = []
+			# send = ([packet for packet in selected if self.queue[packet]] or [None])[0]
+			# yield send
+
+	def algorithmSchedules(self, packet):
+		if not self.sending:
+			self.algPacket = packet
+			self.sentInPhase = 0
+			if packet == self.model.packets[0]:
+				self.mode = "long"
+				if not list(filter(lambda p: self.queue[p] and p > self.algPacket, self.model.packets)): return wait
+			elif packet is None:
+				self.mode = None
 			else:
-				self.mode = 'short'
-				return packet - epsilon
+				self.mode = "short"
+				if not list(filter(lambda p: self.queue[p] and p < packet, self.model.packets)): return wait
+
+	def adversarySchedules(self, packet):
+		if packet:
+			if self.mode == "long" or self.mode == None:
+				return packet
+		else:
+			if self.mode == "short":
+				self.sentInPhase = 0
+				return epsilon if self.sentInPhase else wait
