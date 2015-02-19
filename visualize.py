@@ -3,6 +3,7 @@ import sys
 from matplotlib import patches
 from matplotlib import pyplot
 from random import shuffle
+from itertools import dropwhile, takewhile
 
 from LogReader import LogReader
 
@@ -18,6 +19,7 @@ COLORS = ["brown", "orange", "pink", "magenta", "yellow", "purple", "blue", "gre
 pyplot.rcParams["figure.figsize"] = [5.75, 3.0]
 
 reader = LogReader(sys.argv[1])
+xlim = (float(sys.argv[2]), float(sys.argv[3])) if len(sys.argv) == 4 else None
 
 colormap = {}
 colorlegend = []
@@ -39,19 +41,25 @@ def plotPacket(algorithm, packetEntry):
 def plotError(time):
 	pyplot.plot([time, time], [-2, 2], ':', linewidth=LINEWIDTH, color='black')
 
-for packetEntry in reader.algPackets:
+def readPackets(packets):
+	return takewhile(lambda pe: pe.end <= xlim[1], dropwhile(lambda pe: pe.end < xlim[0], packets)) if xlim else packets
+
+def readErrors():
+	return takewhile(lambda t: t <= xlim[1], dropwhile(lambda t: t < xlim[0], reader.errors)) if xlim else reader.errors
+
+for packetEntry in readPackets(reader.algPackets):
 	plotPacket("ALG", packetEntry)
 
-for packetEntry in reader.advPackets:
+for packetEntry in readPackets(reader.advPackets):
 	plotPacket("ADV", packetEntry)
 
-for time in reader.errors:
+for time in readErrors():
 	plotError(time)
 
 pyplot.yticks([-1, 1], ['ADV', 'ALG'])
 pyplot.ylim(-2, 3)
-if len(sys.argv) == 4:
-	pyplot.xlim(float(sys.argv[2]), float(sys.argv[3]))
+if xlim:
+	pyplot.xlim(*xlim)
 pyplot.legend(handles=colorlegend, ncol=2)
 
 pyplot.show()

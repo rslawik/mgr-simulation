@@ -2,11 +2,12 @@
 :icons: font
 Rafał Sławik <rafal.slawik@gmail.com>
 
-Simulation project of some packet scheduling algorithms.
+Simulation framework for online packet scheduling algorithms.
 
 == Overview
 
-Framework allows to simulate a scheduling algorithm against some adversary.
+Framework allows to simulate a scheduling algorithm against some adversary,
+who has control over packet arrivals and error injections.
 It is required to write down algorithm and adversary in special form.
 
 == Installation
@@ -18,7 +19,7 @@ Requirements:
 
 === Linux
 
-. Install latest Python 3.
+. Install latest Python 3 using package manager.
 . Execute `pip install matplotlib`
 
 === OS X
@@ -34,41 +35,6 @@ Requirements:
 . Execute `pip.exe install matplotlib`.
   This step may fail if Visual $$C++$$ 2010 (part of Visual Studio 2010) is not installed.
   Visual C++ is available http://www.dobreprogramy.pl/Visual-C,Program,Windows,12107.html[here].
-
-== Algorithm
-
-The main part of an algorithm is the `schedule` method that is called every time algorithm can make a scheduling decision.
-Usually in reaction on an event.
-
-[source,python]
-----
-class Algorithm:
-    def schedule(self): # <1>
-        pass
-----
-<1> Schedule packet method -- it returns scheduled packet length or `None` when algorithm is not going to sent anything.
-
-NOTE: Handling packets queue is done internally.
-
-== Adversary
-
-Adversary consists of `schedule` and `scheduleError` methods.
-Former one is used in adversary's algorithm (OFF or OPT).
-Latter one is used to cause errors on the link.
-
-[source,python]
-----
-class Adversary(Algorithm):
-    def schedule(self): # <1>
-        pass
-
-    def scheduleError(self, packet): # <2>
-        pass
-----
-<1> Schedule packet method -- it returns scheduled packet length or `None` when algorithm is not going to sent anything.
-<2> Schedule error method -- return time in which next error occurs (in reaction on packet)
-
-NOTE: Handling packets queue is done internally.
 
 == Experiment
 
@@ -134,6 +100,45 @@ Simulation produces a log, that containa records of moments when each algorithm 
  plot.py <log>
 
 Draw a simple graph of ratio: (sent by alg up to time t) / (sent by adv up to time t) over time t.
+
+== Algorithm
+
+The main part of an algorithm is the `schedule` method that is called every time algorithm can make a scheduling decision.
+Usually in reaction on an event.
+
+[source,python]
+----
+class Algorithm:
+    def schedule(self): # <1>
+        pass
+----
+<1> Schedule packet method -- it returns scheduled packet length or `None` when algorithm is not going to sent anything.
+
+NOTE: Handling packets queue is done internally.
+
+== Adversary
+
+Adversary consists of `schedule` and `scheduleError` methods.
+Former one is used in adversary's algorithm (OFF or OPT).
+Latter one is used to cause errors on the link.
+
+[source,python]
+----
+class Adversary(Algorithm):
+    def schedule(self): # <1>
+        pass
+
+    def algorithmSchedules(self, packet): # <2>
+        pass
+
+    def adversarySchedules(self, packet): # <3>
+    	pass
+----
+<1> Schedule packet method -- it returns scheduled packet length or `None` when algorithm is not going to sent anything.
+<2> Schedule error method -- return time in which next error occurs (in reaction on packet scheduled by algorithm)
+<3> Schedule error method -- return time in which next error occurs (in reaction on packet scheduled by adversary)
+
+NOTE: Handling packets queue is done internally.
 
 == Changelog
 * Januray 2015

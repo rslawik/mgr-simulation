@@ -175,5 +175,8 @@ class ESirocco(Adversary):
 				return packet
 		else:
 			if self.mode == "short":
-				self.sentInPhase = 0
-				return epsilon if self.sentInPhase else wait
+				if self.sentInPhase:
+					self.sentInPhase = 0
+					return epsilon
+				else:
+					return wait

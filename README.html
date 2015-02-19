@@ -423,7 +423,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Simulation project of some packet scheduling algorithms.</p>
+<p>Simulation framework for online packet scheduling algorithms.</p>
 </div>
 </div>
 </div>
@@ -431,7 +431,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Framework allows to simulate a scheduling algorithm against some adversary.
+<p>Framework allows to simulate a scheduling algorithm against some adversary,
+who has control over packet arrivals and error injections.
 It is required to write down algorithm and adversary in special form.</p>
 </div>
 </div>
@@ -457,7 +458,7 @@ It is required to write down algorithm and adversary in special form.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Install latest Python 3.</p>
+<p>Install latest Python 3 using package manager.</p>
 </li>
 <li>
 <p>Execute <code>pip install matplotlib</code></p>
@@ -498,86 +499,6 @@ Visual C++ is available <a href="http://www.dobreprogramy.pl/Visual-C,Program,Wi
 </li>
 </ol>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_algorithm">Algorithm</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The main part of an algorithm is the <code>schedule</code> method that is called every time algorithm can make a scheduling decision.
-Usually in reaction on an event.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-python" data-lang="python">class Algorithm:
-    def schedule(self): <i class="conum" data-value="1"></i><b>(1)</b>
-        pass</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Schedule packet method&#8201;&#8212;&#8201;it returns scheduled packet length or <code>None</code> when algorithm is not going to sent anything.</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Handling packets queue is done internally.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_adversary">Adversary</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Adversary consists of <code>schedule</code> and <code>scheduleError</code> methods.
-Former one is used in adversary&#8217;s algorithm (OFF or OPT).
-Latter one is used to cause errors on the link.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-python" data-lang="python">class Adversary(Algorithm):
-    def schedule(self): <i class="conum" data-value="1"></i><b>(1)</b>
-        pass
-
-    def scheduleError(self, packet): <i class="conum" data-value="2"></i><b>(2)</b>
-        pass</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Schedule packet method&#8201;&#8212;&#8201;it returns scheduled packet length or <code>None</code> when algorithm is not going to sent anything.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Schedule error method&#8201;&#8212;&#8201;return time in which next error occurs (in reaction on packet)</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Handling packets queue is done internally.
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
@@ -669,7 +590,7 @@ Packet length is randomly chosen with corresping probability (from distribution 
 <p>Simulation produces a log, that containa records of moments when each algorithm have successfully transmitted a packet.</p>
 </div>
 <div class="sect3">
-<h4 id="_algorithm_2">Algorithm</h4>
+<h4 id="_algorithm">Algorithm</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -697,7 +618,7 @@ Packet length is randomly chosen with corresping probability (from distribution 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_adversary_2">Adversary</h4>
+<h4 id="_adversary">Adversary</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -726,6 +647,93 @@ Packet length is randomly chosen with corresping probability (from distribution 
 <div class="paragraph">
 <p>Draw a simple graph of ratio: (sent by alg up to time t) / (sent by adv up to time t) over time t.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_algorithm_2">Algorithm</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The main part of an algorithm is the <code>schedule</code> method that is called every time algorithm can make a scheduling decision.
+Usually in reaction on an event.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class Algorithm:
+    def schedule(self): <i class="conum" data-value="1"></i><b>(1)</b>
+        pass</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Schedule packet method&#8201;&#8212;&#8201;it returns scheduled packet length or <code>None</code> when algorithm is not going to sent anything.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Handling packets queue is done internally.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adversary_2">Adversary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Adversary consists of <code>schedule</code> and <code>scheduleError</code> methods.
+Former one is used in adversary&#8217;s algorithm (OFF or OPT).
+Latter one is used to cause errors on the link.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class Adversary(Algorithm):
+    def schedule(self): <i class="conum" data-value="1"></i><b>(1)</b>
+        pass
+
+    def algorithmSchedules(self, packet): <i class="conum" data-value="2"></i><b>(2)</b>
+        pass
+
+    def adversarySchedules(self, packet): <i class="conum" data-value="3"></i><b>(3)</b>
+    	pass</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Schedule packet method&#8201;&#8212;&#8201;it returns scheduled packet length or <code>None</code> when algorithm is not going to sent anything.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Schedule error method&#8201;&#8212;&#8201;return time in which next error occurs (in reaction on packet scheduled by algorithm)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Schedule error method&#8201;&#8212;&#8201;return time in which next error occurs (in reaction on packet scheduled by adversary)</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Handling packets queue is done internally.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -886,7 +894,7 @@ Packet length is randomly chosen with corresping probability (from distribution 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-02-12 18:36:21 CET
+Last updated 2015-02-19 17:57:08 CET
 </div>
 </div>
 </body>
