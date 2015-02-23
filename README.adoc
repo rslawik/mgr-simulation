@@ -46,19 +46,27 @@ When algorithm under test makes a scheduling decision, adversary is asked to sch
 
 === Input
 
-File describing system (model) contains parameters such as packet length, probability distribution.
+File describing system (model) contains parameters such as packet lengths,
+injection rate (parameter &#955;), length distribution and speedup.
 
-.packets.in
-----
-3 5      // <1>
-0.2      // <2>
-0.2 0.8  // <3>
-----
-<1> Packet lengths.
-<2> Parameter &#955;.
-<3> Probability distribution.
+. Packet lengths separated with spaces.
+. Parameter &#955; (has to be &#8805; 0.0).
+. Length distribution separated with spaces (i-th element on the list corresponds to i-th packet length) 
+. Speedup (has to be &#8805; 1.0).
 
-NOTE: Lines 2 and 3 are optional.
+Example model file may look like this:
+
+.model.in
+----
+3 5 7
+5.0
+0.33 0.17 0.5
+1.5
+----
+
+In this example packets appear with rate 5.
+The propability of length 5 is 17%, length 3 -- 33% and half of arrived packets have length 7.
+Simulation using this model given an algorithm a 1.5 speedup.
 
 === generate.py
 
