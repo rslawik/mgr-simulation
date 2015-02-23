@@ -52,3 +52,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Run artifacts
+run/*.log
+run/*.in
