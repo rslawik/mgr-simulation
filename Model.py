@@ -1,27 +1,25 @@
 class Model:
 	"""
-	Information about model:
-	1. Packet lengths
-	2. Parameter lambda (rate)
-	3. Length distribution
+	Information about model: packet lengths, parameter lambda (rate), length distribution, speedup
 	"""
-	def __init__(self, rate, distribution):
-		assert rate is None or sum(distribution.values()) == 1.0, "({}, {}) is not a valid model".format(rate, distribution) 
+	def __init__(self, rate, distribution, speedup):
+		assert rate >= 0.0, "rate has to be >= 0.0"
+		assert sum(distribution.values()) == 1.0, "given distribution is not valid, {} != 1.0".format(sum(distribution.values()))
+		assert speedup >= 1.0, "speedup has to be >= 1.0"
 		self.rate, self.distribution = rate, distribution
 		self.packets = sorted(list(distribution.keys()))
+		self.speedup = speedup
 
 	def probability(self, packet):
 		return self.distribution[packet]
 
 	def fromFile(fileName):
-		with open(fileName, 'r') as description:
-			lines = description.readlines()
-			packets = list(map(float, lines[0].strip().split()))
-			if len(lines) == 1:
-				rate, probabilities = None, [None] * len(packets)
-			else:
-				rate, probabilities = float(lines[1]), map(float, lines[2].strip().split())
-			return Model(rate, dict(zip(packets, probabilities)))
+		with open(fileName, 'r') as modelFile:
+			packetsLine, rateLine, distributionLine, speedupLine = modelFile.readlines()
+			packets = map(float, packetsLine.strip().split())
+			probabilities = map(float, distributionLine.strip().split())
+			return Model(float(rateLine), dict(zip(packets, probabilities)), float(speedupLine))
 
 	def withPackets(*packets):
-		return Model(None, dict((packet, None) for packet in packets))
+		prob = 1 / len(packets)
+		return Model(0.0, dict((packet, prob) for packet in packets), 1.0)
