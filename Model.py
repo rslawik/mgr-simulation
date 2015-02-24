@@ -4,7 +4,7 @@ class Model:
 	"""
 	def __init__(self, rate, distribution, speedup):
 		assert rate >= 0.0, "rate has to be >= 0.0"
-		assert sum(distribution.values()) == 1.0, "given distribution is not valid, {} != 1.0".format(sum(distribution.values()))
+		assert 1.0 - sum(distribution.values()) <= 0.001, "given distribution is not valid, {} != 1.0".format(sum(distribution.values()))
 		assert speedup >= 1.0, "speedup has to be >= 1.0"
 		self.rate, self.distribution = rate, distribution
 		self.packets = sorted(list(distribution.keys()))
