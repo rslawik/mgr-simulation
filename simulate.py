@@ -14,11 +14,14 @@ from Events import Events
 def log(event):
 	print(event)
 
-def play(algorithm, adversary, events):
+def play(algorithm, adversary, events, speedup):
 	def schedule(algorithm):
 		packet = algorithm.schedule()
 		if packet:
-			events.schedule(SentEvent(time + packet, algorithm))
+			if algorithm.algorithmType == "ALG":
+				events.schedule(SentEvent(time + packet / speedup, algorithm))
+			else:
+				events.schedule(SentEvent(time + packet, algorithm))
 			log(ScheduleEvent(time, algorithm, packet))
 		return packet
 
@@ -38,6 +41,7 @@ def play(algorithm, adversary, events):
 
 		if not algorithm.sending:
 			packet = schedule(algorithm)
+			packet = packet / speedup if packet else None
 			error = adversary.algorithmSchedules(packet)
 			scheduleError(time, error)
 
@@ -51,4 +55,4 @@ algorithm = getattr(Algorithm, sys.argv[1])(model)
 adversary = getattr(Adversary, sys.argv[2])(model)
 events = Events.fromFile(sys.argv[3])
 
-play(algorithm, adversary, events)
+play(algorithm, adversary, events, model.speedup)
