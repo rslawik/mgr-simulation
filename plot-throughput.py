@@ -5,8 +5,8 @@ from itertools import accumulate
 
 from LogReader import LogReader
 
-if len(sys.argv) != 2:
-	print("Usage: {} <simulation.log>".format(sys.argv[0]))
+if len(sys.argv) != 2 and len(sys.argv) != 3:
+	print("Usage: {} <simulation.log> [expected-value]".format(sys.argv[0]))
 	sys.exit(1)
 
 pyplot.rcParams["figure.figsize"] = [5.75, 4.0]
@@ -28,6 +28,11 @@ for t, sAdv in advSent:
 	ratios.append(sAlg / sAdv)
 
 tx, = pyplot.plot(times, ratios)
-pyplot.ylim(0, 1)
-pyplot.legend([tx], ["$T_\mathsf{ALG}$"], loc=4)
+l = [(tx, "$T_\mathsf{ALG}$")]
+if len(sys.argv) == 3:
+	expected = float(sys.argv[2])
+	te, = pyplot.plot(times, [expected] * len(times))
+	l.append((te, "expected"))
+# pyplot.ylim(0, 1)
+pyplot.legend(*zip(*l), loc=4)
 pyplot.show()
