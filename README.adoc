@@ -8,11 +8,14 @@ Simulation framework for online packet scheduling algorithms.
 
 Framework allows to simulate a scheduling algorithm against some adversary,
 who has control over packet arrivals and error injections.
-It is required to write down algorithm and adversary in special form.
+When algorithm under test makes a scheduling decision, adversary is asked to schedule an error.
+
+NOTE: It is required to implement an algorithm and an adversary in a special form.
 
 == Installation
 
-Requirements:
+The simulation framework works on all major platforms.
+It depends on:
 
 * https://www.python.org/[Python 3.4]
 * http://matplotlib.org/[matplotlib]
@@ -38,21 +41,19 @@ Requirements:
 
 == Experiment
 
-Each experiment constists of few part.
-There is a file describing system.
-Based on the file, a sequence on inject events is generated.
+Each experiment constists of few steps.
+First, a file describing model has to be created.
+Based on the model file, a sequence on packet arrival events is generated.
 The sequence is used in simulation of both algorithms (algorithm under test and adversary's).
-When algorithm under test makes a scheduling decision, adversary is asked to schedule an error.
 
-=== Input
+=== Model
 
-File describing system (model) contains parameters such as packet lengths,
-injection rate (parameter &#955;), length distribution and speedup.
+A model file contains all model parameters:
 
-. Packet lengths separated with spaces.
-. Parameter &#955; (has to be &#8805; 0.0).
-. Length distribution separated with spaces (i-th element on the list corresponds to i-th packet length) 
-. Speedup (has to be &#8805; 1.0).
+. packet lengths; separated with spaces,
+. parameter &#955;; has to be &#8805; 0.0,
+. length distribution; separated with spaces (i-th element on the list corresponds to i-th packet length),
+. speedup; has to be &#8805; 1.0.
 
 Example model file may look like this:
 
@@ -64,27 +65,41 @@ Example model file may look like this:
 1.5
 ----
 
-In this example packets appear with rate 5.
-The propability of length 5 is 17%, length 3 -- 33% and half of arrived packets have length 7.
-Simulation using this model given an algorithm a 1.5 speedup.
+In this example new packets appear with rate 5.
+The propability of length 5 is 17%, length 3 -- 33% and half of packets have length 7.
+Simulation using this model gives an algorithm a 1.5 speedup.
 
-=== generate.py
+=== Generate
 
-To generate sequence of inject events use:
+To generate a sequence of inject events use:
 
- generate.py <generator> <n> <model>
+ generate.py <generator> <n> <model-file>
 
-==== Generator
+`<generator>` is the name of one of available generators,
+`<n>` is the number of events to generate
+and `<model-file>` points to a file with model description.
 
-* `sirocco_thm9` generator -- Generates inject event sequance using strategy described in Theorem 9.
-* `stochastic` generator -- Generates inject events from exponential distribution with parameter &#955;.
-   Packet length is randomly chosen with corresping probability (from distribution info file).
+==== Available generators
 
-=== simulate.py
+* `sirocco_thm9` -- generates an inject event sequance using the strategy described in Theorem 9 (distribution parameters are ignored).
+* `stochastic` -- generates inject events according to Poisson process with parameter &#955;.
+   Packet length is randomly chosen with the probability from model file.
 
- simulate.py <algorithm> <adversary> <events file> <model>
+=== Simulate
 
-Simulation produces a log, that containa records of moments when each algorithm have successfully transmitted a packet.
+To run a simulation of an algorithm use:
+
+ simulate.py <algorithm> <adversary> <events-file> <model-file>
+
+`<algorithm>` is the name of one of available algorithms,
+`<adversary>` is the name of one of available adversaries,
+`<events-file>` is the file with packet arrival events generated in the previous step
+and `<model-file>` points to a file with model description.
+
+The simulation produces a log that contains records
+what the algorithm and the adversary were doing over time.
+It includes information about packet arrivals, error injections,
+successful and unsuccessful packet transmissions.
 
 ==== Algorithm
 

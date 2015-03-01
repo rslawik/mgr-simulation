@@ -433,7 +433,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Framework allows to simulate a scheduling algorithm against some adversary,
 who has control over packet arrivals and error injections.
-It is required to write down algorithm and adversary in special form.</p>
+When algorithm under test makes a scheduling decision, adversary is asked to schedule an error.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+It is required to implement an algorithm and an adversary in a special form.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -441,7 +453,8 @@ It is required to write down algorithm and adversary in special form.</p>
 <h2 id="_installation">Installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Requirements:</p>
+<p>The simulation framework works on all major platforms.
+It depends on:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -506,31 +519,29 @@ Visual C++ is available <a href="http://www.dobreprogramy.pl/Visual-C,Program,Wi
 <h2 id="_experiment">Experiment</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Each experiment constists of few part.
-There is a file describing system.
-Based on the file, a sequence on inject events is generated.
-The sequence is used in simulation of both algorithms (algorithm under test and adversary&#8217;s).
-When algorithm under test makes a scheduling decision, adversary is asked to schedule an error.</p>
+<p>Each experiment constists of few steps.
+First, a file describing model has to be created.
+Based on the model file, a sequence on packet arrival events is generated.
+The sequence is used in simulation of both algorithms (algorithm under test and adversary&#8217;s).</p>
 </div>
 <div class="sect2">
-<h3 id="_input">Input</h3>
+<h3 id="_model">Model</h3>
 <div class="paragraph">
-<p>File describing system (model) contains parameters such as packet lengths,
-injection rate (parameter &#955;), length distribution and speedup.</p>
+<p>A model file contains all model parameters:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Packet lengths separated with spaces.</p>
+<p>packet lengths; separated with spaces,</p>
 </li>
 <li>
-<p>Parameter &#955; (has to be &#8805; 0.0).</p>
+<p>parameter &#955;; has to be &#8805; 0.0,</p>
 </li>
 <li>
-<p>Length distribution separated with spaces (i-th element on the list corresponds to i-th packet length)</p>
+<p>length distribution; separated with spaces (i-th element on the list corresponds to i-th packet length),</p>
 </li>
 <li>
-<p>Speedup (has to be &#8805; 1.0).</p>
+<p>speedup; has to be &#8805; 1.0.</p>
 </li>
 </ol>
 </div>
@@ -547,45 +558,62 @@ injection rate (parameter &#955;), length distribution and speedup.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>In this example packets appear with rate 5.
-The propability of length 5 is 17%, length 3&#8201;&#8212;&#8201;33% and half of arrived packets have length 7.
-Simulation using this model given an algorithm a 1.5 speedup.</p>
+<p>In this example new packets appear with rate 5.
+The propability of length 5 is 17%, length 3&#8201;&#8212;&#8201;33% and half of packets have length 7.
+Simulation using this model gives an algorithm a 1.5 speedup.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_generate_py">generate.py</h3>
+<h3 id="_generate">Generate</h3>
 <div class="paragraph">
-<p>To generate sequence of inject events use:</p>
+<p>To generate a sequence of inject events use:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>generate.py &lt;generator&gt; &lt;n&gt; &lt;model&gt;</pre>
+<pre>generate.py &lt;generator&gt; &lt;n&gt; &lt;model-file&gt;</pre>
 </div>
+</div>
+<div class="paragraph">
+<p><code>&lt;generator&gt;</code> is the name of one of available generators,
+<code>&lt;n&gt;</code> is the number of events to generate
+and <code>&lt;model-file&gt;</code> points to a file with model description.</p>
 </div>
 <div class="sect3">
-<h4 id="_generator">Generator</h4>
+<h4 id="_available_generators">Available generators</h4>
 <div class="ulist">
 <ul>
 <li>
-<p><code>sirocco_thm9</code> generator&#8201;&#8212;&#8201;Generates inject event sequance using strategy described in Theorem 9.</p>
+<p><code>sirocco_thm9</code>&#8201;&#8212;&#8201;generates an inject event sequance using the strategy described in Theorem 9 (distribution parameters are ignored).</p>
 </li>
 <li>
-<p><code>stochastic</code> generator&#8201;&#8212;&#8201;Generates inject events from exponential distribution with parameter &#955;.
-Packet length is randomly chosen with corresping probability (from distribution info file).</p>
+<p><code>stochastic</code>&#8201;&#8212;&#8201;generates inject events according to Poisson process with parameter &#955;.
+Packet length is randomly chosen with the probability from model file.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_simulate_py">simulate.py</h3>
+<h3 id="_simulate">Simulate</h3>
+<div class="paragraph">
+<p>To run a simulation of an algorithm use:</p>
+</div>
 <div class="literalblock">
 <div class="content">
-<pre>simulate.py &lt;algorithm&gt; &lt;adversary&gt; &lt;events file&gt; &lt;model&gt;</pre>
+<pre>simulate.py &lt;algorithm&gt; &lt;adversary&gt; &lt;events-file&gt; &lt;model-file&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Simulation produces a log, that containa records of moments when each algorithm have successfully transmitted a packet.</p>
+<p><code>&lt;algorithm&gt;</code> is the name of one of available algorithms,
+<code>&lt;adversary&gt;</code> is the name of one of available adversaries,
+<code>&lt;events-file&gt;</code> is the file with packet arrival events generated in the previous step
+and <code>&lt;model-file&gt;</code> points to a file with model description.</p>
+</div>
+<div class="paragraph">
+<p>Simulation produces a log,
+that contains records what the algorithm and the adversary were doing over time.
+It includes information about packet arrivals, error injections,
+successful and unsuccessful packet transmissions.</p>
 </div>
 <div class="sect3">
 <h4 id="_algorithm">Algorithm</h4>
@@ -738,7 +766,7 @@ Handling packets queue is done internally.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-02-23 12:52:58 CET
+Last updated 2015-02-28 16:38:35 CET
 </div>
 </div>
 </body>
