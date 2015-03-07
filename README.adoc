@@ -6,11 +6,17 @@ Simulation framework for online packet scheduling algorithms.
 
 == Overview
 
-Framework allows to simulate a scheduling algorithm against some adversary,
+Framework simulates a scheduling algorithm against some adversary,
 who has control over packet arrivals and error injections.
 When algorithm under test makes a scheduling decision, adversary is asked to schedule an error.
 
 NOTE: It is required to implement an algorithm and an adversary in a special form.
+
+Work is based on following research papers:
+[bibliography]
+- [[[sirocco]]] A. F. Anta, C. Georgiou, D. R. Kowalski, J. Widmer, and E. Zavou,
+  _Measuring the impact of adversarial errors on packet scheduling strategies_.
+  SIROCCO 2013, Springer.
 
 == Installation
 
@@ -85,6 +91,26 @@ and `<model-file>` points to a file with model description.
 * `stochastic` -- generates inject events according to Poisson process with parameter &#955;.
    Packet length is randomly chosen with the probability from model file.
 
+==== Output format
+The result is a sequence of pairs (time and the length of a packet).
+Without loss of generality time starts with the arrival of first packet.
+An example result looks like this:
+
+.events.in
+----
+0.0 10.0
+2.459899742060707 1.0
+5.383135023609432 5.0
+6.710508745166248 10.0
+9.397366473753106 5.0
+11.41576280873459 1.0
+12.265779790163247 10.0
+12.433092337654008 10.0
+17.43791330370601 10.0
+19.84048150554071 1.0
+...
+----
+
 === Simulate
 
 To run a simulation of an algorithm use:
@@ -95,11 +121,6 @@ To run a simulation of an algorithm use:
 `<adversary>` is the name of one of available adversaries,
 `<events-file>` is the file with packet arrival events generated in the previous step
 and `<model-file>` points to a file with model description.
-
-The simulation produces a log that contains records
-what the algorithm and the adversary were doing over time.
-It includes information about packet arrivals, error injections,
-successful and unsuccessful packet transmissions.
 
 ==== Algorithm
 
@@ -113,10 +134,36 @@ successful and unsuccessful packet transmissions.
 
 ==== Adversary
 
-* `SiroccoThm9` -- Adversary from Theorem 9
-* `SiroccoThm11` -- Adversary from Theorem 11
+* `SiroccoThm9` -- the adversary from the proof of Theorem 9 in <<sirocco>>,
+ used to show an upper bound for the throughput of algorithm SL under adversarial arrivals,
+* `SiroccoThm11` -- the adversary from the proof of Theorem 11 in <<sirocco>>,
+ used to show that algorithm LL cannot achieve relative throughput larger than 0,
+ even under stochastic arrivals,
 * `Sirocco` -- Adversary from section 4.1 in paper
 * `ESirocco` -- Adversary from part 3.2.1 in thesis
+
+==== Output format
+
+The simulation produces a log that contains records
+what the algorithm and the adversary were doing over time.
+It includes information about packet arrivals, error injections,
+successful and unsuccessful packet transmissions.
+An example log of a simulation looks like this:
+
+.simulation.log
+----
+...
+138.68732775266903 inject 1.0
+138.68732775266903 error
+138.68732775266903 error
+138.68732775266903 schedule ALG 1.0
+138.68732775266903 schedule ADV 5.0
+139.68732775266903 sent ALG
+139.68732775266903 schedule ALG 5.0
+143.68732775266903 sent ADV
+143.68732775266903 error
+...
+----
 
 === plot.py
 

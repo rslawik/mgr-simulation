@@ -431,7 +431,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Framework allows to simulate a scheduling algorithm against some adversary,
+<p>Framework simulates a scheduling algorithm against some adversary,
 who has control over packet arrivals and error injections.
 When algorithm under test makes a scheduling decision, adversary is asked to schedule an error.</p>
 </div>
@@ -446,6 +446,18 @@ It is required to implement an algorithm and an adversary in a special form.
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>Work is based on following research papers:</p>
+</div>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="sirocco"></a>[sirocco] A. F. Anta, C. Georgiou, D. R. Kowalski, J. Widmer, and E. Zavou,
+<em>Measuring the impact of adversarial errors on packet scheduling strategies</em>.
+SIROCCO 2013, Springer.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -592,6 +604,30 @@ Packet length is randomly chosen with the probability from model file.</p>
 </ul>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_output_format">Output format</h4>
+<div class="paragraph">
+<p>The result is a sequence of pairs (time and the length of a packet).
+Without loss of generality time starts with the arrival of first packet.
+An example result looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="title">events.in</div>
+<div class="content">
+<pre>0.0 10.0
+2.459899742060707 1.0
+5.383135023609432 5.0
+6.710508745166248 10.0
+9.397366473753106 5.0
+11.41576280873459 1.0
+12.265779790163247 10.0
+12.433092337654008 10.0
+17.43791330370601 10.0
+19.84048150554071 1.0
+...</pre>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_simulate">Simulate</h3>
@@ -608,12 +644,6 @@ Packet length is randomly chosen with the probability from model file.</p>
 <code>&lt;adversary&gt;</code> is the name of one of available adversaries,
 <code>&lt;events-file&gt;</code> is the file with packet arrival events generated in the previous step
 and <code>&lt;model-file&gt;</code> points to a file with model description.</p>
-</div>
-<div class="paragraph">
-<p>Simulation produces a log,
-that contains records what the algorithm and the adversary were doing over time.
-It includes information about packet arrivals, error injections,
-successful and unsuccessful packet transmissions.</p>
 </div>
 <div class="sect3">
 <h4 id="_algorithm">Algorithm</h4>
@@ -648,10 +678,13 @@ successful and unsuccessful packet transmissions.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>SiroccoThm9</code>&#8201;&#8212;&#8201;Adversary from Theorem 9</p>
+<p><code>SiroccoThm9</code>&#8201;&#8212;&#8201;the adversary from the proof of Theorem 9 in <a href="#sirocco">[sirocco]</a>,
+used to show an upper bound for the throughput of algorithm SL under adversarial arrivals,</p>
 </li>
 <li>
-<p><code>SiroccoThm11</code>&#8201;&#8212;&#8201;Adversary from Theorem 11</p>
+<p><code>SiroccoThm11</code>&#8201;&#8212;&#8201;the adversary from the proof of Theorem 11 in <a href="#sirocco">[sirocco]</a>,
+used to show that algorithm LL cannot achieve relative throughput larger than 0,
+even under stochastic arrivals,</p>
 </li>
 <li>
 <p><code>Sirocco</code>&#8201;&#8212;&#8201;Adversary from section 4.1 in paper</p>
@@ -660,6 +693,32 @@ successful and unsuccessful packet transmissions.</p>
 <p><code>ESirocco</code>&#8201;&#8212;&#8201;Adversary from part 3.2.1 in thesis</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_output_format_2">Output format</h4>
+<div class="paragraph">
+<p>The simulation produces a log that contains records
+what the algorithm and the adversary were doing over time.
+It includes information about packet arrivals, error injections,
+successful and unsuccessful packet transmissions.
+An example log of a simulation looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="title">simulation.log</div>
+<div class="content">
+<pre>...
+138.68732775266903 inject 1.0
+138.68732775266903 error
+138.68732775266903 error
+138.68732775266903 schedule ALG 1.0
+138.68732775266903 schedule ADV 5.0
+139.68732775266903 sent ALG
+139.68732775266903 schedule ALG 5.0
+143.68732775266903 sent ADV
+143.68732775266903 error
+...</pre>
+</div>
 </div>
 </div>
 </div>
@@ -766,7 +825,7 @@ Handling packets queue is done internally.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-02-28 16:38:35 CET
+Last updated 2015-03-07 15:21:24 CET
 </div>
 </div>
 </body>
