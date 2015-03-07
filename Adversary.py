@@ -56,7 +56,7 @@ class SiroccoThm11(Adversary):
 	def adversarySchedules(self, packet):
 		pass
 
-class Sirocco(Adversary):
+class SiroccoL(Adversary):
 	mode = 'short'
 
 	def generate(self):
@@ -86,7 +86,7 @@ class Sirocco(Adversary):
 	def adversarySchedules(self, packet):
 		pass
 
-class SiroccoI(Adversary):
+class Sirocco(Adversary):
 	mode = None
 	sentShort = 0
 
