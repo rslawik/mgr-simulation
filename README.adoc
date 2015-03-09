@@ -124,22 +124,60 @@ and `<model-file>` points to a file with model description.
 
 ==== Algorithm
 
-* `SL` -- Shortest Length
-* `LL` -- Longest Length
-* `SLPreamble`
-* `CSLPreamble`
-* `Greedy`
-* `Prudent`
-* `ESLPreamble`
+* `SL` -- Shortest Length,
+* `LL` -- Longest Length,
+* `SLPreamble` -- the algorithmfootnote:[`SLPreamble` supports only two packet lengths]
+  defined in section 3.2 in <<sirocco>>;
+  it starts each phase with a preamble of short packets
+  (if there are at least `floor(l_2 / l_1)` short packets in the queue)
+  and then uses `LL`,
+* `CSLPreamble` -- the conditional variant of the `SLPreamble` algorithm;
+  depending on model parameters it uses
+  `SL` or `SLPreamble`,
+* `Greedy` -- the Algorithm 1 from the paper,
+  shown to achieve throughput at most 0.5
+  in a model with an arbitrary number of packet lengths and adversarial arrivals;
+  if the algorithm is about to transmit a packet `l_i`
+  it checks whether there are enough shorter packets in the queue to cover length `l_i`
+  and schedules them instead,
+* `Prudent` --the Algorithm 5 from the paper,
+  shown to achieve throughput 1,
+  when run with speedup 2
+  in a model with an arbitrary number of packet lengths and adversarial arrivals;
+  it sends the special preamble and then switches to `LL`,
+* `ESLPreamble` -- a generalized versionfootnote:[`ESLPreamble` supports only three packet lengths]
+  of the `SLPreamble` algorithm;
+  it uses two preambles (one of length `l_2` and one of length `l_3`)
+  before switching to `LL`,
+* `OnlySL` -- an algorithm that schedules packets of the shrotest length only.
+
+.The pseudo code of the `ESLPreamble` algorithm
+----
+// queue[l_i] := the number of l_i packets in the queue
+loop
+  // first preamble
+  if (queue[l_1] * l_1 >= l_2)
+    transmit packets l_1 up to the length of l_2
+  // second preamble
+  if (queue[l_1] * l_1 + queue[l_2] * l_2 >= l_3)
+    transmit packets l_1 and l_2 up to the length of l_3
+  loop
+    transmit longest unsent packet
+----
 
 ==== Adversary
 
+* `NoErrors` -- an adversary that does not inject any jamming errors,
 * `SiroccoThm9` -- the adversary from the proof of Theorem 9 in <<sirocco>>,
  used to show an upper bound for the throughput of algorithm SL under adversarial arrivals,
 * `SiroccoThm11` -- the adversary from the proof of Theorem 11 in <<sirocco>>,
  used to show that algorithm LL cannot achieve relative throughput larger than 0,
  even under stochastic arrivals,
-* `Sirocco` -- Adversary from section 4.1 in paper
+* `Sirocco` -- the adversary defined in section 4.1 in <<sirocco>>,
+ used to show an upper bound for the throughput of any algorithm
+ in a model with two packet lengths,
+* `SiroccoL` -- the modified version of the `Sirocco` adversary
+ that extends phases as much as possible,
 * `ESirocco` -- Adversary from part 3.2.1 in thesis
 
 ==== Output format
@@ -165,16 +203,98 @@ An example log of a simulation looks like this:
 ...
 ----
 
-=== plot.py
+=== Analyze
 
- plot.py <log>
+There are several utilities for log analysis.
+They offer a graphical representation of data from a log file.
+Only the throughput metric and the size of the queue are supported.
 
-Draw a simple graph of ratio: (sent by alg up to time t) / (sent by adv up to time t) over time t.
+==== Throughput
 
-== Algorithm
+We are interested in the value of the _long term relative throughput_.
+It is the ratio between
+the total length of packets transmitted up to time `t` by an algorithm under test
+and adversary's algorithm
+as `t` goes to infinity.
+Utilities from our framework calculate that ratio in provided samples.
 
-The main part of an algorithm is the `schedule` method that is called every time algorithm can make a scheduling decision.
-Usually in reaction on an event.
+===== Metric value
+
+To obtain only the value of the throughput use:
+
+ throughput.py <log-file>
+
+`<log-file>` is a log created during a simulation.
+
+===== Plot
+
+It is possible to draw a plot how the throughput ratio changes in time.
+To obtain the plot use:
+
+ plot-throughput.py <log-file>
+
+`<log-file>` is a log created during a simulation.
+
+One might want to add a reference value to the plot.
+It is possible to do so by using:
+
+ plot-throughput.py <log-file> <reference-value>
+
+`<reference-value>` is a float value.
+It is used to draw a horizontal line y = reference value.
+
+==== The size of the queue
+
+Another way to characterize an algorithm is by looking at the size of the queue.
+Competitiveness can be expressed in terms of the size of the queues of a specified packet length.
+It allows us to detect which packet accumulate over time.
+To obtain a plot use:
+
+ plot-queuesize.py <log-file>
+
+`<log-file>` is a log created during a simulation.
+
+==== Visualization
+
+The visualization utility allows to see
+what an algorithm under test was doing at given point in time.
+Whether it was transmitting a packet and
+if that transmission ended with a success or was jammed.
+To obtain such plot use:
+
+ visualize.py <log-file>
+
+or
+
+ visualize.py <log-file> <from> <to>
+
+`<log-file>` is a log created during a simulation
+and parameters `from` and `to` can be provide to restrict visualization
+to specified interval [from, to].
+
+Figure shows an example visualization.
+Each packet length has its own color.
+Segments drew with a solid line denote transmission that ended with a success.
+A dashed line denotes a try to send one.
+Vertical gray dashed lines show when jamming errors occurred.
+
+Hence drawing thousands of packets is inefficient,
+it is a good idea to restrict the plot to some interval.
+It speeds up preparing the plot and makes it more readable.
+
+== Implementation notes
+
+Our framework can be extended by
+adding new implementations of algorithms and adversaries.
+The only requirement is to add methods
+allowing our simulation framework to execute them.
+
+=== Algorithm
+
+The main part of an algorithm is the `schedule` method.
+Is is called every time the algorithm is asked to make a scheduling decision.
+The method should return the length of a packet that
+the algorithm schedules now or `None` if it does not schedule anything.
 
 [source,python]
 ----
@@ -182,11 +302,13 @@ class Algorithm:
     def schedule(self): # <1>
         pass
 ----
-<1> Schedule packet method -- it returns scheduled packet length or `None` when algorithm is not going to sent anything.
+<1> `schedule` method -- returns the lnegth of the scheduled packet or `None`
 
 NOTE: Handling packets queue is done internally.
+The framework guarantees that the method gets called only when
+the algorithm has to make a scheduling decision.
 
-== Adversary
+=== Adversary
 
 Adversary consists of `schedule` and `scheduleError` methods.
 Former one is used in adversary's algorithm (OFF or OPT).
@@ -194,7 +316,7 @@ Latter one is used to cause errors on the link.
 
 [source,python]
 ----
-class Adversary(Algorithm):
+class NewAdversary(Adversary):
     def schedule(self): # <1>
         pass
 
@@ -202,10 +324,10 @@ class Adversary(Algorithm):
         pass
 
     def adversarySchedules(self, packet): # <3>
-    	pass
+        pass
 ----
-<1> Schedule packet method -- it returns scheduled packet length or `None` when algorithm is not going to sent anything.
-<2> Schedule error method -- return time in which next error occurs (in reaction on packet scheduled by algorithm)
-<3> Schedule error method -- return time in which next error occurs (in reaction on packet scheduled by adversary)
+<1> `schedule` method -- returns the lnegth of the scheduled packet or `None`
+<2> `algorithmSchedules` method -- returns time in which next error occurs (in reaction on packet scheduled by algorithm)
+<3> `adversarySchedules` method -- returns time in which next error occurs (in reaction on packet scheduled by adversary)
 
 NOTE: Handling packets queue is done internally.

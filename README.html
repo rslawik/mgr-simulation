@@ -650,33 +650,72 @@ and <code>&lt;model-file&gt;</code> points to a file with model description.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>SL</code>&#8201;&#8212;&#8201;Shortest Length</p>
+<p><code>SL</code>&#8201;&#8212;&#8201;Shortest Length,</p>
 </li>
 <li>
-<p><code>LL</code>&#8201;&#8212;&#8201;Longest Length</p>
+<p><code>LL</code>&#8201;&#8212;&#8201;Longest Length,</p>
 </li>
 <li>
-<p><code>SLPreamble</code></p>
+<p><code>SLPreamble</code>&#8201;&#8212;&#8201;the algorithm<span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>
+defined in section 3.2 in <a href="#sirocco">[sirocco]</a>;
+it starts each phase with a preamble of short packets
+(if there are at least <code>floor(l_2 / l_1)</code> short packets in the queue)
+and then uses <code>LL</code>,</p>
 </li>
 <li>
-<p><code>CSLPreamble</code></p>
+<p><code>CSLPreamble</code>&#8201;&#8212;&#8201;the conditional variant of the <code>SLPreamble</code> algorithm;
+depending on model parameters it uses
+<code>SL</code> or <code>SLPreamble</code>,</p>
 </li>
 <li>
-<p><code>Greedy</code></p>
+<p><code>Greedy</code>&#8201;&#8212;&#8201;the Algorithm 1 from the paper,
+shown to achieve throughput at most 0.5
+in a model with an arbitrary number of packet lengths and adversarial arrivals;
+if the algorithm is about to transmit a packet <code>l_i</code>
+it checks whether there are enough shorter packets in the queue to cover length <code>l_i</code>
+and schedules them instead,</p>
 </li>
 <li>
-<p><code>Prudent</code></p>
+<p><code>Prudent</code> --the Algorithm 5 from the paper,
+shown to achieve throughput 1,
+when run with speedup 2
+in a model with an arbitrary number of packet lengths and adversarial arrivals;
+it sends the special preamble and then switches to <code>LL</code>,</p>
 </li>
 <li>
-<p><code>ESLPreamble</code></p>
+<p><code>ESLPreamble</code>&#8201;&#8212;&#8201;a generalized version<span class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</span>
+of the <code>SLPreamble</code> algorithm;
+it uses two preambles (one of length <code>l_2</code> and one of length <code>l_3</code>)
+before switching to <code>LL</code>,</p>
+</li>
+<li>
+<p><code>OnlySL</code>&#8201;&#8212;&#8201;an algorithm that schedules packets of the shrotest length only.</p>
 </li>
 </ul>
+</div>
+<div class="listingblock">
+<div class="title">The pseudo code of the <code>ESLPreamble</code> algorithm</div>
+<div class="content">
+<pre>// queue[l_i] := the number of l_i packets in the queue
+loop
+  // first preamble
+  if (queue[l_1] * l_1 &gt;= l_2)
+    transmit packets l_1 up to the length of l_2
+  // second preamble
+  if (queue[l_1] * l_1 + queue[l_2] * l_2 &gt;= l_3)
+    transmit packets l_1 and l_2 up to the length of l_3
+  loop
+    transmit longest unsent packet</pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_adversary">Adversary</h4>
 <div class="ulist">
 <ul>
+<li>
+<p><code>NoErrors</code>&#8201;&#8212;&#8201;an adversary that does not inject any jamming errors,</p>
+</li>
 <li>
 <p><code>SiroccoThm9</code>&#8201;&#8212;&#8201;the adversary from the proof of Theorem 9 in <a href="#sirocco">[sirocco]</a>,
 used to show an upper bound for the throughput of algorithm SL under adversarial arrivals,</p>
@@ -687,7 +726,13 @@ used to show that algorithm LL cannot achieve relative throughput larger than 0,
 even under stochastic arrivals,</p>
 </li>
 <li>
-<p><code>Sirocco</code>&#8201;&#8212;&#8201;Adversary from section 4.1 in paper</p>
+<p><code>Sirocco</code>&#8201;&#8212;&#8201;the adversary defined in section 4.1 in <a href="#sirocco">[sirocco]</a>,
+used to show an upper bound for the throughput of any algorithm
+in a model with two packet lengths,</p>
+</li>
+<li>
+<p><code>SiroccoL</code>&#8201;&#8212;&#8201;the modified version of the <code>Sirocco</code> adversary
+that extends phases as much as possible,</p>
 </li>
 <li>
 <p><code>ESirocco</code>&#8201;&#8212;&#8201;Adversary from part 3.2.1 in thesis</p>
@@ -723,24 +768,141 @@ An example log of a simulation looks like this:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_plot_py">plot.py</h3>
+<h3 id="_analyze">Analyze</h3>
+<div class="paragraph">
+<p>There are several utilities for log analysis.
+They offer a graphical representation of data from a log file.
+Only the throughput metric and the size of the queue are supported.</p>
+</div>
+<div class="sect3">
+<h4 id="_throughput">Throughput</h4>
+<div class="paragraph">
+<p>We are interested in the value of the <em>long term relative throughput</em>.
+It is the ratio between
+the total length of packets transmitted up to time <code>t</code> by an algorithm under test
+and adversary&#8217;s algorithm
+as <code>t</code> goes to infinity.
+Utilities from our framework calculate that ratio in provided samples.</p>
+</div>
+<div class="sect4">
+<h5 id="_metric_value">Metric value</h5>
+<div class="paragraph">
+<p>To obtain only the value of the throughput use:</p>
+</div>
 <div class="literalblock">
 <div class="content">
-<pre>plot.py &lt;log&gt;</pre>
+<pre>throughput.py &lt;log-file&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Draw a simple graph of ratio: (sent by alg up to time t) / (sent by adv up to time t) over time t.</p>
+<p><code>&lt;log-file&gt;</code> is a log created during a simulation.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_plot">Plot</h5>
+<div class="paragraph">
+<p>It is possible to draw a plot how the throughput ratio changes in time.
+To obtain the plot use:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>plot-throughput.py &lt;log-file&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>&lt;log-file&gt;</code> is a log created during a simulation.</p>
+</div>
+<div class="paragraph">
+<p>One might want to add a reference value to the plot.
+It is possible to do so by using:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>plot-throughput.py &lt;log-file&gt; &lt;reference-value&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>&lt;reference-value&gt;</code> is a float value.
+It is used to draw a horizontal line y = reference value.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_size_of_the_queue">The size of the queue</h4>
+<div class="paragraph">
+<p>Another way to characterize an algorithm is by looking at the size of the queue.
+Competitiveness can be expressed in terms of the size of the queues of a specified packet length.
+It allows us to detect which packet accumulate over time.
+To obtain a plot use:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>plot-queuesize.py &lt;log-file&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>&lt;log-file&gt;</code> is a log created during a simulation.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_visualization">Visualization</h4>
+<div class="paragraph">
+<p>The visualization utility allows to see
+what an algorithm under test was doing at given point in time.
+Whether it was transmitting a packet and
+if that transmission ended with a success or was jammed.
+To obtain such plot use:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>visualize.py &lt;log-file&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>visualize.py &lt;log-file&gt; &lt;from&gt; &lt;to&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>&lt;log-file&gt;</code> is a log created during a simulation
+and parameters <code>from</code> and <code>to</code> can be provide to restrict visualization
+to specified interval [from, to].</p>
+</div>
+<div class="paragraph">
+<p>Figure shows an example visualization.
+Each packet length has its own color.
+Segments drew with a solid line denote transmission that ended with a success.
+A dashed line denotes a try to send one.
+Vertical gray dashed lines show when jamming errors occurred.</p>
+</div>
+<div class="paragraph">
+<p>Hence drawing thousands of packets is inefficient,
+it is a good idea to restrict the plot to some interval.
+It speeds up preparing the plot and makes it more readable.</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_algorithm_2">Algorithm</h2>
+<h2 id="_implementation_notes">Implementation notes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The main part of an algorithm is the <code>schedule</code> method that is called every time algorithm can make a scheduling decision.
-Usually in reaction on an event.</p>
+<p>Our framework can be extended by
+adding new implementations of algorithms and adversaries.
+The only requirement is to add methods
+allowing our simulation framework to execute them.</p>
+</div>
+<div class="sect2">
+<h3 id="_algorithm_2">Algorithm</h3>
+<div class="paragraph">
+<p>The main part of an algorithm is the <code>schedule</code> method.
+Is is called every time the algorithm is asked to make a scheduling decision.
+The method should return the length of a packet that
+the algorithm schedules now or <code>None</code> if it does not schedule anything.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -753,7 +915,7 @@ Usually in reaction on an event.</p>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Schedule packet method&#8201;&#8212;&#8201;it returns scheduled packet length or <code>None</code> when algorithm is not going to sent anything.</td>
+<td><code>schedule</code> method&#8201;&#8212;&#8201;returns the lnegth of the scheduled packet or <code>None</code></td>
 </tr>
 </table>
 </div>
@@ -765,15 +927,15 @@ Usually in reaction on an event.</p>
 </td>
 <td class="content">
 Handling packets queue is done internally.
+The framework guarantees that the method gets called only when
+the algorithm has to make a scheduling decision.
 </td>
 </tr>
 </table>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_adversary_2">Adversary</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_adversary_2">Adversary</h3>
 <div class="paragraph">
 <p>Adversary consists of <code>schedule</code> and <code>scheduleError</code> methods.
 Former one is used in adversary&#8217;s algorithm (OFF or OPT).
@@ -781,7 +943,7 @@ Latter one is used to cause errors on the link.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-python" data-lang="python">class Adversary(Algorithm):
+<pre class="highlight"><code class="language-python" data-lang="python">class NewAdversary(Adversary):
     def schedule(self): <i class="conum" data-value="1"></i><b>(1)</b>
         pass
 
@@ -789,22 +951,22 @@ Latter one is used to cause errors on the link.</p>
         pass
 
     def adversarySchedules(self, packet): <i class="conum" data-value="3"></i><b>(3)</b>
-    	pass</code></pre>
+        pass</code></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Schedule packet method&#8201;&#8212;&#8201;it returns scheduled packet length or <code>None</code> when algorithm is not going to sent anything.</td>
+<td><code>schedule</code> method&#8201;&#8212;&#8201;returns the lnegth of the scheduled packet or <code>None</code></td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Schedule error method&#8201;&#8212;&#8201;return time in which next error occurs (in reaction on packet scheduled by algorithm)</td>
+<td><code>algorithmSchedules</code> method&#8201;&#8212;&#8201;returns time in which next error occurs (in reaction on packet scheduled by algorithm)</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Schedule error method&#8201;&#8212;&#8201;return time in which next error occurs (in reaction on packet scheduled by adversary)</td>
+<td><code>adversarySchedules</code> method&#8201;&#8212;&#8201;returns time in which next error occurs (in reaction on packet scheduled by adversary)</td>
 </tr>
 </table>
 </div>
@@ -823,9 +985,19 @@ Handling packets queue is done internally.
 </div>
 </div>
 </div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. <code>SLPreamble</code> supports only two packet lengths
+</div>
+<div class="footnote" id="_footnote_2">
+<a href="#_footnoteref_2">2</a>. <code>ESLPreamble</code> supports only three packet lengths
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-03-07 15:21:24 CET
+Last updated 2015-03-09 10:15:43 CET
 </div>
 </div>
 </body>
