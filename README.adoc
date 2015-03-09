@@ -300,9 +300,9 @@ the algorithm schedules now or `None` if it does not schedule anything.
 ----
 class Algorithm:
     def schedule(self): # <1>
-        pass
+        yield ...
 ----
-<1> `schedule` method -- returns the lnegth of the scheduled packet or `None`
+<1> `schedule` method -- yields the length of the scheduled packet or `None`
 
 NOTE: Handling packets queue is done internally.
 The framework guarantees that the method gets called only when
@@ -318,15 +318,15 @@ that are used to schedule jamming errors.
 ----
 class NewAdversary(Adversary):
     def schedule(self): # <1>
-        pass
+        yield ...
 
     def algorithmSchedules(self, packet): # <2>
-        pass
+        return ...
 
     def adversarySchedules(self, packet): # <3>
-        pass
+        return ...
 ----
-<1> `schedule` method -- returns the lnegth of the scheduled packet or `None`
+<1> `schedule` method -- yields the length of the scheduled packet or `None`
 <2> `algorithmSchedules` method -- returns time in which next error occurs (in reaction on packet scheduled by algorithm)
 <3> `adversarySchedules` method -- returns time in which next error occurs (in reaction on packet scheduled by adversary)
 

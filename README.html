@@ -908,14 +908,14 @@ the algorithm schedules now or <code>None</code> if it does not schedule anythin
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">class Algorithm:
     def schedule(self): <i class="conum" data-value="1"></i><b>(1)</b>
-        pass</code></pre>
+        yield ...</code></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td><code>schedule</code> method&#8201;&#8212;&#8201;returns the lnegth of the scheduled packet or <code>None</code></td>
+<td><code>schedule</code> method&#8201;&#8212;&#8201;yields the length of the scheduled packet or <code>None</code></td>
 </tr>
 </table>
 </div>
@@ -945,20 +945,20 @@ that are used to schedule jamming errors.</p>
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">class NewAdversary(Adversary):
     def schedule(self): <i class="conum" data-value="1"></i><b>(1)</b>
-        pass
+        yield ...
 
     def algorithmSchedules(self, packet): <i class="conum" data-value="2"></i><b>(2)</b>
-        pass
+        return ...
 
     def adversarySchedules(self, packet): <i class="conum" data-value="3"></i><b>(3)</b>
-        pass</code></pre>
+        return ...</code></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td><code>schedule</code> method&#8201;&#8212;&#8201;returns the lnegth of the scheduled packet or <code>None</code></td>
+<td><code>schedule</code> method&#8201;&#8212;&#8201;yields the length of the scheduled packet or <code>None</code></td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -1014,7 +1014,7 @@ the adversary has to make a scheduling decision.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-03-09 12:17:03 CET
+Last updated 2015-03-09 13:30:12 CET
 </div>
 </div>
 </body>
