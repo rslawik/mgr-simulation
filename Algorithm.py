@@ -185,7 +185,7 @@ class ESLPreamble(Algorithm):
 			except LinkError:
 				pass
 
-class Short(Algorithm):
+class OnlySL(Algorithm):
 	def generate(self):
 		assert len(self.model.packets) == 2
 		l1, l2 = self.model.packets
