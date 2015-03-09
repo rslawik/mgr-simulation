@@ -937,9 +937,9 @@ the algorithm has to make a scheduling decision.
 <div class="sect2">
 <h3 id="_adversary_2">Adversary</h3>
 <div class="paragraph">
-<p>Adversary consists of <code>schedule</code> and <code>scheduleError</code> methods.
-Former one is used in adversary&#8217;s algorithm (OFF or OPT).
-Latter one is used to cause errors on the link.</p>
+<p>Besides the <code>schedule</code> method like an algorithm has,
+an adversary has two methods <code>algorithmSchedules</code> and <code>adversarySchedules</code>
+that are used to schedule jamming errors.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -970,6 +970,21 @@ Latter one is used to cause errors on the link.</p>
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>The <code>schedule</code> method behaves exactly like in the algorithm.
+The <code>algorithmSchedules</code> method is called when
+the algorithm schedules a packet.
+The length of the scheduled packet is passed to it.
+It is used to schedule a jamming error in reaction on the packet schedules by the algorithm.
+It should return time in which the next jamming error occurs or
+<code>None</code> if the adversary decides not to cause an error.
+The <code>adversarySchedules</code> method is called when
+the adversary&#8217;s algorithm makes a scheduling decision.
+It receives the length of the scheduled packet and
+returns time in which the next jamming error occurs.
+It may be used to inject errors in the middle of a phase
+to eliminate unproductive time in the phase for the adversary&#8217;s algorithm.</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -977,7 +992,9 @@ Latter one is used to cause errors on the link.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Handling packets queue is done internally.
+Handling packet queue is done internally.
+The framework guarantees that the methods get called only when
+the adversary has to make a scheduling decision.
 </td>
 </tr>
 </table>
@@ -997,7 +1014,7 @@ Handling packets queue is done internally.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-03-09 10:15:43 CET
+Last updated 2015-03-09 12:17:03 CET
 </div>
 </div>
 </body>

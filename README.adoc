@@ -310,9 +310,9 @@ the algorithm has to make a scheduling decision.
 
 === Adversary
 
-Adversary consists of `schedule` and `scheduleError` methods.
-Former one is used in adversary's algorithm (OFF or OPT).
-Latter one is used to cause errors on the link.
+Besides the `schedule` method like an algorithm has,
+an adversary has two methods `algorithmSchedules` and `adversarySchedules`
+that are used to schedule jamming errors.
 
 [source,python]
 ----
@@ -330,4 +330,20 @@ class NewAdversary(Adversary):
 <2> `algorithmSchedules` method -- returns time in which next error occurs (in reaction on packet scheduled by algorithm)
 <3> `adversarySchedules` method -- returns time in which next error occurs (in reaction on packet scheduled by adversary)
 
-NOTE: Handling packets queue is done internally.
+The `schedule` method behaves exactly like in the algorithm.
+The `algorithmSchedules` method is called when
+the algorithm schedules a packet.
+The length of the scheduled packet is passed to it.
+It is used to schedule a jamming error in reaction on the packet schedules by the algorithm.
+It should return time in which the next jamming error occurs or
+`None` if the adversary decides not to cause an error.
+The `adversarySchedules` method is called when
+the adversary's algorithm makes a scheduling decision.
+It receives the length of the scheduled packet and
+returns time in which the next jamming error occurs.
+It may be used to inject errors in the middle of a phase
+to eliminate unproductive time in the phase for the adversary's algorithm.
+
+NOTE: Handling packet queue is done internally.
+The framework guarantees that the methods get called only when
+the adversary has to make a scheduling decision.
