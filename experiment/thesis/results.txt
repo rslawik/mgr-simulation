@@ -1,0 +1,74 @@
+SL 0,349069
+Greedy 0,499588
+Prudent 0,498977
+ESLPreamble 0,348554
+
+--
+
+ESLPreamble 0,283164
+SL 0,282626
+Prudent 0,499353
+Greedy 0,499644
+
+--
+
+SL 0,757437
+ESLPreamble 0,758306
+Greedy 0,762538
+Prudent 0,74726
+
+--
+
+Prudent 0,748622
+Greedy 0,77263
+SL 0,81929
+ESLPreamble 0,8181
+
+--
+
+Prudent 0,595231
+Greedy 0,594433
+SL 0,607531
+ESLPreamble 0,602421
+
+--
+
+ESLPreamble 0,742529
+Greedy 0,743873
+Prudent 0,74007
+SL 0,744492
+
+--
+
+SL 0,56875
+ESLPreamble 0,564118
+Greedy 0,509538
+Prudent 0,505748
+
+--
+
+Prudent 0,497183
+Greedy 0,498805
+ESLPreamble 0,382616
+SL 0,385248
+
+--
+
+SL 0,438498
+ESLPreamble 0,473791
+Greedy 0,509475
+Prudent 0,506893
+
+--
+
+Prudent 0,705574
+Greedy 0,693101
+ESLPreamble 0,69449
+SL 0,688676
+
+--
+
+SL 0,316632
+ESLPreamble 0,431461
+Greedy 0,571468
+Prudent 0,569527
